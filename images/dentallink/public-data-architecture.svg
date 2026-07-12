@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">DentalLink public data architecture</title>
+  <desc id="desc">Public-safe DentalLink data architecture with Flutter, Provider, Supabase, and PostgreSQL.</desc>
+  <rect width="1200" height="680" fill="#f8fafc"/>
+  <text x="72" y="78" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#143b45">DentalLink Data Architecture</text>
+  <text x="72" y="112" font-family="Arial, sans-serif" font-size="17" fill="#64748b">Flutter 앱과 Supabase(PostgreSQL) 데이터 연동 구조를 공개용으로 재구성</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="76" y="184" width="220" height="112" rx="16" fill="#dbeafe" stroke="#60a5fa"/>
+    <text x="118" y="230" font-size="20" font-weight="700" fill="#1e3a8a">환자 앱</text>
+    <text x="118" y="260" font-size="14" fill="#475569">예약 / 대기 / 공지 조회</text>
+
+    <rect x="76" y="384" width="220" height="112" rx="16" fill="#e0f2fe" stroke="#38bdf8"/>
+    <text x="112" y="430" font-size="20" font-weight="700" fill="#075985">관리자 웹</text>
+    <text x="112" y="460" font-size="14" fill="#475569">대기 상태 / 공지 관리</text>
+
+    <rect x="398" y="284" width="220" height="112" rx="16" fill="#f0fdf4" stroke="#4ade80"/>
+    <text x="448" y="330" font-size="20" font-weight="700" fill="#166534">Provider</text>
+    <text x="430" y="360" font-size="14" fill="#475569">상태 관리 / 데이터 흐름</text>
+
+    <rect x="720" y="284" width="220" height="112" rx="16" fill="#ecfdf5" stroke="#10b981"/>
+    <text x="766" y="330" font-size="20" font-weight="700" fill="#047857">Supabase API</text>
+    <text x="752" y="360" font-size="14" fill="#475569">조회 / 변경 / 예외 처리</text>
+
+    <rect x="1012" y="184" width="132" height="312" rx="20" fill="#fff7ed" stroke="#fb923c"/>
+    <text x="1036" y="232" font-size="18" font-weight="700" fill="#9a3412">PostgreSQL</text>
+    <rect x="1032" y="268" width="92" height="38" rx="8" fill="#ffffff" stroke="#fed7aa"/>
+    <text x="1054" y="292" font-size="13" fill="#334155">patients</text>
+    <rect x="1032" y="322" width="92" height="38" rx="8" fill="#ffffff" stroke="#fed7aa"/>
+    <text x="1042" y="346" font-size="13" fill="#334155">reservations</text>
+    <rect x="1032" y="376" width="92" height="38" rx="8" fill="#ffffff" stroke="#fed7aa"/>
+    <text x="1052" y="400" font-size="13" fill="#334155">waiting</text>
+    <rect x="1032" y="430" width="92" height="38" rx="8" fill="#ffffff" stroke="#fed7aa"/>
+    <text x="1056" y="454" font-size="13" fill="#334155">notices</text>
+  </g>
+
+  <g stroke="#2563eb" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M296 240 C340 240 350 324 392 324"/>
+    <path d="M296 440 C340 440 350 356 392 356"/>
+    <path d="M618 340 H714"/>
+    <path d="M940 340 H1004"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <text x="76" y="584" font-family="Arial, sans-serif" font-size="16" fill="#475569">핵심 기여: 데이터 구조 설계, 조회·상태 변경 로직, 대기열 순번 조정, 공지사항 CRUD, API 오류 예외 처리</text>
+</svg>

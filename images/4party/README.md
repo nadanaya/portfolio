@@ -43,6 +43,18 @@ Team Project
 - 사용 가이드: 동승 참여 절차와 주의사항 안내
 - 마이페이지: 사용자 정보와 참여 내역 관리
 
+## Public Recreated Visuals
+
+아래 이미지는 팀 내부 설계서 원본을 그대로 공개하지 않고, 포트폴리오 공개용으로 화면 흐름과 Firebase 구조만 새로 재구성한 자료입니다.
+
+### Screen Flow
+
+![4Party public screen flow](public-screen-flow.svg)
+
+### Firebase Architecture
+
+![4Party public Firebase architecture](public-firebase-architecture.svg)
+
 ## Screen Flow
 
 ```mermaid

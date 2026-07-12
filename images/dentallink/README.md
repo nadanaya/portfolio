@@ -43,6 +43,18 @@ Team Project
 - 실시간 대기: 현재 대기 순번과 상태 확인
 - 진료 완료: 대기열 종료와 다음 예약 안내 표시
 
+## Public Recreated Visuals
+
+아래 이미지는 팀 내부 보고서 원본을 그대로 공개하지 않고, 포트폴리오 공개용으로 화면 흐름과 데이터 구조만 새로 재구성한 자료입니다.
+
+### Screen Flow
+
+![DentalLink public screen flow](public-screen-flow.svg)
+
+### Data Architecture
+
+![DentalLink public data architecture](public-data-architecture.svg)
+
 ## Architecture
 
 ```mermaid
