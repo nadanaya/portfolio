@@ -6,7 +6,7 @@
     <title>나영 포트폴리오 | Project Contributions</title>
     <meta
       name="description"
-      content="백엔드, AI Agent, Android, Figma Plugin 프로젝트에서의 담당 역할과 구현 기능을 정리한 김나영 개발자 포트폴리오입니다."
+      content="DentalLink, AI Agent System, 4Party, Life Manager 프로젝트에서의 담당 역할과 구현 기능을 정리한 김나영 백엔드 개발자 포트폴리오입니다."
     />
     <style>
       :root {
@@ -375,8 +375,9 @@
             <p class="lead">
               데이터 흐름과 서비스 구조를 이해하고, 백엔드와 AI 기능을 실제
               서비스로 구현해 온 개발자 김나영입니다. Android 앱, 치과 통합
-              관리 서비스, 프로젝트 관리 AI Agent를 개발하며 데이터베이스 설계,
-              API 연동, 예외 처리와 협업 경험을 쌓았습니다.
+              관리 서비스, 프로젝트 관리 AI Agent, Firebase 기반 동승 매칭
+              서비스를 개발하며 데이터베이스 설계, API 연동, 예외 처리와 협업
+              경험을 쌓았습니다.
             </p>
             <div class="actions" aria-label="바로가기">
               <a class="button" href="#projects">프로젝트 보기</a>
@@ -403,7 +404,7 @@
               </div>
               <div class="metric">
                 <strong>App</strong>
-                <span>Android · Figma Plugin</span>
+                <span>Android · Firebase · Room</span>
               </div>
             </div>
           </aside>
@@ -413,63 +414,15 @@
           <div class="section-title">
             <h2 id="projects-title">Projects</h2>
             <p>
-              개인 프로젝트와 팀 프로젝트에서 맡은 역할, 구현 기능, 기술 스택을
-              실제 기여 중심으로 정리했습니다.
+              백엔드·데이터 연동과 연결되는 팀 프로젝트를 먼저 배치하고, Android
+              프로젝트는 로컬 DB와 Firebase 경험 중심으로 정리했습니다.
             </p>
           </div>
 
           <div class="projects">
             <article class="project">
               <div class="project-top">
-                <span class="tag">01 · Android Team Project</span>
-                <span class="tag">2026</span>
-                <h3>Life Manager</h3>
-                <p>
-                  Android 기반 생활 기록 관리 앱입니다. 수면, 공부, 휴대폰 사용,
-                  만보기 데이터를 기록하고 그래프로 확인할 수 있도록 앱 구조와
-                  로컬 DB 흐름을 구현했습니다.
-                </p>
-              </div>
-              <div class="project-body">
-                <div class="info-block">
-                  <h4>담당 역할</h4>
-                  <ul>
-                    <li>Android 생활관리 앱의 주요 기능 구현 참여</li>
-                    <li>수면·공부·휴대폰·만보기 데이터를 관리하는 화면과 흐름 구성</li>
-                    <li>Room 기반 로컬 DB와 화면 데이터 연동 기능 구현</li>
-                  </ul>
-                </div>
-                <div class="info-block">
-                  <h4>구현 기능</h4>
-                  <ul>
-                    <li>수면, 공부, 휴대폰 사용 시간 입력 및 저장</li>
-                    <li>최근 7일 기준 생활 기록 그래프 시각화</li>
-                    <li>주간 평균 계산 및 분석 문구 표시</li>
-                    <li>Room Migration을 통한 만보기 데이터 테이블 확장</li>
-                  </ul>
-                </div>
-                <div class="info-block">
-                  <h4>기술 스택</h4>
-                  <div class="stack" aria-label="Life Manager 기술 스택">
-                    <span>Android</span>
-                    <span>Java</span>
-                    <span>Room</span>
-                    <span>SQLite</span>
-                    <span>XML</span>
-                    <span>UI/UX</span>
-                  </div>
-                </div>
-                <div class="github">
-                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/life-manager/README.md" aria-label="Life Manager 프로젝트 상세 보기">
-                    프로젝트 상세 보기
-                  </a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project-top">
-                <span class="tag">02 · Team Project</span>
+                <span class="tag">01 · Team Project</span>
                 <span class="tag">2026</span>
                 <h3>DentalLink</h3>
                 <p>
@@ -521,7 +474,7 @@
 
             <article class="project">
               <div class="project-top">
-                <span class="tag">03 · Team Project</span>
+                <span class="tag">02 · Team Project</span>
                 <span class="tag">2026</span>
                 <h3>AI Agent System</h3>
                 <p>
@@ -570,44 +523,96 @@
 
             <article class="project">
               <div class="project-top">
-                <span class="tag">04 · Personal Project</span>
+                <span class="tag">03 · Team Project</span>
                 <span class="tag">2026</span>
-                <h3>Figma Plugin</h3>
+                <h3>4Party</h3>
                 <p>
-                  채널톡, 무신사, 카카오페이증권 시나리오를 기반으로 운영 리스크
-                  보드와 금융 케어 카드를 Figma 캔버스에 자동 생성하는 개인
-                  플러그인 프로젝트입니다.
+                  기흥역과 명지대학교를 오가는 학생들의 택시 동승을 지원하는
+                  Android 기반 서비스입니다. 사용자 인증, 파티 생성·참여, 실시간
+                  파티 조회 기능을 구현했습니다.
                 </p>
               </div>
               <div class="project-body">
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>기업별 UX 시나리오 기반 Figma 플러그인 MVP 기획 및 구현</li>
-                    <li>Figma Plugin API 기반 프레임·텍스트·카드 노드 생성 로직 개발</li>
-                    <li>플러그인 UI와 code.js 간 메시지 계약 설계 및 오류 처리</li>
+                    <li>Firebase Authentication 기반 로그인 구현</li>
+                    <li>Cloud Firestore 데이터베이스 설계 및 연동</li>
+                    <li>파티 생성·조회·참여 기능 개발</li>
+                    <li>사용자 정보 및 탑승 정보 관리</li>
+                    <li>Git/GitHub 기반 협업</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>구현 기능</h4>
                   <ul>
-                    <li>입력된 시나리오 기반 Figma 카드·보드 자동 생성</li>
-                    <li>생성된 프레임을 캔버스 중앙에 배치하고 자동 선택</li>
-                    <li>플러그인 UI와 code.js 간 postMessage 기반 명령 전달</li>
-                    <li>기업별 디자인 토큰과 콘텐츠 구조를 반영한 카드 레이아웃 구성</li>
+                    <li>동승 파티 생성 및 참여</li>
+                    <li>실시간 파티 목록 조회</li>
+                    <li>사용자 인증</li>
+                    <li>오픈채팅 연결</li>
+                    <li>탑승 정보 관리</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>기술 스택</h4>
-                  <div class="stack" aria-label="Figma Plugin 기술 스택">
-                    <span>Figma API</span>
-                    <span>JavaScript</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
+                  <div class="stack" aria-label="4Party 기술 스택">
+                    <span>Android</span>
+                    <span>Kotlin</span>
+                    <span>Firebase Auth</span>
+                    <span>Cloud Firestore</span>
+                    <span>Git</span>
                   </div>
                 </div>
                 <div class="github">
-                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/figma-plugin/README.md" aria-label="Figma Plugin 프로젝트 상세 보기">
+                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/4party/README.md" aria-label="4Party 프로젝트 상세 보기">
+                    프로젝트 상세 보기
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-top">
+                <span class="tag">04 · Android Team Project</span>
+                <span class="tag">2026</span>
+                <h3>Life Manager</h3>
+                <p>
+                  Android 기반 생활 기록 관리 앱입니다. 수면, 공부, 휴대폰 사용,
+                  만보기 데이터를 기록하고 그래프로 확인할 수 있도록 앱 구조와
+                  로컬 DB 흐름을 구현했습니다.
+                </p>
+              </div>
+              <div class="project-body">
+                <div class="info-block">
+                  <h4>담당 역할</h4>
+                  <ul>
+                    <li>Android 생활관리 앱의 주요 기능 구현 참여</li>
+                    <li>수면·공부·휴대폰·만보기 데이터를 관리하는 화면과 흐름 구성</li>
+                    <li>Room 기반 로컬 DB와 화면 데이터 연동 기능 구현</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>구현 기능</h4>
+                  <ul>
+                    <li>수면, 공부, 휴대폰 사용 시간 입력 및 저장</li>
+                    <li>최근 7일 기준 생활 기록 그래프 시각화</li>
+                    <li>주간 평균 계산 및 분석 문구 표시</li>
+                    <li>Room Migration을 통한 만보기 데이터 테이블 확장</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>기술 스택</h4>
+                  <div class="stack" aria-label="Life Manager 기술 스택">
+                    <span>Android</span>
+                    <span>Java</span>
+                    <span>Room</span>
+                    <span>SQLite</span>
+                    <span>XML</span>
+                    <span>UI/UX</span>
+                  </div>
+                </div>
+                <div class="github">
+                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/life-manager/README.md" aria-label="Life Manager 프로젝트 상세 보기">
                     프로젝트 상세 보기
                   </a>
                 </div>
