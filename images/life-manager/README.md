@@ -28,3 +28,22 @@ Team Project
 - XML
 - UI/UX
 
+## App Flow
+
+```mermaid
+flowchart LR
+    User[사용자] --> Screen[Android 화면]
+    Screen --> Input[일정 / 할 일 / 메모 입력]
+    Input --> Validation[입력값 검증]
+    Validation --> DB[(SQLite)]
+    DB --> List[목록 조회]
+    List --> Detail[상세 확인 / 수정 / 삭제]
+```
+
+## Data Scope
+
+- 일정: 날짜, 제목, 내용, 상태
+- 할 일: 제목, 완료 여부, 등록일
+- 메모: 제목, 본문, 수정일
+
+

@@ -31,6 +31,38 @@ Team Project
 - Provider
 - REST API
 
+## Architecture
+
+```mermaid
+flowchart LR
+    Admin[관리자 웹] --> Provider[Flutter Provider]
+    Patient[환자 앱] --> Provider
+    Provider --> Service[데이터 조회 / 상태 변경 로직]
+    Service --> Supabase[Supabase API]
+    Supabase --> DB[(PostgreSQL)]
+    DB --> PatientData[환자]
+    DB --> Reservation[예약]
+    DB --> Waiting[대기열]
+    DB --> Notice[공지사항]
+```
+
+## Data Flow
+
+```mermaid
+sequenceDiagram
+    participant Admin as 관리자
+    participant App as Flutter
+    participant API as Supabase
+    participant DB as PostgreSQL
+
+    Admin->>App: 대기 상태 변경
+    App->>API: 상태 변경 요청
+    API->>DB: 대기열 순번 및 상태 업데이트
+    DB-->>API: 변경 결과 반환
+    API-->>App: 최신 대기 현황 응답
+    App-->>Admin: 변경된 대기 목록 표시
+```
+
 ## Repository Note
 
 팀 프로젝트 저장소는 팀 단위로 관리되어 전체 소스를 직접 공개하지 않고, 포트폴리오에는 본인이 담당한 역할과 구현 기능을 중심으로 정리했습니다.

@@ -50,6 +50,35 @@ figma_plugin/
 - `figma.viewport.center`: 생성된 프레임을 현재 캔버스 중앙에 배치
 - `figma.currentPage.selection`: 생성 결과를 자동 선택해 사용자가 바로 확인할 수 있게 처리
 
+## Plugin Flow
+
+```mermaid
+sequenceDiagram
+    participant User as 사용자
+    participant UI as ui.html
+    participant Main as code.js
+    participant Figma as Figma Canvas
+
+    User->>UI: 시나리오 선택
+    UI->>Main: postMessage(create-card)
+    Main->>Main: 스냅샷 데이터 조회
+    Main->>Figma: Frame / Text / Card 노드 생성
+    Main->>Figma: 캔버스 중앙 배치 및 자동 선택
+    Main-->>UI: 생성 완료 또는 오류 메시지
+```
+
+## Generated Outputs
+
+```mermaid
+flowchart LR
+    Scenario[기업별 시나리오] --> ChannelTalk[채널톡 운영 리스크 보드]
+    Scenario --> Musinsa[무신사 운영 리스크 카드]
+    Scenario --> Kakao[Kakao Stock Care 카드]
+    ChannelTalk --> Figma[Figma 캔버스]
+    Musinsa --> Figma
+    Kakao --> Figma
+```
+
 ## Example Use Cases
 
 - ChannelTalk: AI 상담 운영 리스크, 심각도, 담당 모듈, 권장 조치, 운영 지표를 보드로 생성

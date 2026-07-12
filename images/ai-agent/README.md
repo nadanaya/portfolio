@@ -56,6 +56,37 @@ sql/           Supabase schema and seed scripts
 tests/         pytest tests
 ```
 
+## Agent Flow
+
+```mermaid
+flowchart TD
+    Input[회의록 / 프로젝트 데이터] --> Parser[데이터 정리]
+    Parser --> Graph[LangGraph Workflow]
+    Graph --> Summary[회의 요약]
+    Graph --> Action[Action Item 추출]
+    Graph --> Schedule[일정 알림 판단]
+    Graph --> Score[진행률 / 기여도 분석]
+    Graph --> Risk[리스크 감지]
+    Summary --> Report[최종 보고서]
+    Action --> Report
+    Schedule --> Report
+    Score --> Report
+    Risk --> Report
+    Report --> Discord[Discord Bot 응답]
+    Report --> DB[(PostgreSQL / Supabase)]
+```
+
+## Failure Handling
+
+```mermaid
+flowchart LR
+    LLM[LLM 호출] --> Success{성공 여부}
+    Success -->|성공| Result[요약 / 분석 결과 생성]
+    Success -->|실패| Fallback[대체 응답 생성]
+    Fallback --> Log[오류 상태 기록]
+    Log --> User[사용자에게 안내 메시지 반환]
+```
+
 ## Security Note
 
 민감 정보 보호를 위해 아래 항목은 공개 저장소에 업로드하지 않았습니다.
