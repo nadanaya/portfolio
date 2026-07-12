@@ -425,9 +425,9 @@
                 <span class="tag">2026</span>
                 <h3>Life Manager</h3>
                 <p>
-                  Android 기반 생활관리 앱입니다. 일정, 할 일, 메모처럼
-                  일상에서 반복적으로 사용하는 기능을 앱 구조 안에서 구현하며
-                  생활 관리 흐름을 구성했습니다.
+                  Android 기반 생활 기록 관리 앱입니다. 수면, 공부, 휴대폰 사용,
+                  만보기 데이터를 기록하고 그래프로 확인할 수 있도록 앱 구조와
+                  로컬 DB 흐름을 구현했습니다.
                 </p>
               </div>
               <div class="project-body">
@@ -435,24 +435,25 @@
                   <h4>담당 역할</h4>
                   <ul>
                     <li>Android 생활관리 앱의 주요 기능 구현 참여</li>
-                    <li>일정, To-do, 메모 데이터를 관리하는 화면과 흐름 구성</li>
-                    <li>팀 프로젝트 내 UI와 DB 연동 기능 구현</li>
+                    <li>수면·공부·휴대폰·만보기 데이터를 관리하는 화면과 흐름 구성</li>
+                    <li>Room 기반 로컬 DB와 화면 데이터 연동 기능 구현</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>구현 기능</h4>
                   <ul>
-                    <li>일정 등록, 수정, 삭제 및 날짜 기반 관리</li>
-                    <li>할 일(To-do) 체크, 목록 관리, 완료 상태 처리</li>
-                    <li>메모 작성 및 생활 기록 관리</li>
-                    <li>입력 데이터 저장, 조회, 수정 흐름 처리</li>
+                    <li>수면, 공부, 휴대폰 사용 시간 입력 및 저장</li>
+                    <li>최근 7일 기준 생활 기록 그래프 시각화</li>
+                    <li>주간 평균 계산 및 분석 문구 표시</li>
+                    <li>Room Migration을 통한 만보기 데이터 테이블 확장</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>기술 스택</h4>
                   <div class="stack" aria-label="Life Manager 기술 스택">
                     <span>Android</span>
-                    <span>Kotlin</span>
+                    <span>Java</span>
+                    <span>Room</span>
                     <span>SQLite</span>
                     <span>XML</span>
                     <span>UI/UX</span>
