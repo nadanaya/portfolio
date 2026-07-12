@@ -14,6 +14,10 @@ https://github.com/nadanaya/ai-agent
 
 Team Project
 
+## Project Period
+
+2026.02 ~ 2026.09
+
 ## My Contribution
 
 - Python 기반 AI Agent 백엔드 로직 구현

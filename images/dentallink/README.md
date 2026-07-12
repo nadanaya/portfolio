@@ -6,6 +6,10 @@
 
 Team Project
 
+## Project Period
+
+2026.03 ~ 2026.06
+
 ## My Contribution
 
 - Supabase(PostgreSQL) 기반 데이터 구조 설계 및 연동

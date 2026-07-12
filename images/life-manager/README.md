@@ -6,6 +6,10 @@
 
 Team Project
 
+## Project Period
+
+2025.09 ~ 2025.12
+
 ## My Contribution
 
 - Android 앱 주요 화면 구성 및 기능 구현 참여

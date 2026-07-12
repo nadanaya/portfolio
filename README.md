@@ -8,10 +8,10 @@ https://nadanaya.github.io/portfolio/
 
 ## Projects
 
-1. [DentalLink](images/dentallink/README.md)
-2. [AI Agent System](images/ai-agent/README.md)
-3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md)
-4. [Life Manager Android App](images/life-manager/README.md)
+1. [DentalLink](images/dentallink/README.md) · 2026.03 ~ 2026.06
+2. [AI Agent System](images/ai-agent/README.md) · 2026.02 ~ 2026.09
+3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md) · 2025.09 ~ 2025.12
+4. [Life Manager Android App](images/life-manager/README.md) · 2025.09 ~ 2025.12
 
 ## Other Project
 

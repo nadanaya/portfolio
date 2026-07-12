@@ -6,6 +6,10 @@
 
 Team Project
 
+## Project Period
+
+2025.09 ~ 2025.12
+
 ## My Contribution
 
 - Firebase Authentication 기반 로그인 구현
