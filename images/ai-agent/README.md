@@ -16,19 +16,19 @@ Team Project
 
 ## My Contribution
 
-- AI Agent 기반 팀 프로젝트의 워크플로 구조 정리
-- 회의 요약, 일정 추적, 기여도 산정, 최종 보고서 생성 흐름 구현 및 검토
-- PostgreSQL/Supabase 기반 데이터 저장 구조와 SQL 스키마 검토
-- Discord Bot 연동 흐름과 Python 패키지 구조 분리
-- LLM 응답 결과를 Markdown 보고서로 정리하는 기능 검토
+- Python 기반 AI Agent 백엔드 로직 구현
+- Supabase(PostgreSQL) 데이터 저장 구조 및 SQL 스키마 구성
+- Discord Bot 명령과 Agent 실행 흐름 연동
+- 프로젝트 종료 리포트 생성 기능 구현 및 테스트
+- LLM 응답 결과를 Markdown 보고서로 정리하는 흐름 구현
 
 ## Main Features
 
-- 회의 내용 요약
-- 액션 아이템 추출
-- 일정 상태 추적
-- 팀원별 기여도 분석
-- 최종 보고서 생성
+- 회의 내용 요약 및 Action Item 추출
+- D-7·D-3·D-1 일정 알림
+- 업무 진행률과 팀원 기여도 분석
+- 리스크 감지 및 프로젝트 종료 리포트 생성
+- LLM 호출 실패 시 대체 응답 처리
 - Discord Bot 기반 명령 흐름
 
 ## Tech Stack

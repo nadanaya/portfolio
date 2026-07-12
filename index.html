@@ -305,46 +305,6 @@
         word-break: break-all;
       }
 
-      .note {
-        border-top: 1px solid var(--line);
-        border-bottom: 1px solid var(--line);
-        background: #f7f4ed;
-      }
-
-      .note-inner {
-        display: grid;
-        grid-template-columns: 0.8fr 1.2fr;
-        gap: clamp(26px, 5vw, 68px);
-        align-items: start;
-      }
-
-      .note h2 {
-        margin-bottom: 0;
-        font-size: clamp(28px, 4vw, 42px);
-        line-height: 1.1;
-      }
-
-      .note p {
-        margin-bottom: 0;
-        color: #46423d;
-        font-size: 18px;
-      }
-
-      .contact {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 28px;
-        padding-bottom: 72px;
-      }
-
-      .contact h2 {
-        max-width: 760px;
-        margin-bottom: 0;
-        font-size: clamp(30px, 5vw, 54px);
-        line-height: 1.06;
-      }
-
       footer {
         padding: 26px clamp(20px, 5vw, 72px);
         border-top: 1px solid var(--line);
@@ -353,9 +313,7 @@
       }
 
       @media (max-width: 980px) {
-        .hero,
-        .note-inner,
-        .contact {
+        .hero {
           grid-template-columns: 1fr;
         }
 
@@ -394,11 +352,6 @@
           gap: 8px;
         }
 
-        .contact {
-          align-items: stretch;
-          flex-direction: column;
-        }
-
         .button {
           width: 100%;
         }
@@ -411,8 +364,6 @@
         <a class="brand" href="#top">NaYoung Portfolio</a>
         <nav class="nav" aria-label="주요 섹션">
           <a href="#projects">Projects</a>
-          <a href="#team-projects">Team Work</a>
-          <a href="#contact">Contact</a>
         </nav>
       </header>
 
@@ -422,14 +373,13 @@
             <p class="eyebrow">Personal project portfolio</p>
             <h1 id="hero-title">개인 프로젝트와 팀 프로젝트로 증명한 구현 경험</h1>
             <p class="lead">
-              Life Manager Android 앱, DentalLink, AI Agent System, Figma
-              플러그인 프로젝트에서 맡은 역할과 구현 기능을 정리했습니다.
-              Android 앱 구현 경험을 가장 먼저 보여주고, 이어서 팀 프로젝트와
-              AI, 플러그인 경험을 균형 있게 보여주도록 구성했습니다.
+              데이터 흐름과 서비스 구조를 이해하고, 백엔드와 AI 기능을 실제
+              서비스로 구현해 온 개발자 김나영입니다. Android 앱, 치과 통합
+              관리 서비스, 프로젝트 관리 AI Agent를 개발하며 데이터베이스 설계,
+              API 연동, 예외 처리와 협업 경험을 쌓았습니다.
             </p>
             <div class="actions" aria-label="바로가기">
               <a class="button" href="#projects">프로젝트 보기</a>
-              <a class="button secondary" href="#contact">연락처 확인</a>
             </div>
           </div>
 
@@ -459,9 +409,8 @@
           <div class="section-title">
             <h2 id="projects-title">Projects</h2>
             <p>
-              생활관리 Android 앱을 가장 먼저 배치해 앱 구현 역량을 보여주고,
-              이어서 DentalLink와 AI Agent System으로 협업 경험과 백엔드·AI
-              역량을 함께 보여줍니다.
+              개인 프로젝트와 팀 프로젝트에서 맡은 역할, 구현 기능, 기술 스택을
+              실제 기여 중심으로 정리했습니다.
             </p>
           </div>
 
@@ -471,8 +420,8 @@
                 <span class="tag">01 · Android Project</span>
                 <h3>Life Manager</h3>
                 <p>
-                  Android 기반 생활관리 앱입니다. 일정, 할 일, 메모, 알림처럼
-                  일상에서 반복적으로 사용하는 기능을 앱 구조 안에서 구현해
+                  Android 기반 생활관리 앱입니다. 일정, 할 일, 메모처럼
+                  일상에서 반복적으로 사용하는 기능을 앱 구조 안에서 구현하며
                   생활 관리 흐름을 구성했습니다.
                 </p>
               </div>
@@ -491,22 +440,22 @@
                     <li>일정 등록, 수정, 삭제 및 날짜 기반 관리</li>
                     <li>할 일(To-do) 체크, 목록 관리, 완료 상태 처리</li>
                     <li>메모 작성 및 생활 기록 관리</li>
-                    <li>중요 일정이나 할 일을 놓치지 않도록 알림 기능 구성</li>
+                    <li>입력 데이터 저장, 조회, 수정 흐름 처리</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>기술 스택</h4>
                   <div class="stack" aria-label="Life Manager 기술 스택">
                     <span>Android</span>
-                    <span>Java/Kotlin</span>
-                    <span>SQLite/Room</span>
-                    <span>Notifications</span>
+                    <span>Kotlin</span>
+                    <span>SQLite</span>
+                    <span>XML</span>
                     <span>UI/UX</span>
                   </div>
                 </div>
                 <div class="github">
-                  <a href="#" aria-label="Life Manager GitHub 링크">
-                    GitHub 링크 입력
+                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/life-manager/README.md" aria-label="Life Manager 프로젝트 상세 보기">
+                    프로젝트 상세 보기
                   </a>
                 </div>
               </div>
@@ -518,26 +467,30 @@
                 <h3>DentalLink</h3>
                 <p>
                   치과 관리자 웹과 환자 앱을 함께 제공하는 Flutter 기반 팀
-                  프로젝트입니다. Supabase 연동을 바탕으로 환자, 예약, 대기,
-                  알림, 공지 흐름을 실제 병원 운영 방식에 맞게 구현했습니다.
+                  프로젝트입니다. Supabase와 PostgreSQL을 바탕으로 환자, 예약,
+                  대기열, 공지사항 데이터를 실제 병원 운영 흐름에 맞게
+                  연동했습니다.
                 </p>
               </div>
               <div class="project-body">
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>관리자 웹과 환자 앱의 주요 화면 및 상태 관리 구현</li>
-                    <li>Provider 기반 데이터 흐름과 Supabase 연동 로직 정리</li>
-                    <li>팀 GitHub 기반 협업, 기능 단위 개발 및 코드 반영</li>
+                    <li>Supabase(PostgreSQL) 기반 데이터 구조 설계 및 연동</li>
+                    <li>환자·예약·대기열·공지사항 데이터 처리 기능 구현</li>
+                    <li>관리자 웹 대기 관리 및 공지 관리 기능 개발 지원</li>
+                    <li>Flutter와 Supabase 간 데이터 조회·상태 변경 로직 구현</li>
+                    <li>Git/GitHub 기반 기능 브랜치 관리 및 협업</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>구현 기능</h4>
                   <ul>
-                    <li>관리자 대시보드, 환자 관리, 수기 예약 등록 화면</li>
-                    <li>진료 대기 목록, 대기 상태 변경, 시술 정보 관리 흐름</li>
-                    <li>PIN/QR 인증 발급, 환자 알림함, 공지 및 예약 알림 처리</li>
-                    <li>FCM 기반 푸시 알림, 로컬 알림, 중복 알림 캐시 개선</li>
+                    <li>예약 및 대기 현황 조회</li>
+                    <li>대기 상태 변경과 순번 자동 조정</li>
+                    <li>환자 PIN 인증 및 데이터 조회</li>
+                    <li>공지사항 등록·수정·조회</li>
+                    <li>데이터 누락 및 API 오류 예외 처리</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -546,14 +499,14 @@
                     <span>Flutter</span>
                     <span>Dart</span>
                     <span>Supabase</span>
+                    <span>PostgreSQL</span>
                     <span>Provider</span>
-                    <span>Firebase Messaging</span>
-                    <span>QR</span>
+                    <span>REST API</span>
                   </div>
                 </div>
                 <div class="github">
-                  <a href="#" aria-label="DentalLink GitHub 링크">
-                    GitHub 링크 입력
+                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/dentallink/README.md" aria-label="DentalLink 프로젝트 상세 및 담당 기능 보기">
+                    프로젝트 상세 및 담당 기능 보기
                   </a>
                 </div>
               </div>
@@ -564,40 +517,44 @@
                 <span class="tag">03 · Team Project</span>
                 <h3>AI Agent System</h3>
                 <p>
-                  여러 단계의 판단과 실행 흐름을 자동화하는 AI Agent 기반 팀
-                  프로젝트입니다. 에이전트 동작 구조와 결과 처리 흐름에
-                  기여했습니다.
+                  프로젝트 관리 데이터를 분석해 회의 요약, 일정 추적, 기여도
+                  분석, 최종 보고서 생성을 자동화하는 AI Agent 기반 팀
+                  프로젝트입니다.
                 </p>
               </div>
               <div class="project-body">
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>AI Agent 실행 흐름 설계 및 기능 구현 참여</li>
-                    <li>프롬프트, 도구 호출, 결과 정리 구조 개선</li>
-                    <li>BDAI 팀 GitHub를 통한 협업 개발</li>
+                    <li>Python 기반 AI Agent 백엔드 로직 구현</li>
+                    <li>Supabase(PostgreSQL) 데이터 저장 구조 및 SQL 스키마 구성</li>
+                    <li>Discord Bot 명령과 Agent 실행 흐름 연동</li>
+                    <li>프로젝트 종료 리포트 생성 기능 구현 및 테스트</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>구현 기능</h4>
                   <ul>
-                    <li>사용자 입력 기반 작업 분기 및 응답 생성 흐름</li>
-                    <li>에이전트 실행 결과 저장 또는 후처리 로직</li>
-                    <li>테스트 가능한 모듈 단위 기능 정리</li>
+                    <li>회의 내용 요약 및 Action Item 추출</li>
+                    <li>D-7·D-3·D-1 일정 알림</li>
+                    <li>업무 진행률과 팀원 기여도 분석</li>
+                    <li>리스크 감지 및 프로젝트 종료 리포트 생성</li>
+                    <li>LLM 호출 실패 시 대체 응답 처리</li>
                   </ul>
                 </div>
                 <div class="info-block">
                   <h4>기술 스택</h4>
                   <div class="stack" aria-label="AI Agent System 기술 스택">
                     <span>Python</span>
-                    <span>LangChain</span>
                     <span>LangGraph</span>
                     <span>LLM</span>
+                    <span>PostgreSQL</span>
+                    <span>Discord Bot</span>
                   </div>
                 </div>
                 <div class="github">
-                  <a href="#" aria-label="AI Agent System GitHub 링크">
-                    GitHub 링크 입력
+                  <a href="https://github.com/nadanaya/ai-agent" aria-label="AI Agent System GitHub 링크">
+                    GitHub 보기
                   </a>
                 </div>
               </div>
@@ -640,29 +597,13 @@
                   </div>
                 </div>
                 <div class="github">
-                  <a href="#" aria-label="Figma Plugin GitHub 링크">
-                    GitHub 링크 입력
+                  <a href="https://github.com/nadanaya/portfolio/blob/main/images/figma-plugin/README.md" aria-label="Figma Plugin 프로젝트 상세 보기">
+                    프로젝트 상세 보기
                   </a>
                 </div>
               </div>
             </article>
           </div>
-        </section>
-
-        <section id="team-projects" class="note" aria-labelledby="team-title">
-          <div class="note-inner">
-            <h2 id="team-title">팀 프로젝트를 개인 기여 중심으로 보여주는 방식</h2>
-            <p>
-              Life Manager는 Android 앱 구현 경험을 먼저 보여줍니다. DentalLink와
-              AI Agent System은 팀 프로젝트 안에서 맡은 역할과 기여 범위를
-              보여주고, Figma Plugin은 개인 프로젝트 확장성을 보여줍니다.
-            </p>
-          </div>
-        </section>
-
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">더 자세한 구현 내용은 GitHub와 함께 확인할 수 있습니다.</h2>
-          <a class="button" href="mailto:your-email@example.com">Email</a>
         </section>
       </main>
 
