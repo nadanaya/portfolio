@@ -6,7 +6,7 @@
     <title>나영 포트폴리오 | Project Contributions</title>
     <meta
       name="description"
-      content="DentalLink, AI Agent System, Figma plugin 프로젝트에서의 담당 역할과 구현 기능을 정리한 개인 포트폴리오입니다."
+      content="Life Manager Android 앱, DentalLink, AI Agent System, Figma plugin 프로젝트에서의 담당 역할과 구현 기능을 정리한 개인 포트폴리오입니다."
     />
     <style>
       :root {
@@ -212,7 +212,7 @@
 
       .projects {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 18px;
       }
 
@@ -420,12 +420,12 @@
         <section class="hero" aria-labelledby="hero-title">
           <div>
             <p class="eyebrow">Personal project portfolio</p>
-            <h1 id="hero-title">팀 프로젝트 속에서 제가 맡아 완성한 기능들</h1>
+            <h1 id="hero-title">개인 프로젝트와 팀 프로젝트로 증명한 구현 경험</h1>
             <p class="lead">
-              DentalLink, AI Agent System, Figma 플러그인 프로젝트에서 맡은
-              역할과 구현 기능을 개인 포트폴리오 형식으로 정리했습니다.
-              팀 저장소의 맥락은 유지하되, 제가 직접 구현하고 개선한 기능이
-              먼저 보이도록 구성했습니다.
+              Life Manager Android 앱, DentalLink, AI Agent System, Figma
+              플러그인 프로젝트에서 맡은 역할과 구현 기능을 정리했습니다.
+              개인 프로젝트로 처음부터 끝까지 구현한 경험을 보여주고, 팀
+              프로젝트로 협업과 백엔드, AI 경험을 함께 보여주도록 구성했습니다.
             </p>
             <div class="actions" aria-label="바로가기">
               <a class="button" href="#projects">프로젝트 보기</a>
@@ -440,7 +440,7 @@
             </div>
             <div class="panel-body">
               <div class="metric">
-                <strong>3</strong>
+                <strong>4</strong>
                 <span>주요 프로젝트 정리</span>
               </div>
               <div class="metric">
@@ -448,8 +448,8 @@
                 <span>팀 GitHub 기반 프로젝트</span>
               </div>
               <div class="metric">
-                <strong>1</strong>
-                <span>개인 저장소 기반 플러그인</span>
+                <strong>2</strong>
+                <span>개인 프로젝트 기반 구현 경험</span>
               </div>
             </div>
           </aside>
@@ -459,16 +459,62 @@
           <div class="section-title">
             <h2 id="projects-title">Projects</h2>
             <p>
-              각 프로젝트는 담당 역할, 구현 기능, 기술 스택, GitHub 링크 순서로
-              정리했습니다. 제출 시에는 아래 링크와 세부 문구만 실제 내용으로
-              교체하면 됩니다.
+              개인 프로젝트를 먼저 배치해 직접 구현 능력을 보여주고, 이어서
+              팀 프로젝트와 플러그인 프로젝트를 통해 협업 경험과 확장 역량을
+              함께 보여줍니다.
             </p>
           </div>
 
           <div class="projects">
             <article class="project">
               <div class="project-top">
-                <span class="tag">Team GitHub</span>
+                <span class="tag">01 · Personal Project</span>
+                <h3>Life Manager</h3>
+                <p>
+                  Android 기반 생활관리 앱입니다. 일정, 할 일, 메모, 알림처럼
+                  일상에서 반복적으로 사용하는 기능을 하나의 앱 구조 안에서
+                  직접 설계하고 구현했습니다.
+                </p>
+              </div>
+              <div class="project-body">
+                <div class="info-block">
+                  <h4>담당 역할</h4>
+                  <ul>
+                    <li>개인 프로젝트로 앱 기획, 화면 구성, 기능 구현 전 과정 담당</li>
+                    <li>일정, To-do, 메모 데이터를 관리하는 앱 구조 설계</li>
+                    <li>사용자가 반복적으로 쓰기 편한 UI/UX 흐름 구성</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>구현 기능</h4>
+                  <ul>
+                    <li>일정 등록, 수정, 삭제 및 날짜 기반 관리</li>
+                    <li>할 일(To-do) 체크, 목록 관리, 완료 상태 처리</li>
+                    <li>메모 작성 및 생활 기록 관리</li>
+                    <li>중요 일정이나 할 일을 놓치지 않도록 알림 기능 구성</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>기술 스택</h4>
+                  <div class="stack" aria-label="Life Manager 기술 스택">
+                    <span>Android</span>
+                    <span>Java/Kotlin</span>
+                    <span>SQLite/Room</span>
+                    <span>Notifications</span>
+                    <span>UI/UX</span>
+                  </div>
+                </div>
+                <div class="github">
+                  <a href="#" aria-label="Life Manager GitHub 링크">
+                    GitHub 링크 입력
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-top">
+                <span class="tag">02 · Team Project</span>
                 <h3>DentalLink</h3>
                 <p>
                   치과 관리자 웹과 환자 앱을 함께 제공하는 Flutter 기반 팀
@@ -515,7 +561,7 @@
 
             <article class="project">
               <div class="project-top">
-                <span class="tag">BDAI Team GitHub</span>
+                <span class="tag">03 · Team Project</span>
                 <h3>AI Agent System</h3>
                 <p>
                   여러 단계의 판단과 실행 흐름을 자동화하는 AI Agent 기반 팀
@@ -559,7 +605,7 @@
 
             <article class="project">
               <div class="project-top">
-                <span class="tag">Personal Repository</span>
+                <span class="tag">04 · Personal Project</span>
                 <h3>Figma Plugin</h3>
                 <p>
                   Figma 작업을 더 빠르게 만들기 위한 개인 플러그인 프로젝트입니다.
@@ -607,11 +653,10 @@
           <div class="note-inner">
             <h2 id="team-title">팀 프로젝트를 개인 기여 중심으로 보여주는 방식</h2>
             <p>
-              DentalLink와 AI Agent System은 팀 저장소를 그대로 제출하기보다,
-              개인 포트폴리오에서 프로젝트의 목적과 본인이 맡은 역할을 먼저
-              설명한 뒤 GitHub 링크를 연결하는 방식이 적합합니다. 이렇게 구성하면
-              팀 프로젝트라는 맥락은 투명하게 유지되고, 평가자는 나영님의 실제
-              기여 범위를 빠르게 확인할 수 있습니다.
+              Life Manager는 개인 프로젝트로 앱을 처음부터 끝까지 구현한 경험을
+              보여주고, DentalLink와 AI Agent System은 팀 프로젝트 안에서 맡은
+              역할과 기여 범위를 보여줍니다. 이렇게 구성하면 채용 담당자가
+              개인 구현 능력과 협업 경험을 함께 확인할 수 있습니다.
             </p>
           </div>
         </section>
