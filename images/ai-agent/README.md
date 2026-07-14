@@ -62,6 +62,10 @@ tests/         pytest tests
 
 ## Agent Flow
 
+### Public Workflow
+
+![AI Agent public workflow](public-agent-workflow.svg)
+
 ```mermaid
 flowchart TD
     Input[회의록 / 프로젝트 데이터] --> Parser[데이터 정리]
@@ -90,6 +94,16 @@ flowchart LR
     Fallback --> Log[오류 상태 기록]
     Log --> User[사용자에게 안내 메시지 반환]
 ```
+
+## Troubleshooting
+
+### LLM 호출 실패 시 Bot 흐름이 끊기는 문제
+
+LLM 응답 실패나 토큰 설정 오류가 발생해도 Discord Bot 명령 흐름이 중단되지 않도록 대체 응답을 반환하는 fallback 처리를 구성했습니다. 사용자는 실패 원인을 안내받고, 시스템은 오류 상태를 기록한 뒤 다음 명령을 받을 수 있는 상태를 유지하도록 했습니다.
+
+### 분석 결과를 보고서 형태로 정리하는 문제
+
+회의 요약, Action Item, 일정 알림, 기여도 분석 결과가 각각 다른 형태로 생성되기 때문에 최종 출력이 흩어질 수 있었습니다. 분석 결과를 Markdown 섹션 단위로 조립해 Discord 응답과 보고서 산출물이 같은 구조를 갖도록 정리했습니다.
 
 ## Security Note
 

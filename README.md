@@ -13,13 +13,26 @@ https://nadanaya.github.io/portfolio/
 3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md) · 2025.09 ~ 2025.12
 4. [Life Manager Android App](images/life-manager/README.md) · 2025.09 ~ 2025.12
 
+## Skills
+
+- Backend: Python, Java, REST API, Supabase
+- Database: PostgreSQL, Cloud Firestore, Room, SQLite
+- AI: LangGraph, LLM, Markdown report generation, fallback handling
+- App & Collaboration: Flutter, Android, Kotlin, Git, GitHub
+
 ## Other Project
 
 - [Figma Plugin](images/figma-plugin/README.md)
 
 ## Public Code Links
 
+- GitHub Profile: https://github.com/nadanaya
+- Portfolio Repository: https://github.com/nadanaya/portfolio
 - AI Agent System: https://github.com/nadanaya/ai-agent
+
+## Public Visual Materials
+
+팀 내부 원본 문서를 그대로 공개하지 않고, 포트폴리오 제출용으로 화면 흐름과 구조를 재제작한 이미지를 각 프로젝트 README에 추가했습니다.
 
 ## Repository Structure
 
