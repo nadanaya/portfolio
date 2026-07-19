@@ -1,6 +1,6 @@
 # NaYoung Portfolio
 
-김나영의 Backend & Data Analysis 포트폴리오입니다. Python, SQL, PostgreSQL, REST API 기반의 구현 경험을 바탕으로 서비스 데이터가 어떻게 생성·저장·조회되는지 이해하고, 이를 분석 인턴 관점의 문제 정의, 지표, 인사이트, 개선 액션으로 정리했습니다.
+김나영의 Data Analyst & Backend Developer 포트폴리오입니다. Python, SQL, PostgreSQL, Supabase 기반의 구현 경험을 바탕으로 서비스 데이터가 어떻게 생성·저장·조회되는지 이해하고, 이를 분석 인턴 관점의 문제 정의, 핵심 수치, 인사이트, 개선 액션으로 정리했습니다.
 
 ## Live Page
 
@@ -15,17 +15,15 @@ https://nadanaya.github.io/portfolio/
 
 ## Projects
 
-1. [DentalLink](images/dentallink/README.md) · 병원 운영 데이터 흐름, 예약·대기열 상태 관리, PostgreSQL 기반 서비스 데이터 모델링
-2. [AI Agent System](images/ai-agent/README.md) · Python 기반 프로젝트 데이터 분석, 업무 진행률·기여도·리스크 리포팅 자동화
-3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md) · 사용자 행동 데이터, 모집 상태, 참여 이력 중심의 Firebase 데이터 구조 설계
-4. [Life Manager Android App](images/life-manager/README.md) · 생활 기록 데이터 저장, 최근 7일 지표 계산, 그래프 시각화
+1. [DentalLink](images/dentallink/README.md) · 4개 데이터 도메인(환자·예약·대기열·공지), 5개 공개 화면 흐름, PostgreSQL 기반 병원 운영 데이터 모델링
+2. [AI Agent System](images/ai-agent/README.md) · 5개 분석 산출(요약·Action Item·일정·기여도·리스크), D-7/D-3/D-1 리마인드, Markdown 보고서 자동화
+3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md) · 6개 화면 범위, 3개 Firestore 데이터 그룹, 모집 상태와 참여 이력 관리
+4. [Life Manager Android App](images/life-manager/README.md) · 4개 생활 기록 데이터, 최근 7일 지표 계산, 주간 평균과 그래프 시각화
 
 ## Skills
 
-- Analysis: Python, Pandas/NumPy, SQL, Markdown report generation
-- Database & Query: PostgreSQL, Supabase, Cloud Firestore, SQLite, Room
-- Service Backend: REST API, Flutter, Firebase, fallback handling
-- AI & Collaboration: LangGraph, LLM, Discord Bot, Git, GitHub
+- Core: Python, SQL, PostgreSQL, Supabase, Firebase, Android
+- Supporting: Pandas/NumPy, REST API, Markdown report generation, Git/GitHub
 
 ## Portfolio Message
 
@@ -33,8 +31,9 @@ https://nadanaya.github.io/portfolio/
 
 1. 문제 정의: 서비스 운영 또는 사용자 경험에서 어떤 문제가 있었는지 설명
 2. 데이터: 어떤 테이블, 상태값, 사용자 행동 데이터가 필요한지 정리
-3. 분석/처리: SQL, Python, 앱 로직으로 데이터를 조회·정제·계산하는 방식 제시
-4. 인사이트/액션: 지표를 바탕으로 화면, 리포트, 운영 흐름을 어떻게 개선했는지 연결
+3. 핵심 수치: 공개 가능한 범위에서 데이터 도메인 수, 화면 범위, 분석 산출물 수를 제시
+4. 분석/처리: SQL, Python, 앱 로직으로 데이터를 조회·정제·계산하는 방식 제시
+5. 인사이트/액션: 지표를 바탕으로 화면, 리포트, 운영 흐름을 어떻게 개선했는지 연결
 
 ## Other Project
 

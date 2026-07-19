@@ -8,6 +8,13 @@
 - Data: 사용자 정보, 파티 정보, 탑승 정보, 참여 상태를 Firestore 컬렉션 흐름으로 구분했습니다.
 - Metrics: 모집글 생성 수, 파티별 참여 인원, 모집 상태, 사용자별 참여 이력을 확인할 수 있습니다.
 - Action: 파티·사용자·탑승 정보를 분리하고 최신 목록을 다시 조회해 참여 후 상태가 일관되게 보이도록 정리했습니다.
+- Result: 사용자가 참여 후에도 모집 상태와 본인 참여 내역을 일관된 기준으로 확인할 수 있게 했습니다.
+
+## Key Numbers
+
+- 6 screen scopes: 로그인, 파티 생성, 파티 목록, 참여한 파티, 사용 가이드, 마이페이지
+- 3 Firestore data groups: 사용자, 파티, 탑승 정보
+- 5 main features: 인증, 생성, 조회, 참여, 오픈채팅 연결
 
 ## Project Type
 
@@ -19,10 +26,10 @@ Team Project
 
 ## My Contribution
 
-- Firebase Authentication 기반 로그인 구현
-- Cloud Firestore 데이터베이스 설계 및 연동
-- 파티 생성·조회·참여 기능 개발
-- 사용자 정보 및 탑승 정보 관리
+- 담당: Firebase Authentication 기반 로그인 구현
+- 담당: Cloud Firestore 데이터베이스 설계 및 연동
+- 담당: 파티 생성·조회·참여 기능 개발
+- 담당: 사용자 정보 및 탑승 정보 저장 흐름 관리
 - Git/GitHub 기반 협업
 
 ## Main Features

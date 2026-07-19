@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>김나영 포트폴리오 | Backend & Data Analysis</title>
+    <title>김나영 포트폴리오 | Data Analyst & Backend Developer</title>
     <meta
       name="description"
-      content="Python, SQL, PostgreSQL, 서비스 데이터 흐름 이해를 바탕으로 분석형 프로젝트와 백엔드 구현 경험을 정리한 김나영 포트폴리오입니다."
+      content="Python, SQL, PostgreSQL, Supabase 기반 서비스 데이터 분석과 백엔드 구현 경험을 정리한 김나영 포트폴리오입니다."
     />
     <style>
       :root {
@@ -226,6 +226,34 @@
       .focus-item span {
         color: var(--muted);
         font-size: 14px;
+      }
+
+      .quick-facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+        gap: 10px;
+      }
+
+      .fact {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #faf9f5;
+      }
+
+      .fact strong {
+        display: block;
+        color: var(--accent-dark);
+        font-size: 22px;
+        line-height: 1;
+      }
+
+      .fact span {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.35;
       }
 
       section {
@@ -453,14 +481,14 @@
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div>
-            <p class="eyebrow">Backend & Data Analysis Portfolio</p>
+            <p class="eyebrow">Data Analyst & Backend Developer</p>
             <h1 id="hero-title">서비스 데이터를 이해하고 개선 관점으로 분석하는 지원자</h1>
             <p class="lead">
-              Python과 SQL, PostgreSQL 기반 데이터 구조를 다루며 서비스 흐름을
+              Python, SQL, PostgreSQL 기반 데이터 구조를 다루며 서비스 흐름을
               지표로 설명하는 경험을 쌓아 온 김나영입니다. 치과 통합 관리,
-              프로젝트 관리 AI Agent, 동승 매칭 서비스에서 데이터 저장 구조,
-              조회 흐름, 상태 변경 로직을 구현했고, 이를 분석 인턴 관점의 문제
-              정의·데이터 처리·인사이트·개선안으로 정리했습니다.
+              프로젝트 관리 AI Agent, 동승 매칭 서비스에서 직접 맡은 데이터
+              설계·조회·상태 변경 역할을 문제 정의, 핵심 수치, 결과 중심으로
+              정리했습니다.
             </p>
             <div class="actions" aria-label="바로가기">
               <a class="button" href="#projects">프로젝트 보기</a>
@@ -479,16 +507,16 @@
                 <span>Service data projects</span>
               </div>
               <div class="metric">
-                <strong>SQL</strong>
-                <span>PostgreSQL · Supabase · data modeling</span>
+                <strong>6</strong>
+                <span>Core skills: Python · SQL · PostgreSQL · Supabase · Firebase · Android</span>
               </div>
               <div class="metric">
-                <strong>Python</strong>
-                <span>AI Agent · report automation · analysis flow</span>
+                <strong>4</strong>
+                <span>Main data domains in DentalLink</span>
               </div>
               <div class="metric">
-                <strong>BI Fit</strong>
-                <span>CRM · operations · growth data internship</span>
+                <strong>7일</strong>
+                <span>Life Manager weekly metric window</span>
               </div>
             </div>
           </aside>
@@ -498,47 +526,42 @@
           <div class="section-title">
             <h2 id="skills-title">Skills</h2>
             <p>
-              데이터분석 인턴에서 바로 읽히도록 SQL/Python 분석, 서비스 데이터
-              모델링, 리포팅 자동화, 앱·백엔드 구현 경험을 분리해 정리했습니다.
+              기술을 넓게 나열하기보다 데이터분석 인턴과 서비스 백엔드 이해에
+              직접 연결되는 핵심 스택 6개를 중심으로 정리했습니다.
             </p>
           </div>
 
           <div class="skills-grid">
             <div class="skill-group">
-              <h3>Analysis</h3>
+              <h3>Core Analysis</h3>
               <div class="stack">
                 <span>Python</span>
-                <span>Pandas / NumPy</span>
                 <span>SQL</span>
+                <span>Pandas / NumPy</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Service Data</h3>
+              <div class="stack">
+                <span>PostgreSQL</span>
+                <span>Supabase</span>
+                <span>Firebase</span>
+              </div>
+            </div>
+            <div class="skill-group">
+              <h3>Implementation</h3>
+              <div class="stack">
+                <span>Android</span>
+                <span>REST API</span>
                 <span>Markdown Report</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>Database & Query</h3>
+              <h3>Collaboration</h3>
               <div class="stack">
-                <span>PostgreSQL</span>
-                <span>Supabase</span>
-                <span>Cloud Firestore</span>
-                <span>SQLite</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>Service Backend</h3>
-              <div class="stack">
-                <span>REST API</span>
-                <span>Flutter</span>
-                <span>Firebase</span>
-                <span>Fallback Handling</span>
-              </div>
-            </div>
-            <div class="skill-group">
-              <h3>AI & Collaboration</h3>
-              <div class="stack">
-                <span>LangGraph</span>
-                <span>LLM</span>
-                <span>Discord Bot</span>
                 <span>Git</span>
                 <span>GitHub</span>
+                <span>Team Project</span>
               </div>
             </div>
           </div>
@@ -589,6 +612,14 @@
               </div>
               <div class="project-body">
                 <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>4</strong><span>데이터 도메인: 환자·예약·대기열·공지</span></div>
+                    <div class="fact"><strong>5</strong><span>공개 화면 흐름: 홈·예약·대기·완료</span></div>
+                    <div class="fact"><strong>4개월</strong><span>2026.03 ~ 2026.06 팀 프로젝트</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
                   <h4>분석 관점</h4>
                   <ul>
                     <li>문제 정의: 병원 운영에서 예약, 대기, 공지 데이터가 분리되어 실시간 상태 파악이 어려움</li>
@@ -599,11 +630,10 @@
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>Supabase(PostgreSQL) 기반 데이터 구조 설계 및 연동</li>
-                    <li>환자·예약·대기열·공지사항 데이터 처리 기능 구현</li>
-                    <li>관리자 웹 대기 관리 및 공지 관리 기능 개발 지원</li>
-                    <li>Flutter와 Supabase 간 데이터 조회·상태 변경 로직 구현</li>
-                    <li>Git/GitHub 기반 기능 브랜치 관리 및 협업</li>
+                    <li>담당: Supabase(PostgreSQL) 데이터 구조 설계 및 Flutter 연동</li>
+                    <li>담당: 환자·예약·대기열·공지사항 데이터 조회/저장 로직 구현</li>
+                    <li>담당: 관리자 대기 관리, 공지 관리 기능 개발 지원</li>
+                    <li>담당: 상태 변경 후 최신 목록 재조회와 API 오류 예외 처리</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -614,6 +644,7 @@
                     <li>환자 PIN 인증 및 데이터 조회</li>
                     <li>공지사항 등록·수정·조회</li>
                     <li>데이터 누락 및 API 오류 예외 처리</li>
+                    <li>결과: 관리자와 환자가 동일한 기준의 대기 순서를 확인할 수 있도록 개선</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -653,6 +684,14 @@
               </div>
               <div class="project-body">
                 <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>5</strong><span>분석 산출: 요약·Action Item·일정·기여도·리스크</span></div>
+                    <div class="fact"><strong>3</strong><span>리마인드 기준: D-7·D-3·D-1</span></div>
+                    <div class="fact"><strong>1</strong><span>최종 Markdown 보고서 자동 생성</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
                   <h4>분석 관점</h4>
                   <ul>
                     <li>문제 정의: 회의록, 일정, 업무 진행 데이터가 흩어져 프로젝트 상태 판단이 늦어짐</li>
@@ -663,10 +702,10 @@
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>Python 기반 AI Agent 백엔드 로직 구현</li>
-                    <li>Supabase(PostgreSQL) 데이터 저장 구조 및 SQL 스키마 구성</li>
-                    <li>Discord Bot 명령과 Agent 실행 흐름 연동</li>
-                    <li>프로젝트 종료 리포트 생성 기능 구현 및 테스트</li>
+                    <li>담당: Python 기반 AI Agent 분석 로직 구현</li>
+                    <li>담당: Supabase(PostgreSQL) 저장 구조 및 SQL 스키마 구성</li>
+                    <li>담당: Discord Bot 명령과 Agent 실행 흐름 연동</li>
+                    <li>담당: 프로젝트 종료 리포트 생성 기능 구현 및 테스트</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -677,6 +716,7 @@
                     <li>업무 진행률과 팀원 기여도 분석</li>
                     <li>리스크 감지 및 프로젝트 종료 리포트 생성</li>
                     <li>LLM 호출 실패 시 대체 응답 처리</li>
+                    <li>결과: 프로젝트 상태를 하나의 Markdown 보고서로 자동 생성</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -715,6 +755,14 @@
               </div>
               <div class="project-body">
                 <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>6</strong><span>화면 범위: 로그인·생성·목록·참여·가이드·마이페이지</span></div>
+                    <div class="fact"><strong>3</strong><span>Firestore 데이터 그룹: 사용자·파티·탑승</span></div>
+                    <div class="fact"><strong>5</strong><span>주요 기능: 인증·생성·조회·참여·연결</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
                   <h4>분석 관점</h4>
                   <ul>
                     <li>문제 정의: 택시 동승 모집 상태와 참여자 정보가 실시간으로 맞지 않으면 사용자 신뢰가 떨어짐</li>
@@ -725,11 +773,10 @@
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>Firebase Authentication 기반 로그인 구현</li>
-                    <li>Cloud Firestore 데이터베이스 설계 및 연동</li>
-                    <li>파티 생성·조회·참여 기능 개발</li>
-                    <li>사용자 정보 및 탑승 정보 관리</li>
-                    <li>Git/GitHub 기반 협업</li>
+                    <li>담당: Firebase Authentication 기반 로그인 구현</li>
+                    <li>담당: Cloud Firestore 데이터베이스 설계 및 연동</li>
+                    <li>담당: 파티 생성·조회·참여 기능 개발</li>
+                    <li>담당: 사용자 정보와 탑승 정보 저장 흐름 관리</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -740,6 +787,7 @@
                     <li>사용자 인증</li>
                     <li>오픈채팅 연결</li>
                     <li>탑승 정보 관리</li>
+                    <li>결과: 참여 후에도 모집 상태와 사용자 참여 내역이 일관되게 보이도록 개선</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -778,6 +826,14 @@
               </div>
               <div class="project-body">
                 <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>4</strong><span>생활 기록: 수면·공부·휴대폰·걸음 수</span></div>
+                    <div class="fact"><strong>7일</strong><span>최근 7일 기준 그래프와 평균 계산</span></div>
+                    <div class="fact"><strong>3</strong><span>Room Entity 공개 코드 기준</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
                   <h4>분석 관점</h4>
                   <ul>
                     <li>문제 정의: 생활 기록을 저장만 하면 사용자가 패턴을 이해하기 어려움</li>
@@ -788,9 +844,9 @@
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
-                    <li>Android 생활관리 앱의 주요 기능 구현 참여</li>
-                    <li>수면·공부·휴대폰·만보기 데이터를 관리하는 화면과 흐름 구성</li>
-                    <li>Room 기반 로컬 DB와 화면 데이터 연동 기능 구현</li>
+                    <li>담당: Android 생활 기록 입력·저장·조회 화면 구현 참여</li>
+                    <li>담당: 수면·공부·휴대폰·만보기 데이터 흐름 구성</li>
+                    <li>담당: Room 기반 로컬 DB와 그래프 화면 데이터 연동</li>
                   </ul>
                 </div>
                 <div class="info-block">
@@ -800,6 +856,7 @@
                     <li>최근 7일 기준 생활 기록 그래프 시각화</li>
                     <li>주간 평균 계산 및 분석 문구 표시</li>
                     <li>Room Migration을 통한 만보기 데이터 테이블 확장</li>
+                    <li>결과: 사용자가 최근 7일 생활 패턴과 평균을 한 화면에서 확인하도록 개선</li>
                   </ul>
                 </div>
                 <div class="info-block">

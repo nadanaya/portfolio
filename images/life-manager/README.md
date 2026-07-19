@@ -8,6 +8,13 @@
 - Data: 날짜별 수면 시간, 공부 시간, 휴대폰 사용 시간, 걸음 수를 로컬 DB에 저장했습니다.
 - Metrics: 최근 7일 기록, 주간 평균, 날짜별 변화량을 계산해 화면에 표시했습니다.
 - Action: 빈 날짜를 포함한 최근 7일 기준을 먼저 만들고, 저장된 값을 채워 그래프와 분석 문구가 안정적으로 보이게 했습니다.
+- Result: 사용자가 최근 7일 생활 패턴과 주간 평균을 한 화면에서 확인할 수 있게 했습니다.
+
+## Key Numbers
+
+- 4 life data types: 수면, 공부, 휴대폰 사용, 걸음 수
+- 7-day metric window: 최근 7일 기준 그래프와 주간 평균
+- 3 Room entities shown in public code evidence: LifeLogEntity, StudyLog, PedometerLog
 
 ## Project Type
 
@@ -19,11 +26,11 @@ Team Project
 
 ## My Contribution
 
-- Android 앱 주요 화면 구성 및 기능 구현 참여
-- 생활 기록 데이터의 입력·저장·조회 흐름 구현
-- UI와 Room 기반 로컬 데이터 저장 로직 연동
-- 사용자 입력값 검증과 예외 상황 처리
-- 최근 7일 데이터를 기반으로 그래프와 주간 평균 표시
+- 담당: Android 생활 기록 입력·저장·조회 화면 구현 참여
+- 담당: 생활 기록 데이터의 입력·저장·조회 흐름 구현
+- 담당: UI와 Room 기반 로컬 데이터 저장 로직 연동
+- 담당: 사용자 입력값 검증과 예외 상황 처리
+- 담당: 최근 7일 데이터를 기반으로 그래프와 주간 평균 표시
 
 ## Main Features
 

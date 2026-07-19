@@ -8,6 +8,13 @@
 - Data: 회의 내용, Action Item, 마감일, 담당자, 진행률, 팀원별 작업 기록을 분석 단위로 정리했습니다.
 - Metrics: 마감 임박 일정, 업무 진행률, 팀원별 기여도, 리스크 신호, 최종 보고서 항목을 산출했습니다.
 - Action: Python Agent가 데이터를 정리하고 Markdown 리포트와 Discord 응답으로 자동 생성하도록 구성했습니다.
+- Result: 프로젝트 상태를 하나의 Markdown 보고서로 자동 생성해 팀 진행 상황을 빠르게 확인할 수 있게 했습니다.
+
+## Key Numbers
+
+- 5 analysis outputs: 회의 요약, Action Item, 일정 알림, 기여도 분석, 리스크 감지
+- 3 reminder rules: D-7, D-3, D-1
+- 1 final Markdown report flow
 
 ## Source Repository
 
@@ -27,10 +34,10 @@ Team Project
 
 ## My Contribution
 
-- Python 기반 AI Agent 백엔드 로직 구현
-- Supabase(PostgreSQL) 데이터 저장 구조 및 SQL 스키마 구성
-- Discord Bot 명령과 Agent 실행 흐름 연동
-- 프로젝트 종료 리포트 생성 기능 구현 및 테스트
+- 담당: Python 기반 AI Agent 분석 로직 구현
+- 담당: Supabase(PostgreSQL) 데이터 저장 구조 및 SQL 스키마 구성
+- 담당: Discord Bot 명령과 Agent 실행 흐름 연동
+- 담당: 프로젝트 종료 리포트 생성 기능 구현 및 테스트
 - LLM 응답 결과를 Markdown 보고서로 정리하는 흐름 구현
 
 ## Main Features
