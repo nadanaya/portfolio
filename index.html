@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>나영 포트폴리오 | Project Contributions</title>
+    <title>김나영 포트폴리오 | Backend & Data Analysis</title>
     <meta
       name="description"
-      content="DentalLink, AI Agent System, 4Party, Life Manager 프로젝트에서의 담당 역할과 구현 기능을 정리한 김나영 백엔드 개발자 포트폴리오입니다."
+      content="Python, SQL, PostgreSQL, 서비스 데이터 흐름 이해를 바탕으로 분석형 프로젝트와 백엔드 구현 경험을 정리한 김나영 포트폴리오입니다."
     />
     <style>
       :root {
@@ -203,6 +203,29 @@
         margin-bottom: 14px;
         color: var(--accent-dark);
         font-size: 17px;
+      }
+
+      .focus-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .focus-item {
+        border-left: 4px solid var(--accent);
+        padding: 2px 0 2px 14px;
+      }
+
+      .focus-item strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--accent-dark);
+      }
+
+      .focus-item span {
+        color: var(--muted);
+        font-size: 14px;
       }
 
       section {
@@ -430,14 +453,14 @@
       <main id="top">
         <section class="hero" aria-labelledby="hero-title">
           <div>
-            <p class="eyebrow">Backend & AI Developer Portfolio</p>
-            <h1 id="hero-title">개인 프로젝트와 팀 프로젝트로 증명한 구현 경험</h1>
+            <p class="eyebrow">Backend & Data Analysis Portfolio</p>
+            <h1 id="hero-title">서비스 데이터를 이해하고 개선 관점으로 분석하는 지원자</h1>
             <p class="lead">
-              데이터 흐름과 서비스 구조를 이해하고, 백엔드와 AI 기능을 실제
-              서비스로 구현해 온 개발자 김나영입니다. Android 앱, 치과 통합
-              관리 서비스, 프로젝트 관리 AI Agent, Firebase 기반 동승 매칭
-              서비스를 개발하며 데이터베이스 설계, API 연동, 예외 처리와 협업
-              경험을 쌓았습니다.
+              Python과 SQL, PostgreSQL 기반 데이터 구조를 다루며 서비스 흐름을
+              지표로 설명하는 경험을 쌓아 온 김나영입니다. 치과 통합 관리,
+              프로젝트 관리 AI Agent, 동승 매칭 서비스에서 데이터 저장 구조,
+              조회 흐름, 상태 변경 로직을 구현했고, 이를 분석 인턴 관점의 문제
+              정의·데이터 처리·인사이트·개선안으로 정리했습니다.
             </p>
             <div class="actions" aria-label="바로가기">
               <a class="button" href="#projects">프로젝트 보기</a>
@@ -453,19 +476,19 @@
             <div class="panel-body">
               <div class="metric">
                 <strong>4</strong>
-                <span>Projects</span>
+                <span>Service data projects</span>
               </div>
               <div class="metric">
-                <strong>Backend</strong>
-                <span>Supabase · PostgreSQL · API</span>
+                <strong>SQL</strong>
+                <span>PostgreSQL · Supabase · data modeling</span>
               </div>
               <div class="metric">
-                <strong>AI</strong>
-                <span>LangGraph · LLM · Discord Bot</span>
+                <strong>Python</strong>
+                <span>AI Agent · report automation · analysis flow</span>
               </div>
               <div class="metric">
-                <strong>App</strong>
-                <span>Android · Firebase · Room</span>
+                <strong>BI Fit</strong>
+                <span>CRM · operations · growth data internship</span>
               </div>
             </div>
           </aside>
@@ -475,48 +498,63 @@
           <div class="section-title">
             <h2 id="skills-title">Skills</h2>
             <p>
-              프로젝트에서 실제로 사용한 기술을 백엔드, 데이터베이스, AI,
-              앱 개발과 협업 도구 중심으로 정리했습니다.
+              데이터분석 인턴에서 바로 읽히도록 SQL/Python 분석, 서비스 데이터
+              모델링, 리포팅 자동화, 앱·백엔드 구현 경험을 분리해 정리했습니다.
             </p>
           </div>
 
           <div class="skills-grid">
             <div class="skill-group">
-              <h3>Backend</h3>
+              <h3>Analysis</h3>
               <div class="stack">
                 <span>Python</span>
-                <span>Java</span>
-                <span>REST API</span>
-                <span>Supabase</span>
+                <span>Pandas / NumPy</span>
+                <span>SQL</span>
+                <span>Markdown Report</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>Database</h3>
+              <h3>Database & Query</h3>
               <div class="stack">
                 <span>PostgreSQL</span>
+                <span>Supabase</span>
                 <span>Cloud Firestore</span>
-                <span>Room</span>
                 <span>SQLite</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>AI</h3>
+              <h3>Service Backend</h3>
               <div class="stack">
-                <span>LangGraph</span>
-                <span>LLM</span>
-                <span>Markdown Report</span>
+                <span>REST API</span>
+                <span>Flutter</span>
+                <span>Firebase</span>
                 <span>Fallback Handling</span>
               </div>
             </div>
             <div class="skill-group">
-              <h3>App & Collaboration</h3>
+              <h3>AI & Collaboration</h3>
               <div class="stack">
-                <span>Flutter</span>
-                <span>Android</span>
-                <span>Kotlin</span>
+                <span>LangGraph</span>
+                <span>LLM</span>
+                <span>Discord Bot</span>
                 <span>Git</span>
                 <span>GitHub</span>
               </div>
+            </div>
+          </div>
+
+          <div class="focus-list" aria-label="지원 직무 방향">
+            <div class="focus-item">
+              <strong>Fit 01. 서비스 데이터 분석</strong>
+              <span>사용자·예약·대기열·파티 상태처럼 서비스에서 발생하는 데이터를 구조화하고 흐름을 설명합니다.</span>
+            </div>
+            <div class="focus-item">
+              <strong>Fit 02. 운영/CRM/그로스 보조</strong>
+              <span>SQL 조회, 데이터 정제, 지표 리포팅, 개선안 도출이 필요한 인턴 포지션을 우선 타깃으로 둡니다.</span>
+            </div>
+            <div class="focus-item">
+              <strong>Fit 03. 백엔드 이해 기반 분석</strong>
+              <span>데이터가 어떤 화면과 API 흐름에서 만들어지는지 이해하고 분석 요구사항으로 연결합니다.</span>
             </div>
           </div>
         </section>
@@ -525,8 +563,9 @@
           <div class="section-title">
             <h2 id="projects-title">Projects</h2>
             <p>
-              백엔드·데이터 연동과 연결되는 팀 프로젝트를 먼저 배치하고, Android
-              프로젝트는 로컬 DB와 Firebase 경험 중심으로 정리했습니다.
+              각 프로젝트를 문제 정의, 데이터 흐름, 분석 가능 지표, 개선 액션
+              순서로 읽히게 재정리했습니다. 서비스 데이터 이해형 데이터분석
+              인턴에 맞는 프로젝트를 먼저 배치했습니다.
             </p>
           </div>
 
@@ -549,6 +588,14 @@
                 </p>
               </div>
               <div class="project-body">
+                <div class="info-block">
+                  <h4>분석 관점</h4>
+                  <ul>
+                    <li>문제 정의: 병원 운영에서 예약, 대기, 공지 데이터가 분리되어 실시간 상태 파악이 어려움</li>
+                    <li>분석 지표: 예약 현황, 대기 순번, 상태 변경 이력, 공지 노출 여부</li>
+                    <li>개선 액션: 관리자 화면과 환자 앱이 같은 기준의 최신 상태를 보도록 데이터 조회 흐름 정리</li>
+                  </ul>
+                </div>
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
@@ -606,6 +653,14 @@
               </div>
               <div class="project-body">
                 <div class="info-block">
+                  <h4>분석 관점</h4>
+                  <ul>
+                    <li>문제 정의: 회의록, 일정, 업무 진행 데이터가 흩어져 프로젝트 상태 판단이 늦어짐</li>
+                    <li>분석 지표: Action Item, 마감 임박 일정, 업무 진행률, 팀원별 기여도, 리스크 신호</li>
+                    <li>개선 액션: Python Agent가 데이터를 정리해 Markdown 리포트와 Discord 응답으로 자동 산출</li>
+                  </ul>
+                </div>
+                <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
                     <li>Python 기반 AI Agent 백엔드 로직 구현</li>
@@ -659,6 +714,14 @@
                 </p>
               </div>
               <div class="project-body">
+                <div class="info-block">
+                  <h4>분석 관점</h4>
+                  <ul>
+                    <li>문제 정의: 택시 동승 모집 상태와 참여자 정보가 실시간으로 맞지 않으면 사용자 신뢰가 떨어짐</li>
+                    <li>분석 지표: 모집글 생성 수, 참여 상태, 탑승 인원, 사용자별 참여 내역</li>
+                    <li>개선 액션: Firestore 데이터 구조를 파티·사용자·탑승 정보로 나눠 상태 추적 기준 정리</li>
+                  </ul>
+                </div>
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
@@ -714,6 +777,14 @@
                 </p>
               </div>
               <div class="project-body">
+                <div class="info-block">
+                  <h4>분석 관점</h4>
+                  <ul>
+                    <li>문제 정의: 생활 기록을 저장만 하면 사용자가 패턴을 이해하기 어려움</li>
+                    <li>분석 지표: 최근 7일 공부 시간, 수면 시간, 휴대폰 사용 시간, 주간 평균</li>
+                    <li>개선 액션: 날짜 기준 데이터를 정리해 그래프와 분석 문구로 행동 변화를 확인할 수 있게 구성</li>
+                  </ul>
+                </div>
                 <div class="info-block">
                   <h4>담당 역할</h4>
                   <ul>
