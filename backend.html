@@ -153,6 +153,35 @@
         box-shadow: 0 18px 50px rgba(47, 95, 147, 0.08);
       }
 
+      .project-body {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(18px, 3vw, 30px);
+        align-items: start;
+        margin-top: 18px;
+      }
+
+      .visual {
+        border: 1px solid #e4e0d7;
+        border-radius: 8px;
+        background: #f7f5ef;
+        padding: 14px;
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .visual figcaption {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
       .meta {
         display: flex;
         flex-wrap: wrap;
@@ -172,9 +201,8 @@
 
       .criteria {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
-        margin-top: 18px;
       }
 
       .criterion {
@@ -194,6 +222,47 @@
         margin: 0;
         color: var(--muted);
         font-size: 14px;
+      }
+
+      .split-note {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .split-note div {
+        border-left: 3px solid var(--accent);
+        background: #fcfcfb;
+        padding: 10px 12px;
+      }
+
+      .split-note strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .split-note p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .evidence-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .evidence-list a {
+        border: 1px solid #d8e2ef;
+        border-radius: 999px;
+        background: #fff;
+        padding: 5px 10px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
       }
 
       .supporting {
@@ -234,8 +303,13 @@
 
       @media (max-width: 980px) {
         .criteria,
-        .supporting {
+        .supporting,
+        .split-note {
           grid-template-columns: 1fr 1fr;
+        }
+
+        .project-body {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -246,7 +320,9 @@
         }
 
         .criteria,
-        .supporting {
+        .supporting,
+        .split-note,
+        .project-body {
           grid-template-columns: 1fr;
         }
       }
@@ -274,7 +350,7 @@
       </section>
 
       <section aria-labelledby="projects-title">
-        <h2 id="projects-title">Backend Projects</h2>
+        <h2 id="projects-title">Backend & Service Development</h2>
         <div class="projects">
           <article class="project featured">
             <div class="meta">
@@ -289,26 +365,54 @@
               사용자별 수입·지출 거래를 저장하고 월별 조회, 잔액 조회, AI 요약
               연동까지 제공하는 개인 금융 백엔드 API 서비스입니다.
             </p>
-            <div class="criteria">
-              <div class="criterion">
-                <strong>도메인</strong>
-                <p>사용자별 수입·지출 거래 관리와 월별 개인 금융 흐름 확인</p>
-              </div>
-              <div class="criterion">
-                <strong>데이터 모델</strong>
-                <p>사용자 이메일, 거래 유형, 금액, 카테고리, 거래 날짜 중심 구조</p>
-              </div>
-              <div class="criterion">
-                <strong>API 구조</strong>
-                <p>거래 저장, 전체 조회, 월별 조회, 잔액 조회, AI 분석 요청 API</p>
-              </div>
-              <div class="criterion">
-                <strong>문제 해결</strong>
-                <p>사용자별 거래 분리와 월별 집계 기준을 서비스 계층에서 일관되게 구현</p>
-              </div>
-              <div class="criterion">
-                <strong>테스트 및 개선</strong>
-                <p>트랜잭션 경계, 인덱스, 예외 응답, 통계 캐싱, 테스트 코드 강화 계획</p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/pigge/public-api-flow.svg" alt="Pigge Server API 흐름" />
+                <figcaption>Controller, Service, Repository, AI Client로 이어지는 거래 API 흐름</figcaption>
+              </figure>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>도메인</strong>
+                    <p>사용자별 수입·지출 거래 관리와 월별 개인 금융 흐름 확인</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>데이터 모델</strong>
+                    <p>사용자 이메일, 거래 유형, 금액, 카테고리, 거래 날짜 중심의 거래 Entity 구성</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>핵심 API</strong>
+                    <p>거래 저장, 전체 조회, 월별 조회, 잔액 조회, AI 분석 요청 API 구현</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>구현 완료</strong>
+                    <p>TransactionController, TransactionService, JPA Repository로 저장·조회·월별 집계 흐름 구현</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>검증</strong>
+                    <p>서비스 흐름과 Repository 조회 기준을 기준으로 거래 저장·월별 조회 동작 확인</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>개선 예정</strong>
+                    <p>DTO/Entity 분리, Bean Validation, 공통 예외 응답, 인덱스, 테스트 코드, Swagger 보강</p>
+                  </div>
+                </div>
+                <div class="split-note">
+                  <div>
+                    <strong>현재 강점</strong>
+                    <p>실제 Spring Boot 서버로 금융 거래 API와 월별 집계 흐름을 구현했습니다.</p>
+                  </div>
+                  <div>
+                    <strong>면접 보완점</strong>
+                    <p>트랜잭션 정합성, 조회 성능, 예외 표준화는 구현 여부와 계획을 분리해 설명합니다.</p>
+                  </div>
+                </div>
+                <div class="evidence-list" aria-label="Pigge Server 증거 파일">
+                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/controller/TransactionController.java">Controller</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/service/TransactionService.java">Service</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/repository/TransactionRepository.java">Repository</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/dto/TransactionRequest.java">DTO</a>
+                </div>
               </div>
             </div>
             <div class="links">
@@ -322,33 +426,47 @@
               <span class="tag">Flutter</span>
               <span class="tag">Supabase</span>
               <span class="tag">PostgreSQL</span>
-              <span class="tag">Auth</span>
+              <span class="tag">RLS</span>
             </div>
             <h3>DentalLink</h3>
             <p>
               치과 운영 과정에서 발생하는 환자, 예약, 대기열, 공지 데이터를
               모바일 앱과 데이터베이스로 연결한 서비스 프로젝트입니다.
             </p>
-            <div class="criteria">
-              <div class="criterion">
-                <strong>도메인</strong>
-                <p>병원 예약, 환자 관리, 대기열, 공지 확인을 하나의 흐름으로 관리</p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/dentallink/public-data-architecture.svg" alt="DentalLink 데이터 접근 구조" />
+                <figcaption>Supabase Auth, PostgreSQL 테이블, 화면별 데이터 접근 구조</figcaption>
+              </figure>
+              <div class="criteria">
+                <div class="criterion">
+                  <strong>도메인</strong>
+                  <p>병원 예약, 환자 관리, 대기열, 공지 확인을 하나의 흐름으로 관리</p>
+                </div>
+                <div class="criterion">
+                  <strong>데이터 모델</strong>
+                  <p>환자, 예약, 대기 상태, 공지, 사용자 인증 정보를 PostgreSQL 기반으로 구성</p>
+                </div>
+                <div class="criterion">
+                  <strong>데이터 접근 구조</strong>
+                  <p>Supabase Auth와 PostgreSQL 테이블을 기반으로 인증·예약·대기 상태 흐름 구성</p>
+                </div>
+                <div class="criterion">
+                  <strong>문제 해결</strong>
+                  <p>관리자와 환자 화면의 데이터 흐름을 분리하고 상태 변경 기준을 명확화</p>
+                </div>
+                <div class="criterion">
+                  <strong>검증</strong>
+                  <p>예약 조회, 대기 상태 확인, 공지 데이터 노출 흐름을 앱 화면 기준으로 확인</p>
+                </div>
+                <div class="criterion">
+                  <strong>개선 예정</strong>
+                  <p>RLS 정책, 권한별 접근 제어, 예약 충돌 방지, Realtime 상태 동기화 보강</p>
+                </div>
               </div>
-              <div class="criterion">
-                <strong>데이터 모델</strong>
-                <p>환자, 예약, 대기 상태, 공지, 사용자 인증 정보를 관계형으로 구성</p>
-              </div>
-              <div class="criterion">
-                <strong>API 구조</strong>
-                <p>Supabase 연동을 통해 인증, 예약 조회, 상태 변경, 공지 조회 처리</p>
-              </div>
-              <div class="criterion">
-                <strong>문제 해결</strong>
-                <p>관리자와 환자 화면의 데이터 흐름을 분리하고 상태 변경 기준을 명확화</p>
-              </div>
-              <div class="criterion">
-                <strong>테스트 및 개선</strong>
-                <p>권한별 접근 제어, 예약 충돌 방지, 주요 흐름 테스트 보강 계획</p>
+              <div class="evidence-list" aria-label="DentalLink 증거 파일">
+                <a href="images/dentallink/README.md">상세 문서</a>
+                <a href="https://github.com/nadanaya/portfolio/tree/main/images/dentallink">아키텍처 이미지</a>
               </div>
             </div>
             <div class="links">
@@ -361,33 +479,47 @@
               <span class="tag">Android</span>
               <span class="tag">Kotlin</span>
               <span class="tag">Firebase</span>
-              <span class="tag">Firestore</span>
+              <span class="tag">BaaS</span>
             </div>
             <h3>4Party</h3>
             <p>
               파티 생성과 참여, 모집 상태 관리를 구현한 매칭 서비스 프로젝트로,
               인증과 실시간 데이터 흐름을 백엔드 관점에서 설명할 수 있습니다.
             </p>
-            <div class="criteria">
-              <div class="criterion">
-                <strong>도메인</strong>
-                <p>사용자 인증, 파티 생성, 참여, 모집 상태 변경을 관리하는 매칭 서비스</p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/4party/public-firebase-architecture.svg" alt="4Party Firebase 데이터 구조" />
+                <figcaption>Firebase Auth와 Firestore 컬렉션 기반의 실시간 매칭 데이터 구조</figcaption>
+              </figure>
+              <div class="criteria">
+                <div class="criterion">
+                  <strong>도메인</strong>
+                  <p>사용자 인증, 파티 생성, 참여, 모집 상태 변경을 관리하는 매칭 서비스</p>
+                </div>
+                <div class="criterion">
+                  <strong>데이터 모델링</strong>
+                  <p>사용자, 파티, 참여자, 모집 상태, 생성 시간 중심의 Firestore 컬렉션 설계</p>
+                </div>
+                <div class="criterion">
+                  <strong>BaaS 구조</strong>
+                  <p>Firebase Auth와 Firestore 읽기/쓰기 흐름으로 실시간 서비스 상태 관리</p>
+                </div>
+                <div class="criterion">
+                  <strong>문제 해결</strong>
+                  <p>파티 목록 조회와 참여 상태 변경을 화면 흐름에 맞춰 연결</p>
+                </div>
+                <div class="criterion">
+                  <strong>검증</strong>
+                  <p>파티 생성, 목록 조회, 참여 상태 변경 흐름을 주요 사용자 시나리오로 확인</p>
+                </div>
+                <div class="criterion">
+                  <strong>개선 예정</strong>
+                  <p>보안 규칙, 동시 참여 제어, 중복 참여 방지, 상태 변경 실패 처리 강화</p>
+                </div>
               </div>
-              <div class="criterion">
-                <strong>데이터 모델</strong>
-                <p>사용자, 파티, 참여자, 모집 상태, 생성 시간 중심의 Firestore 구조</p>
-              </div>
-              <div class="criterion">
-                <strong>API 구조</strong>
-                <p>Firebase 인증과 Firestore 읽기/쓰기 흐름으로 서비스 상태 관리</p>
-              </div>
-              <div class="criterion">
-                <strong>문제 해결</strong>
-                <p>파티 목록 조회와 참여 상태 변경을 화면 흐름에 맞춰 연결</p>
-              </div>
-              <div class="criterion">
-                <strong>테스트 및 개선</strong>
-                <p>동시 참여 제어, 보안 규칙, 상태 변경 실패 처리, 데이터 검증 강화 계획</p>
+              <div class="evidence-list" aria-label="4Party 증거 파일">
+                <a href="images/4party/README.md">상세 문서</a>
+                <a href="https://github.com/nadanaya/portfolio/tree/main/images/4party">Firebase 구조 이미지</a>
               </div>
             </div>
             <div class="links">
@@ -407,8 +539,8 @@
           <article class="support">
             <h3>Backend Improvement Topics</h3>
             <p>
-              거래 정합성, 월별 조회 인덱스, 통계 배치, 예외 응답 표준화는
-              백엔드 면접에서 확장 질문으로 연결하기 좋은 개선 주제입니다.
+              Pigge Server는 실제 서버 백엔드, DentalLink와 4Party는 Supabase/Firebase
+              기반 서비스 데이터 구조로 구분해 설명합니다.
             </p>
           </article>
         </div>
