@@ -1,0 +1,33 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">JipFit AI ML Workflow</title>
+  <desc id="desc">Housing affordability inputs flow into feature engineering, machine learning classification, policy matching, and Streamlit output.</desc>
+  <rect width="1200" height="675" fill="#FAF8F3"/>
+  <rect x="70" y="70" width="1060" height="535" rx="18" fill="#FFFFFF" stroke="#DDD7CD" stroke-width="2"/>
+  <text x="100" y="124" fill="#0D433D" font-family="Arial, sans-serif" font-size="34" font-weight="700">JipFit AI</text>
+  <text x="100" y="158" fill="#5F6268" font-family="Arial, sans-serif" font-size="18">Youth housing affordability risk classification and policy recommendation workflow</text>
+  <rect x="110" y="245" width="190" height="112" rx="10" fill="#E5F0EC" stroke="#176B5F" stroke-width="2"/>
+  <text x="143" y="287" fill="#0D433D" font-family="Arial, sans-serif" font-size="20" font-weight="700">User Inputs</text>
+  <text x="140" y="318" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">income, asset, rent</text>
+  <text x="151" y="341" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">deposit, debt</text>
+  <rect x="370" y="245" width="190" height="112" rx="10" fill="#F7F5EF" stroke="#DDD7CD" stroke-width="2"/>
+  <text x="400" y="287" fill="#171717" font-family="Arial, sans-serif" font-size="20" font-weight="700">Feature Rules</text>
+  <text x="401" y="318" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">housing cost ratio</text>
+  <text x="412" y="341" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">debt buffer</text>
+  <rect x="630" y="245" width="190" height="112" rx="10" fill="#E6EDF6" stroke="#315A8A" stroke-width="2"/>
+  <text x="674" y="287" fill="#1E3E62" font-family="Arial, sans-serif" font-size="20" font-weight="700">ML Model</text>
+  <text x="676" y="318" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">Logistic Regression</text>
+  <text x="692" y="341" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">F1 0.9014</text>
+  <rect x="890" y="245" width="190" height="112" rx="10" fill="#FFF8ED" stroke="#A9562F" stroke-width="2"/>
+  <text x="924" y="287" fill="#7A3B1E" font-family="Arial, sans-serif" font-size="20" font-weight="700">Policy Match</text>
+  <text x="925" y="318" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">eligible programs</text>
+  <text x="938" y="341" fill="#5F6268" font-family="Arial, sans-serif" font-size="14">next actions</text>
+  <path d="M300 301H358" stroke="#176B5F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M350 292L362 301L350 310" stroke="#176B5F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M560 301H618" stroke="#315A8A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M610 292L622 301L610 310" stroke="#315A8A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M820 301H878" stroke="#A9562F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M870 292L882 301L870 310" stroke="#A9562F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="145" y="445" width="910" height="70" rx="10" fill="#F2EEE6" stroke="#DDD7CD"/>
+  <text x="176" y="487" fill="#171717" font-family="Arial, sans-serif" font-size="18" font-weight="700">Portfolio hooks:</text>
+  <text x="340" y="487" fill="#5F6268" font-family="Arial, sans-serif" font-size="17">KPI design, model comparison, policy explainability, data quality validation</text>
+</svg>
