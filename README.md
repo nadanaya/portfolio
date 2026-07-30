@@ -1,7 +1,7 @@
 # NaYoung Portfolio
 
-신입 데이터 분석가와 신입 백엔드 개발자 지원을 위해 구성한 포트폴리오입니다.
-하나의 저장소를 유지하되, 평가 기준이 다른 두 직무를 별도 상세 페이지로 분리했습니다.
+데이터 분석과 백엔드 개발 프로젝트를 함께 정리한 포트폴리오입니다.
+하나의 저장소를 유지하되, 분석 관점과 구현 관점을 별도 상세 페이지로 분리했습니다.
 
 ## Live Pages
 
@@ -13,9 +13,9 @@
 
 ```text
 portfolio/
-  index.html          # 김나영 소개 + 직무 선택
-  data.html           # 데이터 분석 지원용 상세 페이지
-  backend.html        # 백엔드 지원용 상세 페이지
+  index.html          # 김나영 소개 + 페이지 선택
+  data.html           # 데이터 분석 상세 페이지
+  backend.html        # 백엔드 개발 상세 페이지
   README.md
   images/
     jipfit/
@@ -29,7 +29,7 @@ portfolio/
 
 ## Main Page
 
-`index.html`은 긴 프로젝트 나열 페이지가 아니라 지원 직무 선택 페이지입니다.
+`index.html`은 긴 프로젝트 나열 페이지가 아니라 분석/구현 관점 선택 페이지입니다.
 
 - 김나영 소개
 - 데이터 분석 포트폴리오 이동
@@ -48,7 +48,7 @@ portfolio/
 
 ## Data Analyst Page
 
-`data.html`은 데이터 분석가 직무에서 중요하게 보는 기준에 맞춰 구성했습니다.
+`data.html`은 데이터 분석 프로젝트에서 중요하게 보는 기준에 맞춰 구성했습니다.
 
 ### Representative Projects
 
@@ -72,7 +72,7 @@ JipFit AI는 합성 시나리오 기반 기술 검증 결과임을 명시하고,
 
 ## Backend Developer Page
 
-`backend.html`은 백엔드 개발자 직무에서 중요하게 보는 기준에 맞춰 구성했습니다.
+`backend.html`은 백엔드 개발 프로젝트에서 중요하게 보는 기준에 맞춰 구성했습니다.
 
 ### Representative Projects
 
