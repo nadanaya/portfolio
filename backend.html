@@ -389,8 +389,8 @@
                     <p>TransactionController, TransactionService, JPA Repository로 저장·조회·월별 집계 흐름 구현</p>
                   </div>
                   <div class="criterion">
-                    <strong>검증</strong>
-                    <p>기본 contextLoads 테스트 파일을 보유하고, API 응답 검증과 Service/Repository 테스트는 보강 예정</p>
+                    <strong>월별 집계 로직</strong>
+                    <p>거래 유형과 거래 월을 기준으로 수입·지출 합계를 계산하고 잔액 응답으로 연결</p>
                   </div>
                   <div class="criterion">
                     <strong>개선 예정</strong>
@@ -400,11 +400,11 @@
                 <div class="split-note">
                   <div>
                     <strong>현재 강점</strong>
-                    <p>실제 Spring Boot 서버로 거래 기록 API와 월별 집계 흐름을 구현했습니다.</p>
+                    <p>Spring Boot 서버에서 거래 기록 API, 사용자별 조회, 월별 집계 흐름을 구현했습니다.</p>
                   </div>
                   <div>
-                    <strong>면접 보완점</strong>
-                    <p>트랜잭션 정합성, 조회 성능, 예외 표준화는 구현 여부와 계획을 분리해 설명합니다.</p>
+                    <strong>다음 개선 단계</strong>
+                    <p>트랜잭션 정합성, 조회 성능, 예외 응답 표준화, Service/Repository 테스트 보강</p>
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="Pigge Server 증거 파일">
