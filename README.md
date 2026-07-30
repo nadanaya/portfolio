@@ -1,6 +1,7 @@
 # NaYoung Portfolio
 
-김나영의 Data Analyst & Backend Developer 포트폴리오입니다. Python, SQL, PostgreSQL, Supabase 기반의 구현 경험을 바탕으로 서비스 데이터가 어떻게 생성·저장·조회되는지 이해하고, 이를 분석 인턴 관점의 문제 정의, 핵심 수치, 인사이트, 개선 액션으로 정리했습니다.
+신입 데이터 분석가 및 백엔드 개발자 포지션을 목표로 구성한 포트폴리오입니다.
+단순 기능 구현 목록보다 **문제 정의, 데이터 흐름, 분석 지표, 백엔드 안정성 개선**을 중심으로 정리했습니다.
 
 ## Live Page
 
@@ -8,36 +9,115 @@ https://nadanaya.github.io/portfolio/
 
 ## Target Position
 
-- 서비스 데이터 분석 인턴
-- 운영데이터 / CRM / 그로스 분석 보조
-- SQL 기반 데이터 추출·정제·리포팅 인턴
-- 데이터 흐름을 이해하는 백엔드 연계형 분석 포지션
+- 신입 데이터 분석가
+- 신입 백엔드 개발자
+- 관심 분야: 은행, IT, 핀테크, IT 플랫폼
+- 핵심 메시지: 데이터를 이해하고, 서비스 문제를 정의하며, 안정적인 백엔드 구조로 개선할 수 있는 지원자
+
+## Portfolio Focus
+
+### Data Analyst
+
+- SQL/Python 기반 데이터 추출, 정제, 집계
+- 사용자 행동 및 서비스 운영 데이터의 지표화
+- KPI 관점의 문제 정의와 개선 액션 제안
+- Tableau/Excel/Python 리포트로 분석 결과 전달
+
+### Backend Developer
+
+- 거래성 데이터의 정합성과 트랜잭션 처리
+- 대용량 조회 성능 개선을 위한 인덱스, 캐싱, 집계 구조
+- 예외 처리, 테스트, API 문서화 등 코드 품질 관리
+- 금융/핀테크 도메인에 필요한 안정성 중심 설계
+
+## Pigge Server
+
+`nadanaya/pigge_server` 저장소의 실제 Spring Boot 백엔드 구조를 바탕으로 정리한 대표 프로젝트입니다.
+
+- Repository: https://github.com/nadanaya/pigge_server
+- Stack: Java 17, Spring Boot, Spring Data JPA, H2, Gradle, RestTemplate, Ollama
+- Core API:
+  - `POST /api/transactions`: 수입/지출 거래 저장
+  - `GET /api/transactions/{userEmail}`: 사용자별 전체 거래 조회
+  - `GET /api/transactions/month`: 사용자별 월별 거래 조회
+  - `GET /api/transactions/balance/{userEmail}`: 총 잔액 조회
+  - `POST /api/transactions/with-ai`: 거래 저장 후 월별 통계 기반 AI 요약 생성
+  - `POST /api/analysis/expense`: 소비 내역 텍스트 기반 AI 분석
+
+### Implemented Data Flow
+
+1. 사용자가 수입/지출 거래를 등록합니다.
+2. `TransactionController`가 요청을 받고 `TransactionService`로 전달합니다.
+3. `Transaction` JPA Entity가 `TransactionRepository`를 통해 저장됩니다.
+4. 월별 조회와 월별 통계는 `userEmail`, `year`, `month`, `type` 기준으로 집계됩니다.
+5. `AiClient` 추상화와 `OllamaClient` 구현을 통해 소비 분석 코멘트를 생성합니다.
+
+### Data Analysis Expansion
+
+직접 개발 및 운용한 가계부 앱 데이터를 활용해 다음 3가지 분석 프로젝트로 확장할 수 있습니다.
+
+1. 예산 초과 예측 및 알림 전략
+   - 데이터: 수입/지출 내역, 카테고리, 날짜, 고정비 여부, 예산
+   - 분석: 월 중간 누적 지출률, 예산 초과 여부, 카테고리별 기여도
+   - 기대효과: 월말 예산 초과 가능성을 조기 탐지하고 개인화 알림으로 지출 개선
+
+2. 소비 카테고리 기반 사용자 세그먼트 분석
+   - 데이터: 월별 카테고리 지출 비중, 고정비/변동비, 주중/주말 소비
+   - 분석: 소비 유형 분류, 저축률, 지출 집중도, 변동성
+   - 기대효과: 사용자 유형별 예산 추천, 구독 점검, 적금/비상금 목표 제안
+
+3. 월별 현금흐름 예측 및 재무 안정성 지표 설계
+   - 데이터: 월별 수입, 고정비, 변동비, 잔액, 반복 결제일
+   - 분석: 월말 예상 잔액, 고정비 비중, 비상자금 확보 가능 개월 수
+   - 기대효과: 개인 금융관리 서비스의 리스크 탐지 및 맞춤형 자산관리 기능으로 확장
+
+## Backend Deep-Dive Ideas From Pigge Server
+
+현재 `pigge_server` 코드에서 자연스럽게 이어지는 백엔드 개선 주제입니다.
+
+1. 거래 저장과 AI 요약 흐름의 정합성 개선
+   - Issue: `POST /api/transactions/with-ai` 흐름에서 저장과 요약 생성이 분리되어 중복 저장 또는 부분 실패 가능성이 생길 수 있음
+   - Action: 저장 트랜잭션 경계 정리, 저장 후 월별 통계 재조회, AI 실패 시 fallback 응답과 로그 분리
+   - Result: 거래 데이터는 안정적으로 저장하고 AI 분석 실패가 핵심 거래 흐름을 막지 않도록 개선
+
+2. 월별/카테고리별 통계 API 성능 최적화
+   - Issue: `YEAR(date)`, `MONTH(date)` 함수 기반 조회는 데이터가 많아질수록 인덱스를 효율적으로 활용하기 어려움
+   - Action: `startDate <= date < endDate` 범위 조건, `userEmail + date + type` 복합 인덱스, 월별 통계 캐싱
+   - Result: 월별 거래 조회와 월별 집계 API의 응답 시간 및 DB 부하 개선
+
+3. 통계 데이터 배치 처리와 알림 기능
+   - Issue: 홈 화면, 잔액 조회, AI 요약에서 매번 원장 데이터를 집계하면 반복 조회 비용이 커질 수 있음
+   - Action: 일/월 단위 집계 테이블, 스케줄러 또는 Batch, 실패 재처리 로그, 알림 대상 추출 쿼리
+   - Result: 월간 리포트, 예산 초과 알림, AI 소비 분석을 운영 가능한 구조로 확장
 
 ## Projects
 
-1. [DentalLink](images/dentallink/README.md) · 4개 데이터 도메인(환자·예약·대기열·공지), 5개 공개 화면 흐름, PostgreSQL 기반 병원 운영 데이터 모델링
-2. [AI Agent System](images/ai-agent/README.md) · 5개 분석 산출(요약·Action Item·일정·기여도·리스크), D-7/D-3/D-1 리마인드, Markdown 보고서 자동화
-3. [4Party - 택시 동승 매칭 서비스](images/4party/README.md) · 6개 화면 범위, 3개 Firestore 데이터 그룹, 모집 상태와 참여 이력 관리
-4. [Life Manager Android App](images/life-manager/README.md) · 4개 생활 기록 데이터, 최근 7일 지표 계산, 주간 평균과 그래프 시각화
+1. [Pigge Server](images/pigge/README.md)
+   - Java 17, Spring Boot, JPA 기반 가계부 백엔드
+   - 수입/지출 거래 저장, 사용자별 조회, 월별 집계, 잔액 조회, AI 소비 분석
+
+2. [DentalLink](images/dentallink/README.md)
+   - Flutter, Supabase, PostgreSQL 기반 치과 통합 관리 프로젝트
+   - 환자, 예약, 대기열, 공지사항 데이터 흐름 정리
+
+3. [AI Agent System](images/ai-agent/README.md)
+   - Python, LangGraph, PostgreSQL 기반 프로젝트 관리 자동화 Agent
+   - 회의 요약, Action Item, 일정 리마인드, 리스크 분석, Markdown 보고서 생성
+
+4. [4Party](images/4party/README.md)
+   - Android, Kotlin, Firebase 기반 택시 동승 매칭 서비스
+   - 사용자 인증, 파티 생성/참여, 모집 상태 관리
+
+5. [Life Manager Android App](images/life-manager/README.md)
+   - Android, Java, Room 기반 생활 기록 관리 앱
+   - 수면, 공부, 스마트폰 사용, 만보기 데이터 기록 및 7일 지표 시각화
 
 ## Skills
 
-- Core: Python, SQL, PostgreSQL, Supabase, Firebase, Android
-- Supporting: Pandas/NumPy, REST API, Markdown report generation, Git/GitHub
-
-## Portfolio Message
-
-이 포트폴리오는 단순 기능 구현 목록보다 아래 흐름이 보이도록 구성했습니다.
-
-1. 문제 정의: 서비스 운영 또는 사용자 경험에서 어떤 문제가 있었는지 설명
-2. 데이터: 어떤 테이블, 상태값, 사용자 행동 데이터가 필요한지 정리
-3. 핵심 수치: 공개 가능한 범위에서 데이터 도메인 수, 화면 범위, 분석 산출물 수를 제시
-4. 분석/처리: SQL, Python, 앱 로직으로 데이터를 조회·정제·계산하는 방식 제시
-5. 인사이트/액션: 지표를 바탕으로 화면, 리포트, 운영 흐름을 어떻게 개선했는지 연결
-
-## Other Project
-
-- [Figma Plugin](images/figma-plugin/README.md)
+- Analysis: Python, SQL, Pandas, NumPy, Excel, Tableau
+- Backend/Data: PostgreSQL, Supabase, Firebase, REST API
+- App/Implementation: Android, Flutter, Java, Kotlin, Dart
+- Engineering Practice: Git, GitHub, 테스트, 문서화, 트러블슈팅
 
 ## Public Code Links
 
@@ -45,23 +125,18 @@ https://nadanaya.github.io/portfolio/
 - Portfolio Repository: https://github.com/nadanaya/portfolio
 - AI Agent System: https://github.com/nadanaya/ai-agent
 
-## Public Visual Materials
-
-팀 내부 원본 문서를 그대로 공개하지 않고, 포트폴리오 제출용으로 화면 흐름과 구조를 재제작한 이미지를 각 프로젝트 README에 추가했습니다.
-
 ## Repository Structure
 
 ```text
-portfolio
-├─ index.html
-├─ README.md
-├─ images/
-│  ├─ dentallink/
-│  ├─ ai-agent/
-│  ├─ 4party/
-│  ├─ life-manager/
-│  └─ figma-plugin/
-└─ assets/
+portfolio/
+  index.html
+  README.md
+  images/
+    pigge/
+    dentallink/
+    ai-agent/
+    4party/
+    life-manager/
+    figma-plugin/
+  tools/
 ```
-
-팀 프로젝트는 저장소 전체가 아니라 본인이 담당한 역할과 구현 기능 중심으로 정리했습니다.
