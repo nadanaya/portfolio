@@ -48,7 +48,7 @@ portfolio/
 
 ## Data Analyst Page
 
-`data.html`은 데이터 분석가 채용 담당자가 보는 기준에 맞춰 구성했습니다.
+`data.html`은 데이터 분석가 직무에서 중요하게 보는 기준에 맞춰 구성했습니다.
 
 ### Representative Projects
 
@@ -72,7 +72,7 @@ JipFit AI는 합성 시나리오 기반 기술 검증 결과임을 명시하고,
 
 ## Backend Developer Page
 
-`backend.html`은 백엔드 개발자 채용 담당자가 보는 기준에 맞춰 구성했습니다.
+`backend.html`은 백엔드 개발자 직무에서 중요하게 보는 기준에 맞춰 구성했습니다.
 
 ### Representative Projects
 
