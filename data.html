@@ -176,6 +176,10 @@
         background: #fff;
       }
 
+      .visual img + img {
+        margin-top: 12px;
+      }
+
       .visual figcaption {
         margin-top: 10px;
         color: var(--muted);
@@ -325,7 +329,8 @@
             <div class="project-body">
               <figure class="visual">
                 <img src="images/jipfit/public-ml-workflow.svg" alt="JipFit AI 머신러닝 분석 흐름" />
-                <figcaption>문제 정의, 입력 변수, 모델 비교, 정책 추천까지 이어지는 분석 흐름</figcaption>
+                <img src="images/jipfit/public-model-results.svg" alt="JipFit AI 모델 비교와 혼동행렬" />
+                <figcaption>분석 흐름과 함께 합성 테스트 데이터 기준 모델 비교·혼동행렬을 직접 노출</figcaption>
               </figure>
               <div>
                 <div class="criteria">
@@ -343,7 +348,7 @@
                   </div>
                   <div class="criterion">
                     <strong>결과</strong>
-                    <p>기술 검증 데이터 기준 Logistic Regression Accuracy 0.9308, Macro F1 0.9014 기록</p>
+                    <p>합성 테스트 데이터 기준 Accuracy 0.9308, Macro F1 0.9014</p>
                   </div>
                   <div class="criterion">
                     <strong>오류 분석</strong>
@@ -386,7 +391,8 @@
             <div class="project-body">
               <figure class="visual">
                 <img src="images/weather/public-forecast-error-flow.svg" alt="기상 예보 오차 데이터 파이프라인" />
-                <figcaption>공공 API 수집, 시간 정렬, 관측값 결합, 예보 오차 타깃 정의 흐름</figcaption>
+                <img src="images/weather/public-demo-results.svg" alt="예보 오류 분류 데모 결과" />
+                <figcaption>공공 API 수집·타깃 정의 흐름과 소규모 데모 결과를 함께 표시</figcaption>
               </figure>
               <div class="criteria">
                 <div class="criterion">
@@ -415,6 +421,7 @@
                 <a href="https://github.com/nadanaya/weather-forecast-error/blob/main/notebooks/02_merge_and_target.ipynb">target notebook</a>
                 <a href="https://github.com/nadanaya/weather-forecast-error/blob/main/src/build_forecast_error_dataset.py">target builder</a>
                 <a href="https://github.com/nadanaya/weather-forecast-error/blob/main/docs/data_dictionary.md">data dictionary</a>
+                <a href="https://github.com/nadanaya/weather-forecast-error/blob/main/rain-error-demo/reports/metrics.json">demo metrics</a>
               </div>
             </div>
             <div class="links">
