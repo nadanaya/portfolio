@@ -34,7 +34,7 @@ portfolio/
 - 김나영 소개
 - 데이터 분석 포트폴리오 이동
 - 백엔드 포트폴리오 이동
-- GitHub 링크
+- 포트폴리오 GitHub 저장소 링크
 - 공통 역량 요약
 
 공통 역량은 다음 항목만 간결하게 보여줍니다.
@@ -94,10 +94,10 @@ portfolio/
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
-## Public Code Links
+## GitHub Links
 
-- GitHub Profile: https://github.com/nadanaya
 - Portfolio Repository: https://github.com/nadanaya/portfolio
+- GitHub Profile: https://github.com/nadanaya
 - JipFit AI: https://github.com/nadanaya/jipfit-ai
 - Weather Forecast Error: https://github.com/nadanaya/weather-forecast-error
 - Pigge Server: https://github.com/nadanaya/pigge_server
