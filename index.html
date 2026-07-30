@@ -513,8 +513,8 @@
                 <span>핵심 스킬: Python, SQL, PostgreSQL, Supabase, Firebase, Android</span>
               </div>
               <div class="metric">
-                <strong>5</strong>
-                <span>공개 프로젝트: Pigge Server, DentalLink, AI Agent, 4Party, Life Manager</span>
+                <strong>7</strong>
+                <span>공개 프로젝트: Pigge Server, JipFit AI, Weather Forecast Error, DentalLink, AI Agent, 4Party, Life Manager</span>
               </div>
             </div>
           </aside>
@@ -759,11 +759,108 @@
             <article class="project">
               <img
                 class="project-visual"
+                src="images/jipfit/public-ml-workflow.svg"
+                alt="JipFit AI 분석 및 모델링 흐름"
+              />
+              <div class="project-top">
+                <span class="tag">03 Data / ML</span>
+                <span class="tag blue">Streamlit · SQLite</span>
+                <h3>JipFit AI</h3>
+                <p>
+                  청년의 소득, 자산, 주거비, 부채 조건을 바탕으로 주거비 부담 위험을 분류하고,
+                  조건에 맞는 청년 주거 정책을 추천하는 데이터 분석 및 ML 프로젝트입니다.
+                </p>
+              </div>
+              <div class="project-body">
+                <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>6,000</strong><span>합성 주거 시나리오 기반 학습 데이터</span></div>
+                    <div class="fact"><strong>0.9308</strong><span>선정 모델 Logistic Regression Accuracy</span></div>
+                    <div class="fact"><strong>0.9014</strong><span>Macro F1 기준 다중 분류 성능</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4>문제와 해결</h4>
+                  <ul>
+                    <li>청년이 월세, 관리비, 보증금, 부채를 함께 고려해 실제 주거비 부담을 판단하기 어렵다는 문제를 정의했습니다.</li>
+                    <li>주거비 상한, 소득 대비 주거비 비율, 부채 버퍼를 규칙 기반 지표로 계산하고 ML 분류 모델과 결합했습니다.</li>
+                    <li>정책 조건을 구조화해 사용자의 조건과 매칭하고, 추천 이유와 다음 행동을 함께 제공하도록 구성했습니다.</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>기술 스택</h4>
+                  <div class="stack">
+                    <span>Python</span>
+                    <span>Streamlit</span>
+                    <span>scikit-learn</span>
+                    <span>SQLite</span>
+                    <span>SQL</span>
+                    <span>pytest</span>
+                  </div>
+                </div>
+                <div class="github">
+                  <a href="images/jipfit/README.md">프로젝트 상세 보기</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                class="project-visual"
+                src="images/weather/public-forecast-error-flow.svg"
+                alt="Weather Forecast Error 데이터 파이프라인"
+              />
+              <div class="project-top">
+                <span class="tag">04 Data Pipeline</span>
+                <span class="tag blue">KMA API</span>
+                <h3>Weather Forecast Error</h3>
+                <p>
+                  기상청 단기예보와 서울 ASOS 관측 데이터를 결합해 시간대별 강수 예보 오차 여부를 정의하고,
+                  공공 API 기반 데이터셋을 구축한 분석 프로젝트입니다.
+                </p>
+              </div>
+              <div class="project-body">
+                <div class="info-block">
+                  <h4>핵심 수치</h4>
+                  <div class="quick-facts">
+                    <div class="fact"><strong>2</strong><span>단기예보 API와 ASOS 관측 API 결합</span></div>
+                    <div class="fact"><strong>24h</strong><span>시간대별 강수 예보와 실제 강수 비교</span></div>
+                    <div class="fact"><strong>1</strong><span>forecast_error 분류 타깃 생성</span></div>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <h4>문제와 해결</h4>
+                  <ul>
+                    <li>일 단위 강수량만으로는 시간대별 예보 정확도를 검증하기 어렵다는 문제를 정의했습니다.</li>
+                    <li>단기예보의 강수 여부와 ASOS 시간 관측의 실제 강수 여부를 같은 시간 기준으로 맞춰 타깃을 생성했습니다.</li>
+                    <li>`forecast_rain != actual_rain` 기준으로 예보 오차 라벨을 만들고, 후속 분류 모델링이 가능한 데이터셋으로 정리했습니다.</li>
+                  </ul>
+                </div>
+                <div class="info-block">
+                  <h4>기술 스택</h4>
+                  <div class="stack">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>Public API</span>
+                    <span>Data Validation</span>
+                    <span>Classification Target</span>
+                  </div>
+                </div>
+                <div class="github">
+                  <a href="images/weather/README.md">프로젝트 상세 보기</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <img
+                class="project-visual"
                 src="images/ai-agent/public-agent-workflow.svg"
                 alt="AI Agent System 공개 워크플로우"
               />
               <div class="project-top">
-                <span class="tag">03 Team Project</span>
+                <span class="tag">05 Team Project</span>
                 <span class="tag blue">2026.02 ~ 2026.09</span>
                 <h3>AI Agent System</h3>
                 <p>
@@ -811,7 +908,7 @@
                 alt="4Party 공개 화면 흐름"
               />
               <div class="project-top">
-                <span class="tag">04 Team Project</span>
+                <span class="tag">06 Team Project</span>
                 <span class="tag blue">2025.09 ~ 2025.12</span>
                 <h3>4Party</h3>
                 <p>
@@ -859,7 +956,7 @@
                 alt="Life Manager 공부 시간 그래프 화면"
               />
               <div class="project-top">
-                <span class="tag">05 Android Team Project</span>
+                <span class="tag">07 Android Team Project</span>
                 <span class="tag blue">2025.09 ~ 2025.12</span>
                 <h3>Life Manager</h3>
                 <p>
@@ -916,6 +1013,16 @@
               <h3>Pigge Server</h3>
               <p>가계부 앱 백엔드의 거래 API, 월별 통계, AI 분석 연동 코드를 확인할 수 있습니다.</p>
               <a href="https://github.com/nadanaya/pigge_server">github.com/nadanaya/pigge_server</a>
+            </div>
+            <div class="link-card">
+              <h3>JipFit AI</h3>
+              <p>주거비 부담 위험 분류, 정책 추천, 모델 성능 리포트가 포함된 분석 프로젝트입니다.</p>
+              <a href="images/jipfit/README.md">JipFit AI 상세 보기</a>
+            </div>
+            <div class="link-card">
+              <h3>Weather Forecast Error</h3>
+              <p>공공 API 데이터를 결합해 예보 오차 분류 타깃을 만든 데이터 파이프라인 프로젝트입니다.</p>
+              <a href="images/weather/README.md">Weather Forecast Error 상세 보기</a>
             </div>
             <div class="link-card">
               <h3>GitHub</h3>
