@@ -68,6 +68,8 @@ portfolio/
 
 백엔드, Flutter, Android 구현 설명은 최소화하고 문제 정의, 데이터 출처, 지표 설계, 모델 검증, 비즈니스 활용 가능성을 중심에 둡니다.
 
+JipFit AI는 합성 시나리오 기반 기술 검증 결과임을 명시하고, 성능 수치와 오류 분석 근거를 함께 연결합니다.
+
 ## Backend Developer Page
 
 `backend.html`은 백엔드 개발자 채용 담당자가 보는 기준에 맞춰 구성했습니다.
@@ -93,6 +95,8 @@ portfolio/
 - 테스트 및 개선
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
+
+Pigge Server는 실제 Spring Boot 서버 구현 근거를 중심으로 배치하고, DentalLink와 4Party는 별도 백엔드 서버가 아니라 Supabase/Firebase 기반 서비스 데이터 구조로 설명합니다.
 
 ## GitHub Links
 
