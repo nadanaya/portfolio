@@ -1,95 +1,98 @@
 # NaYoung Portfolio
 
-신입 데이터 분석가 및 백엔드 개발자 포지션을 목표로 구성한 포트폴리오입니다.
-단순 기능 구현 목록보다 **문제 정의, 데이터 흐름, 분석 지표, 백엔드 안정성 개선**을 중심으로 정리했습니다.
+신입 데이터 분석가와 신입 백엔드 개발자 지원을 위해 구성한 포트폴리오입니다.
+하나의 저장소를 유지하되, 평가 기준이 다른 두 직무를 별도 상세 페이지로 분리했습니다.
 
-## Live Page
+## Live Pages
 
-https://nadanaya.github.io/portfolio/
+- Main: https://nadanaya.github.io/portfolio/
+- Data Analyst: https://nadanaya.github.io/portfolio/data.html
+- Backend Developer: https://nadanaya.github.io/portfolio/backend.html
 
-## Target Position
+## Page Structure
 
-- 신입 데이터 분석가
-- 신입 백엔드 개발자
-- 관심 분야: 은행, IT, 핀테크, IT 플랫폼
-- 핵심 메시지: 데이터를 이해하고, 서비스 문제를 정의하며, 안정적인 백엔드 구조로 개선할 수 있는 지원자
+```text
+portfolio/
+  index.html          # 김나영 소개 + 직무 선택
+  data.html           # 데이터 분석 지원용 상세 페이지
+  backend.html        # 백엔드 지원용 상세 페이지
+  README.md
+  images/
+    jipfit/
+    weather/
+    ai-agent/
+    pigge/
+    dentallink/
+    4party/
+    life-manager/
+```
 
-## Portfolio Focus
+## Main Page
 
-### Data Analyst
+`index.html`은 긴 프로젝트 나열 페이지가 아니라 지원 직무 선택 페이지입니다.
 
-- SQL/Python 기반 데이터 추출, 정제, 집계
-- 사용자 행동 및 서비스 운영 데이터의 지표화
-- KPI 관점의 문제 정의와 개선 액션 제안
-- Tableau/Excel/Python 리포트로 분석 결과 전달
+- 김나영 소개
+- 데이터 분석 포트폴리오 이동
+- 백엔드 포트폴리오 이동
+- GitHub 링크
+- 공통 역량 요약
 
-### Backend Developer
+공통 역량은 다음 항목만 간결하게 보여줍니다.
 
-- 거래성 데이터의 정합성과 트랜잭션 처리
-- 대용량 조회 성능 개선을 위한 인덱스, 캐싱, 집계 구조
-- 예외 처리, 테스트, API 문서화 등 코드 품질 관리
-- 금융/핀테크 도메인에 필요한 안정성 중심 설계
+- Python / SQL
+- Java / Spring Boot
+- PostgreSQL
+- REST API
+- 데이터 모델링
+- 테스트와 문서화
 
-## Featured Project: JipFit AI
+## Data Analyst Page
 
-청년 주거비 부담 위험을 예측하고, 조건에 맞는 주거 정책을 추천하는 데이터 분석/ML 대표 프로젝트입니다.
+`data.html`은 데이터 분석가 채용 담당자가 보는 기준에 맞춰 구성했습니다.
 
-- Repository: https://github.com/nadanaya/jipfit-ai
-- Stack: Python, Streamlit, scikit-learn, SQLite, SQL, pytest
-- Result: Logistic Regression Accuracy 0.9308, Macro F1 0.9014
-- Details: [JipFit AI 상세 보기](images/jipfit/README.md)
+### Representative Projects
 
-## Projects
+1. JipFit AI
+2. Weather Forecast Error
+3. AI Agent System
 
-1. [JipFit AI](images/jipfit/README.md)
-   - Python, Streamlit, SQLite 기반 청년 주거비 부담 예측 및 정책 추천 프로젝트
-   - Logistic Regression 기준 Accuracy 0.9308, Macro F1 0.9014
+### Evaluation Criteria
 
-2. [Weather Forecast Error](images/weather/README.md)
-   - 기상청 단기예보와 서울 ASOS 관측 데이터를 결합한 공공 API 데이터 파이프라인
-   - 시간대별 강수 예보 오차 여부를 `forecast_error` 분류 타깃으로 정의
-   - Repository: https://github.com/nadanaya/weather-forecast-error
+각 프로젝트는 다음 5가지 기준으로만 설명합니다.
 
-3. [Pigge Server](images/pigge/README.md)
-   - Java 17, Spring Boot, JPA 기반 가계부 백엔드
-   - 수입/지출 거래 저장, 사용자별 조회, 월별 집계, 잔액 조회, AI 소비 분석
+- 문제
+- 데이터
+- 분석 방법
+- 결과
+- 개선 방향
 
-4. [DentalLink](images/dentallink/README.md)
-   - Flutter, Supabase, PostgreSQL 기반 치과 통합 관리 프로젝트
-   - 환자, 예약, 대기열, 공지사항 데이터 흐름 정리
+백엔드, Flutter, Android 구현 설명은 최소화하고 문제 정의, 데이터 출처, 지표 설계, 모델 검증, 비즈니스 활용 가능성을 중심에 둡니다.
 
-5. [AI Agent System](images/ai-agent/README.md)
-   - Python, LangGraph, PostgreSQL 기반 프로젝트 관리 자동화 Agent
-   - 회의 요약, Action Item, 일정 리마인드, 리스크 분석, Markdown 보고서 생성
+## Backend Developer Page
 
-6. [4Party](images/4party/README.md)
-   - Android, Kotlin, Firebase 기반 택시 동승 매칭 서비스
-   - 사용자 인증, 파티 생성/참여, 모집 상태 관리
+`backend.html`은 백엔드 개발자 채용 담당자가 보는 기준에 맞춰 구성했습니다.
 
-7. [Life Manager Android App](images/life-manager/README.md)
-   - Android, Java, Room 기반 생활 기록 관리 앱
-   - 수면, 공부, 스마트폰 사용, 만보기 데이터 기록 및 7일 지표 시각화
+### Representative Projects
 
-## Recommended Portfolio Tracks
+1. Pigge Server
+2. DentalLink
+3. 4Party
 
-### Data Analyst Main Projects
+### Supporting Project
 
-- JipFit AI: 주거비 부담 예측 및 정책 추천 ML
-- Weather Forecast Error: 공공 API 기반 예보 오차 데이터셋 구축
-- AI Agent System: 회의/업무 데이터 기반 운영 자동화 분석
+- Life Manager
 
-### Backend Main Projects
+### Evaluation Criteria
 
-- Pigge Server: 금융 거래 API, 월별 집계, AI 연동
-- DentalLink: 병원 운영 데이터 흐름 및 Flutter-Supabase 연동
-- 4Party: 매칭 서비스, 인증, 상태 관리, Firestore 구조
+각 프로젝트는 다음 5가지 기준으로 설명합니다.
 
-## Skills
+- 도메인
+- 데이터 모델
+- API 구조
+- 문제 해결
+- 테스트 및 개선
 
-- Analysis: Python, SQL, Pandas, NumPy, Excel, Tableau
-- Backend/Data: PostgreSQL, Supabase, Firebase, REST API
-- App/Implementation: Android, Flutter, Java, Kotlin, Dart
-- Engineering Practice: Git, GitHub, 테스트, 문서화, 트러블슈팅
+모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
 ## Public Code Links
 
@@ -97,22 +100,5 @@ https://nadanaya.github.io/portfolio/
 - Portfolio Repository: https://github.com/nadanaya/portfolio
 - JipFit AI: https://github.com/nadanaya/jipfit-ai
 - Weather Forecast Error: https://github.com/nadanaya/weather-forecast-error
+- Pigge Server: https://github.com/nadanaya/pigge_server
 - AI Agent System: https://github.com/nadanaya/ai-agent
-
-## Repository Structure
-
-```text
-portfolio/
-  index.html
-  README.md
-  images/
-    pigge/
-    jipfit/
-    weather/
-    dentallink/
-    ai-agent/
-    4party/
-    life-manager/
-    figma-plugin/
-  tools/
-```
