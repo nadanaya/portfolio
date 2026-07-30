@@ -48,6 +48,7 @@ https://nadanaya.github.io/portfolio/
 2. [Weather Forecast Error](images/weather/README.md)
    - 기상청 단기예보와 서울 ASOS 관측 데이터를 결합한 공공 API 데이터 파이프라인
    - 시간대별 강수 예보 오차 여부를 `forecast_error` 분류 타깃으로 정의
+   - Repository: https://github.com/nadanaya/weather-forecast-error
 
 3. [Pigge Server](images/pigge/README.md)
    - Java 17, Spring Boot, JPA 기반 가계부 백엔드
@@ -73,9 +74,9 @@ https://nadanaya.github.io/portfolio/
 
 ### Data Analyst Main Projects
 
-- Pigge: 개인 금융 데이터 분석 및 AI 소비 요약
 - JipFit AI: 주거비 부담 예측 및 정책 추천 ML
 - Weather Forecast Error: 공공 API 기반 예보 오차 데이터셋 구축
+- AI Agent System: 회의/업무 데이터 기반 운영 자동화 분석
 
 ### Backend Main Projects
 
