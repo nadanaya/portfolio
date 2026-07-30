@@ -588,62 +588,32 @@
 
         <section id="pigge" class="playbook" aria-labelledby="pigge-title">
           <div class="section-title">
-            <h2 id="pigge-title">Pigge Server Deep-Dive</h2>
+            <h2 id="pigge-title">Pigge Server</h2>
             <p>
-              `nadanaya/pigge_server`의 실제 Spring Boot 백엔드 구조를 기반으로, 구현된 API와 확장 가능한 분석/백엔드 개선 과제를 함께 정리했습니다.
+              메인 화면에서는 핵심만 보여주고, API 흐름과 개선 아이디어는 프로젝트 상세 문서로 분리했습니다.
             </p>
           </div>
 
           <div class="cards-grid">
             <article class="text-card">
-              <span class="tag">Implemented API</span>
-              <h3>거래 원장 저장과 조회</h3>
+              <span class="tag">Representative Project</span>
+              <h3>개인 금융 거래 API</h3>
               <p>
-                `POST /api/transactions`로 수입/지출 거래를 저장하고, 사용자 이메일 기준 전체 거래와 월별 거래를 조회합니다.
-                `Transaction` Entity는 title, amount, date, type, userEmail을 중심으로 개인 금융 데이터를 구성합니다.
+                수입/지출 거래 저장, 사용자별 조회, 월별 집계, 잔액 조회, AI 소비 요약을 구현한 Spring Boot 백엔드입니다.
               </p>
             </article>
             <article class="text-card">
-              <span class="tag">Implemented Metric</span>
-              <h3>잔액과 월별 통계</h3>
+              <span class="tag">Portfolio Hook</span>
+              <h3>분석과 백엔드 연결</h3>
               <p>
-                `GET /api/transactions/balance/{userEmail}`로 총 잔액을 제공하고, 월별 통계 쿼리로 수입, 지출, 잔액을 계산합니다.
-                이 구조는 예산 초과율, 저축률, 월말 예상 잔액 같은 분석 KPI의 출발점이 됩니다.
+                거래 원장을 월별 수입, 지출, 잔액 지표로 변환하고, 예산 초과 예측과 현금흐름 분석으로 확장할 수 있습니다.
               </p>
             </article>
             <article class="text-card">
-              <span class="tag">Implemented AI</span>
-              <h3>AI 소비 분석 연동</h3>
+              <span class="tag blue">Details</span>
+              <h3>상세 문서로 분리</h3>
               <p>
-                `AiClient` 인터페이스와 `OllamaClient` 구현을 통해 월별 통계나 소비 내역 텍스트를 AI 분석으로 연결합니다.
-                거래 데이터가 리포트와 소비 코칭 기능으로 확장되는 흐름을 보여줍니다.
-              </p>
-            </article>
-          </div>
-
-          <div class="cards-grid" style="margin-top: 16px">
-            <article class="text-card">
-              <span class="tag blue">Backend Issue 01</span>
-              <h3>거래 저장과 AI 요약 정합성</h3>
-              <p>
-                `with-ai` 흐름은 거래 저장 후 월별 통계와 AI 코멘트를 생성합니다.
-                저장 트랜잭션, 중복 저장 방지, AI 실패 fallback을 분리하면 금융성 데이터의 안정성을 더 강하게 보여줄 수 있습니다.
-              </p>
-            </article>
-            <article class="text-card">
-              <span class="tag blue">Backend Issue 02</span>
-              <h3>통계 API 조회 성능 개선</h3>
-              <p>
-                현재 월별 조회는 연도/월 조건으로 거래를 필터링합니다.
-                데이터가 늘어날 경우 날짜 범위 조건과 `userEmail + date + type` 복합 인덱스를 적용해 조회 성능 개선 과제로 확장할 수 있습니다.
-              </p>
-            </article>
-            <article class="text-card">
-              <span class="tag blue">Backend Issue 03</span>
-              <h3>배치 집계와 알림 구조</h3>
-              <p>
-                월별 리포트와 예산 초과 알림은 매 요청마다 원장 데이터를 재계산하지 않고 집계 테이블로 분리할 수 있습니다.
-                스케줄러, 실패 로그, 재처리 흐름을 설계하면 운영 관점의 백엔드 감각을 보여줍니다.
+                API 목록, 데이터 흐름, 성능 개선 과제는 <a href="images/pigge/README.md">Pigge 상세 README</a>에 정리했습니다.
               </p>
             </article>
           </div>
