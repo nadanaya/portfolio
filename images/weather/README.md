@@ -2,9 +2,9 @@
 
 기상청 단기예보 API와 서울 ASOS 관측 데이터를 결합해 시간대별 강수 예보 오차 여부를 정의한 공공 데이터 파이프라인 프로젝트입니다.
 
-## Source Folder
+## Source Repository
 
-`C:\Users\yeoh0\weather-forecast-error`
+https://github.com/nadanaya/weather-forecast-error
 
 ## Project Type
 
@@ -42,4 +42,3 @@ Data Pipeline / Public API / Classification Dataset
 ## Public Workflow
 
 ![Weather forecast error workflow](public-forecast-error-flow.svg)
-

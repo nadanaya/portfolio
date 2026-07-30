@@ -30,27 +30,28 @@ https://nadanaya.github.io/portfolio/
 - 예외 처리, 테스트, API 문서화 등 코드 품질 관리
 - 금융/핀테크 도메인에 필요한 안정성 중심 설계
 
-## Pigge Server
+## Featured Project: JipFit AI
 
-`nadanaya/pigge_server`를 기반으로 정리한 가계부 백엔드 대표 프로젝트입니다.
+청년 주거비 부담 위험을 예측하고, 조건에 맞는 주거 정책을 추천하는 데이터 분석/ML 대표 프로젝트입니다.
 
-- 핵심 가치: 개인 금융 거래 데이터를 저장, 월별 집계, AI 소비 요약까지 연결
-- Stack: Java 17, Spring Boot, Spring Data JPA, H2, RestTemplate, Ollama
-- Details: [Pigge Server 상세 보기](images/pigge/README.md)
+- Repository: https://github.com/nadanaya/jipfit-ai
+- Stack: Python, Streamlit, scikit-learn, SQLite, SQL, pytest
+- Result: Logistic Regression Accuracy 0.9308, Macro F1 0.9014
+- Details: [JipFit AI 상세 보기](images/jipfit/README.md)
 
 ## Projects
 
-1. [Pigge Server](images/pigge/README.md)
-   - Java 17, Spring Boot, JPA 기반 가계부 백엔드
-   - 수입/지출 거래 저장, 사용자별 조회, 월별 집계, 잔액 조회, AI 소비 분석
-
-2. [JipFit AI](images/jipfit/README.md)
+1. [JipFit AI](images/jipfit/README.md)
    - Python, Streamlit, SQLite 기반 청년 주거비 부담 예측 및 정책 추천 프로젝트
    - Logistic Regression 기준 Accuracy 0.9308, Macro F1 0.9014
 
-3. [Weather Forecast Error](images/weather/README.md)
+2. [Weather Forecast Error](images/weather/README.md)
    - 기상청 단기예보와 서울 ASOS 관측 데이터를 결합한 공공 API 데이터 파이프라인
    - 시간대별 강수 예보 오차 여부를 `forecast_error` 분류 타깃으로 정의
+
+3. [Pigge Server](images/pigge/README.md)
+   - Java 17, Spring Boot, JPA 기반 가계부 백엔드
+   - 수입/지출 거래 저장, 사용자별 조회, 월별 집계, 잔액 조회, AI 소비 분석
 
 4. [DentalLink](images/dentallink/README.md)
    - Flutter, Supabase, PostgreSQL 기반 치과 통합 관리 프로젝트
@@ -93,6 +94,8 @@ https://nadanaya.github.io/portfolio/
 
 - GitHub Profile: https://github.com/nadanaya
 - Portfolio Repository: https://github.com/nadanaya/portfolio
+- JipFit AI: https://github.com/nadanaya/jipfit-ai
+- Weather Forecast Error: https://github.com/nadanaya/weather-forecast-error
 - AI Agent System: https://github.com/nadanaya/ai-agent
 
 ## Repository Structure

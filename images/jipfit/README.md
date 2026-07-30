@@ -2,9 +2,9 @@
 
 청년의 소득, 자산, 주거비, 보증금, 부채 조건을 바탕으로 주거비 부담 위험을 분류하고, 조건에 맞는 청년 주거 정책을 추천하는 데이터 분석 및 ML 프로젝트입니다.
 
-## Source Folder
+## Source Repository
 
-`C:\Users\yeoh0\jipfit-ai`
+https://github.com/nadanaya/jipfit-ai
 
 ## Project Type
 
@@ -44,4 +44,3 @@ Data Analysis / ML / Streamlit App
 ## Public Workflow
 
 ![JipFit AI workflow](public-ml-workflow.svg)
-
