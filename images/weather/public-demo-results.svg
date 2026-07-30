@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Weather Forecast Error 데모 결과</title>
+  <desc id="desc">데모 샘플 12건 기준 예보 오류 분류 결과 요약</desc>
+  <rect width="960" height="420" fill="#fbfaf7"/>
+  <text x="48" y="58" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#161616">Weather Forecast Error 결과 요약</text>
+  <text x="48" y="88" font-family="Arial, sans-serif" font-size="15" fill="#60646c">rain-error-demo 샘플 12건 기준 · 최종 프로젝트는 데이터 파이프라인 검증 중심</text>
+
+  <rect x="48" y="126" width="262" height="220" rx="10" fill="#ffffff" stroke="#dedbd2"/>
+  <text x="78" y="166" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2f5f93">분류 정확도</text>
+  <text x="78" y="235" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#2f5f93">0.75</text>
+  <text x="78" y="272" font-family="Arial, sans-serif" font-size="15" fill="#60646c">accuracy</text>
+  <rect x="78" y="294" width="180" height="14" rx="7" fill="#e7eef7"/>
+  <rect x="78" y="294" width="135" height="14" rx="7" fill="#2f5f93"/>
+
+  <rect x="349" y="126" width="262" height="220" rx="10" fill="#ffffff" stroke="#dedbd2"/>
+  <text x="379" y="166" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2f5f93">오류 발생 비율</text>
+  <text x="379" y="235" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#2f5f93">0.50</text>
+  <text x="379" y="272" font-family="Arial, sans-serif" font-size="15" fill="#60646c">actual error rate</text>
+  <rect x="379" y="294" width="180" height="14" rx="7" fill="#e7eef7"/>
+  <rect x="379" y="294" width="90" height="14" rx="7" fill="#2f5f93"/>
+
+  <rect x="650" y="126" width="262" height="220" rx="10" fill="#ffffff" stroke="#dedbd2"/>
+  <text x="680" y="166" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#2f5f93">판정 임계값</text>
+  <text x="680" y="235" font-family="Arial, sans-serif" font-size="58" font-weight="700" fill="#2f5f93">0.58</text>
+  <text x="680" y="272" font-family="Arial, sans-serif" font-size="15" fill="#60646c">threshold</text>
+  <rect x="680" y="294" width="180" height="14" rx="7" fill="#e7eef7"/>
+  <rect x="680" y="294" width="104" height="14" rx="7" fill="#2f5f93"/>
+
+  <text x="48" y="382" font-family="Arial, sans-serif" font-size="14" fill="#60646c">근거 파일: rain-error-demo/reports/metrics.json · 소규모 데모 결과이므로 전체 서비스 성능으로 과장하지 않음</text>
+</svg>

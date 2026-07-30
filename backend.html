@@ -390,11 +390,11 @@
                   </div>
                   <div class="criterion">
                     <strong>검증</strong>
-                    <p>서비스 흐름과 Repository 조회 기준을 기준으로 거래 저장·월별 조회 동작 확인</p>
+                    <p>기본 contextLoads 테스트 파일을 보유하고, API 응답 검증과 Service/Repository 테스트는 보강 예정</p>
                   </div>
                   <div class="criterion">
                     <strong>개선 예정</strong>
-                    <p>DTO/Entity 분리, Bean Validation, 공통 예외 응답, 인덱스, 테스트 코드, Swagger 보강</p>
+                    <p>응답 DTO와 매핑 계층, Bean Validation, 공통 예외 응답, 인덱스, Swagger 보강</p>
                   </div>
                 </div>
                 <div class="split-note">
@@ -408,10 +408,11 @@
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="Pigge Server 증거 파일">
-                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/controller/TransactionController.java">Controller</a>
-                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/service/TransactionService.java">Service</a>
-                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/repository/TransactionRepository.java">Repository</a>
-                  <a href="https://github.com/nadanaya/pigge_server/blob/main/src/main/java/com/example/pigge_server/dto/TransactionRequest.java">DTO</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/controller/TransactionController.java">Controller</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/service/TransactionService.java">Service</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/repository/TransactionRepository.java">Repository</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/dto/TransactionRequest.java">Request DTO</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/test/java/com/example/pigge_server/PiggeServerApplicationTests.java">기본 테스트</a>
                 </div>
               </div>
             </div>
