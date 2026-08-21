@@ -21,6 +21,7 @@ portfolio/
     jipfit/
     weather/
     ai-agent/
+    festai/
     pigge/
     dentallink/
     4party/
@@ -77,8 +78,9 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 ### Representative Projects
 
 1. Pigge Server
-2. DentalLink
-3. 4Party
+2. FESTAI
+3. DentalLink
+4. 4Party
 
 ### Supporting Project
 
@@ -96,7 +98,7 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
-Pigge Server는 실제 Spring Boot 서버 구현 근거를 중심으로 배치하고, DentalLink와 4Party는 별도 백엔드 서버가 아니라 Supabase/Firebase 기반 서비스 데이터 구조로 설명합니다.
+FESTAI와 Pigge Server는 실제 서버 백엔드 구현 근거를 중심으로 배치하고, DentalLink와 4Party는 별도 백엔드 서버가 아니라 Supabase/Firebase 기반 서비스 데이터 구조로 설명합니다.
 
 ## GitHub Links
 
@@ -104,5 +106,7 @@ Pigge Server는 실제 Spring Boot 서버 구현 근거를 중심으로 배치�
 - GitHub Profile: https://github.com/nadanaya
 - JipFit AI: https://github.com/nadanaya/jipfit-ai
 - Weather Forecast Error: https://github.com/nadanaya/weather-forecast-error
+- FESTAI Backend: https://github.com/FEST-ON/Backend
+- FESTAI Organization: https://github.com/FEST-ON
 - Pigge Server: https://github.com/nadanaya/pigge_server
 - AI Agent System: https://github.com/nadanaya/ai-agent
