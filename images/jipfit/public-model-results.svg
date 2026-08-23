@@ -12,11 +12,11 @@
 
   <text x="78" y="238" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#161616">Majority baseline</text>
   <rect x="78" y="252" width="176" height="16" rx="8" fill="#d7ebe6"/>
-  <rect x="78" y="252" width="130" height="16" rx="8" fill="#7eb8ad"/>
-  <text x="264" y="266" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.7358</text>
+  <rect x="78" y="252" width="116" height="16" rx="8" fill="#7eb8ad"/>
+  <text x="264" y="266" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.6617</text>
   <rect x="250" y="278" width="176" height="16" rx="8" fill="#eee6dc"/>
-  <rect x="250" y="278" width="50" height="16" rx="8" fill="#c49a78"/>
-  <text x="264" y="318" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.2826</text>
+  <rect x="250" y="278" width="47" height="16" rx="8" fill="#c49a78"/>
+  <text x="264" y="318" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.2655</text>
 
   <text x="78" y="342" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#161616">Logistic Regression</text>
   <rect x="78" y="356" width="176" height="16" rx="8" fill="#d7ebe6"/>
@@ -28,11 +28,11 @@
 
   <text x="78" y="446" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#161616">Random Forest</text>
   <rect x="78" y="460" width="176" height="16" rx="8" fill="#d7ebe6"/>
-  <rect x="78" y="460" width="162" height="16" rx="8" fill="#3f8f82"/>
-  <text x="264" y="474" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9183</text>
+  <rect x="78" y="460" width="159" height="16" rx="8" fill="#3f8f82"/>
+  <text x="264" y="474" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9050</text>
   <rect x="250" y="486" width="176" height="16" rx="8" fill="#d7ebe6"/>
-  <rect x="250" y="486" width="153" height="16" rx="8" fill="#3f8f82"/>
-  <text x="264" y="526" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.8714</text>
+  <rect x="250" y="486" width="151" height="16" rx="8" fill="#3f8f82"/>
+  <text x="264" y="526" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.8600</text>
 
   <rect x="506" y="126" width="406" height="360" rx="10" fill="#ffffff" stroke="#dedbd2"/>
   <text x="536" y="166" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#12665b">Logistic Regression 혼동행렬</text>
@@ -46,23 +46,23 @@
   <text x="548" y="438" font-family="Arial, sans-serif" font-size="13" fill="#60646c">위험</text>
 
   <rect x="612" y="246" width="74" height="64" rx="8" fill="#12665b"/>
-  <text x="642" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">820</text>
+  <text x="642" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">744</text>
   <rect x="706" y="246" width="74" height="64" rx="8" fill="#9fd3c9"/>
-  <text x="743" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">63</text>
+  <text x="743" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">50</text>
   <rect x="800" y="246" width="74" height="64" rx="8" fill="#f1eee8"/>
   <text x="837" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#60646c">0</text>
 
   <rect x="612" y="326" width="74" height="64" rx="8" fill="#d7ebe6"/>
-  <text x="649" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">4</text>
+  <text x="649" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">3</text>
   <rect x="706" y="326" width="74" height="64" rx="8" fill="#2c8175"/>
-  <text x="743" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">168</text>
+  <text x="743" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">218</text>
   <rect x="800" y="326" width="74" height="64" rx="8" fill="#c7e3dd"/>
-  <text x="837" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">8</text>
+  <text x="837" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">7</text>
 
   <rect x="612" y="406" width="74" height="64" rx="8" fill="#f1eee8"/>
   <text x="649" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#60646c">0</text>
   <rect x="706" y="406" width="74" height="64" rx="8" fill="#c7e3dd"/>
-  <text x="743" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">8</text>
+  <text x="743" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#163d38">15</text>
   <rect x="800" y="406" width="74" height="64" rx="8" fill="#2c8175"/>
-  <text x="837" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">129</text>
+  <text x="837" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">163</text>
 </svg>
