@@ -20,11 +20,11 @@
 
   <text x="78" y="342" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#161616">Logistic Regression</text>
   <rect x="78" y="356" width="176" height="16" rx="8" fill="#d7ebe6"/>
-  <rect x="78" y="356" width="164" height="16" rx="8" fill="#12665b"/>
-  <text x="264" y="370" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9308</text>
+  <rect x="78" y="356" width="165" height="16" rx="8" fill="#12665b"/>
+  <text x="264" y="370" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9375</text>
   <rect x="250" y="382" width="176" height="16" rx="8" fill="#d7ebe6"/>
-  <rect x="250" y="382" width="159" height="16" rx="8" fill="#12665b"/>
-  <text x="264" y="422" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9014</text>
+  <rect x="250" y="382" width="162" height="16" rx="8" fill="#12665b"/>
+  <text x="264" y="422" font-family="Arial, sans-serif" font-size="13" fill="#60646c">0.9185</text>
 
   <text x="78" y="446" font-family="Arial, sans-serif" font-size="15" font-weight="700" fill="#161616">Random Forest</text>
   <rect x="78" y="460" width="176" height="16" rx="8" fill="#d7ebe6"/>

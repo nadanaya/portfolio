@@ -399,12 +399,12 @@
                 </div>
                 <div class="split-note">
                   <div>
-                    <strong>현재 강점</strong>
-                    <p>Spring Boot 서버에서 거래 기록 API, 사용자별 조회, 월별 집계 흐름을 구현했습니다.</p>
+                    <strong>검증 근거</strong>
+                    <p>거래 저장, 사용자별 잔액 계산, 월별 조회, AI 요약 응답을 Service 테스트로 검증했습니다.</p>
                   </div>
                   <div>
                     <strong>다음 개선 단계</strong>
-                    <p>트랜잭션 정합성, 조회 성능, 예외 응답 표준화, Service/Repository 테스트 보강</p>
+                    <p>트랜잭션 정합성, 조회 성능, Bean Validation, 공통 예외 응답, Swagger 문서화 보강</p>
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="Pigge Server 증거 파일">
@@ -412,6 +412,7 @@
                   <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/service/TransactionService.java">Service</a>
                   <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/repository/TransactionRepository.java">Repository</a>
                   <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/dto/TransactionRequest.java">Request DTO</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/test/java/com/example/pigge_server/service/TransactionServiceTest.java">Service Test</a>
                 </div>
               </div>
             </div>
@@ -469,12 +470,12 @@
                 </div>
                 <div class="split-note">
                   <div>
-                    <strong>현재 강점</strong>
-                    <p>공개 API의 게시 상태 필터링과, 검증된 festival context만 AI에 전달하는 안전한 안내 흐름을 구현했습니다.</p>
+                    <strong>전체 시스템</strong>
+                    <p>방문객 QR 웹, 운영자 콘솔, 참여업체 콘솔이 사용하는 축제 운영 백엔드입니다.</p>
                   </div>
                   <div>
-                    <strong>다음 개선 단계</strong>
-                    <p>공유 캐시, 다중 인스턴스 레이트 리밋, 공개 API 스키마 문서와 운영 모니터링 보강</p>
+                    <strong>내 기여·검증 범위</strong>
+                    <p>공개 API 게시 상태 필터링, 승인된 festival context 기반 AI 안내, Alan fallback, 방문 세션 토큰 해시 처리를 정리·검증했습니다.</p>
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="FESTAI 증거 파일">

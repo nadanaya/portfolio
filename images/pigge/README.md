@@ -66,6 +66,10 @@ Personal Backend Project
 
 월별 통계, 잔액, 예산 초과 여부를 매 요청마다 계산하지 않고 일/월 단위 집계 테이블로 관리하면 홈 화면과 리포트 API의 부하를 줄일 수 있습니다. 이후 예산 초과 알림, 월간 소비 리포트, AI 소비 코칭 기능으로 확장할 수 있습니다.
 
+## Testing Evidence
+
+`TransactionServiceTest`로 거래 저장, 사용자별 잔액 계산, 월별 거래 조회, AI 요약 응답 생성을 검증합니다. AI 호출은 테스트에서 mock 처리해 외부 Ollama 서버 없이 서비스 로직만 확인할 수 있게 했습니다.
+
 ## Public API Flow
 
 ![Pigge public API flow](public-api-flow.svg)

@@ -10,6 +10,14 @@ https://github.com/FEST-ON/Backend
 
 Team Project
 
+## Contribution Scope
+
+FESTAI는 팀 프로젝트이므로 아래 문서는 전체 백엔드 기능 범위와 개인 기여 범위를 분리해 설명합니다.
+
+- 전체 시스템: 방문객 QR 웹, 운영자 콘솔, 참여업체 콘솔이 사용하는 FastAPI/PostgreSQL 백엔드
+- 직접 정리·구현·검증한 범위: 공개 조회 API의 게시 상태 필터링, 승인된 festival context 기반 AI 안내 흐름, Alan 호출 실패 시 fallback 흐름, 방문 세션 토큰 해시 처리, AI context/API/SQL 테스트 근거 정리
+- 이력서 표기 원칙: 팀 저장소의 전체 기능을 개인 단독 구현으로 쓰지 않고, 담당 API와 검증한 파일 링크를 함께 제시합니다.
+
 ## Tech Stack
 
 - Python 3.12+
