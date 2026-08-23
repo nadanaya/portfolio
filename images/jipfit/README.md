@@ -26,7 +26,7 @@ Data Analysis / ML / Streamlit App
 - Data: 소득, 자산, 보증금, 월세, 관리비, 부채, 고용 상태, 지역 비용지수, 정책 조건 데이터를 사용합니다.
 - Metrics: 총 주거비, 권장 주거비 상한, 소득 대비 주거비 비율, 부채 반영 버퍼, 주거비 부담 위험 등급을 설계했습니다.
 - Model: 합성 주거 시나리오 6,000건을 생성하고 Logistic Regression, Random Forest 등을 비교했습니다.
-- Result: Logistic Regression 기준 Accuracy 0.9308, Macro F1 0.9014로 안정/주의/위험 부담 등급을 분류했습니다.
+- Result: 최신 `reports/metrics.json` 기준 Logistic Regression Accuracy 0.9375, Macro F1 0.9185로 안정/주의/위험 부담 등급을 분류했습니다.
 
 ## Business Insight
 

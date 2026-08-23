@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>김나영 | Finance IT Portfolio</title>
+    <meta
+      name="description"
+      content="거래 데이터 정합성, 잔액 계산, 소득·부채 기반 리스크 분류를 중심으로 정리한 김나영 금융 IT 포트폴리오입니다."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #161616;
+        --muted: #60646c;
+        --line: #dedbd2;
+        --paper: #fbfaf7;
+        --panel: #ffffff;
+        --accent: #9b5a2e;
+        --accent-soft: #f3e7db;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(20px, 5vw, 72px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 250, 247, 0.94);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .brand {
+        font-weight: 850;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav a:hover {
+        color: var(--accent);
+      }
+
+      section {
+        padding: 54px clamp(20px, 5vw, 72px);
+      }
+
+      .hero {
+        padding-top: clamp(72px, 11vw, 126px);
+        padding-bottom: 38px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        max-width: 900px;
+        font-size: clamp(44px, 7vw, 84px);
+        line-height: 1.03;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin-bottom: 28px;
+        color: var(--muted);
+        font-size: clamp(18px, 2.1vw, 22px);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .projects {
+        display: grid;
+        gap: 18px;
+      }
+
+      .project {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: clamp(22px, 3vw, 30px);
+      }
+
+      .project.featured {
+        border-color: rgba(155, 90, 46, 0.45);
+        box-shadow: 0 18px 50px rgba(155, 90, 46, 0.08);
+      }
+
+      .project-body {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(18px, 3vw, 30px);
+        align-items: start;
+        margin-top: 18px;
+      }
+
+      .visual {
+        border: 1px solid #e4e0d7;
+        border-radius: 8px;
+        background: #f7f5ef;
+        padding: 14px;
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .visual img + img {
+        margin-top: 12px;
+      }
+
+      .visual figcaption {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .tag {
+        border: 1px solid #ecdcc7;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        padding: 4px 10px;
+        color: #6b3f1f;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .criteria {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .criterion {
+        min-height: 150px;
+        border-top: 2px solid var(--accent);
+        background: #fcfcfb;
+        padding: 14px 12px 0;
+      }
+
+      .criterion strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+
+      .criterion p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .split-note {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .split-note div {
+        border-left: 3px solid var(--accent);
+        background: #fcfcfb;
+        padding: 10px 12px;
+      }
+
+      .split-note strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .split-note p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .note {
+        margin: 14px 0 0;
+        border-left: 3px solid var(--accent);
+        padding-left: 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .evidence-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .evidence-list a {
+        border: 1px solid #ecdcc7;
+        border-radius: 999px;
+        background: #fff;
+        padding: 5px 10px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .supporting {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .support {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 18px;
+      }
+
+      .support p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      footer {
+        padding: 30px clamp(20px, 5vw, 72px);
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .criteria,
+        .supporting,
+        .split-note {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .project-body {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .criteria,
+        .supporting,
+        .split-note,
+        .project-body {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">김나영 Portfolio</a>
+      <nav class="nav" aria-label="주요 링크">
+        <a href="index.html">Home</a>
+        <a href="backend.html">Backend</a>
+        <a href="data.html">Data Analyst</a>
+        <a href="ai.html">AI Engineer</a>
+        <a href="https://github.com/nadanaya/portfolio">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Finance IT</p>
+        <h1>거래를 정확히 계산하고,<br />소득·부채 데이터로 리스크를 분류합니다.</h1>
+        <p class="lead">
+          거래 저장과 잔액 계산의 정합성, 월별 집계 로직, 소득·자산·부채
+          조건을 기준으로 한 리스크 분류 모델까지 금융 도메인과 맞닿은
+          프로젝트를 정리했습니다.
+        </p>
+        <a class="button" href="https://github.com/nadanaya/pigge_server">Pigge Server 코드 보기</a>
+      </section>
+
+      <section aria-labelledby="projects-title">
+        <h2 id="projects-title">거래 데이터·리스크 분류 경험</h2>
+        <div class="projects">
+          <article class="project featured">
+            <div class="meta">
+              <span class="tag">대표 프로젝트</span>
+              <span class="tag">Java 17</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">거래 정합성</span>
+            </div>
+            <h3>Pigge Server</h3>
+            <p>
+              사용자별 수입·지출 거래를 저장하고 월별 조회, 잔액 계산, AI
+              소비 요약까지 제공하는 개인 가계부 백엔드 API입니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/pigge/public-api-flow.svg" alt="Pigge Server API 흐름" />
+                <figcaption>거래 저장부터 월별 집계, 잔액 계산까지 이어지는 API 흐름</figcaption>
+              </figure>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>거래 데이터 모델</strong>
+                    <p>사용자 이메일, 거래 유형, 금액, 카테고리, 거래 날짜 중심의 거래 Entity 구성</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>잔액 계산</strong>
+                    <p>거래 유형별 합계를 집계해 사용자별 총 잔액을 계산하는 로직 구현</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>월별 집계</strong>
+                    <p>연·월 단위로 거래를 필터링해 특정 기간의 수입·지출만 조회하는 API 구현</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>정합성 검증</strong>
+                    <p>거래 저장, 사용자별 잔액 계산, 월별 필터링 로직을 Service 테스트로 검증</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>AI 연동</strong>
+                    <p>월별 집계 데이터를 AI Client로 넘겨 소비 요약을 생성하고, mock 기반으로 흐름 검증</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>개선 예정</strong>
+                    <p>동시 거래 처리, 트랜잭션 정합성, Bean Validation, 공통 예외 응답 보강</p>
+                  </div>
+                </div>
+                <p class="note">
+                  4개 테스트(거래 저장·잔액 계산, 월별 필터링, AI 요약 mock 흐름)를
+                  <code>gradlew test</code>로 직접 실행해 BUILD SUCCESSFUL을 확인했습니다.
+                </p>
+                <div class="evidence-list" aria-label="Pigge Server 증거 파일">
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/service/TransactionService.java">Service</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/test/java/com/example/pigge_server/service/TransactionServiceTest.java">Service Test</a>
+                  <a href="https://github.com/nadanaya/pigge_server/blob/master/src/main/java/com/example/pigge_server/repository/TransactionRepository.java">Repository</a>
+                </div>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/nadanaya/pigge_server">Repository</a>
+              <a href="images/pigge/README.md">상세 문서</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <span class="tag">Python</span>
+              <span class="tag">리스크 분류</span>
+              <span class="tag">소득·부채 지표</span>
+            </div>
+            <h3>JipFit AI</h3>
+            <p>
+              소득, 자산, 보증금, 월세, 관리비, 부채 조건을 함께 고려해 가계
+              주거비 부담 리스크를 분류하는 모델링 프로젝트입니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/jipfit/public-ml-workflow.svg" alt="JipFit AI 머신러닝 분석 흐름" />
+                <img src="images/jipfit/public-model-results.svg" alt="JipFit AI 모델 비교와 혼동행렬" />
+                <figcaption>소득·부채 조건 기반 지표 설계와 리스크 분류 모델 성능</figcaption>
+              </figure>
+              <div class="criteria">
+                <div class="criterion">
+                  <strong>재무 지표 설계</strong>
+                  <p>총 주거비, 소득 대비 주거비 비율, 부채 버퍼 등 가계 재무 리스크 지표 정의</p>
+                </div>
+                <div class="criterion">
+                  <strong>리스크 분류</strong>
+                  <p>안정·주의·위험 3단계로 가계 주거비 부담 리스크를 분류하는 모델 구성</p>
+                </div>
+                <div class="criterion">
+                  <strong>모델 검증</strong>
+                  <p>Majority baseline 대비 Accuracy 0.9375, Macro F1 0.9185로 개선 폭을 수치로 제시</p>
+                </div>
+                <div class="criterion">
+                  <strong>한계와 다음 단계</strong>
+                  <p>합성 데이터 기반 결과이며, 실거래·정책 데이터 연동이 다음 개선 단계</p>
+                </div>
+              </div>
+              <div class="evidence-list" aria-label="JipFit AI 증거 파일">
+                <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/metrics.json">성능 지표</a>
+                <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/error-analysis.md">오류 분석</a>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/nadanaya/jipfit-ai">Repository</a>
+              <a href="images/jipfit/README.md">상세 문서</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <span class="tag">팀 프로젝트</span>
+              <span class="tag">보안 처리</span>
+              <span class="tag">데이터 정합성</span>
+            </div>
+            <h3>FESTAI</h3>
+            <p>
+              축제 운영 플랫폼 백엔드에서 담당한 세션 보안과 게시 데이터
+              정합성 처리 부분입니다. 도메인은 금융이 아니지만, 민감한
+              데이터를 다루는 백엔드에 필요한 보안·정합성 관행을 보여줍니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/festai/public-ai-context-flow.svg" alt="FESTAI 공개 API와 보안 처리 흐름" />
+                <figcaption>세션 토큰 해시 저장과 게시 상태 필터링으로 이어지는 데이터 처리 흐름</figcaption>
+              </figure>
+              <div class="criteria">
+                <div class="criterion">
+                  <strong>세션 보안</strong>
+                  <p>익명 방문 세션에서 원문 토큰 대신 해시를 저장해 정보 노출 위험 축소</p>
+                </div>
+                <div class="criterion">
+                  <strong>데이터 정합성</strong>
+                  <p>게시 상태 필터링으로 승인·게시된 데이터만 외부 응답에 노출되도록 검증</p>
+                </div>
+                <div class="criterion">
+                  <strong>기여 범위</strong>
+                  <p>공개 API 게시 상태 필터링과 세션 보안 처리를 직접 구현·검증 (전체 시스템은 팀 공동 개발)</p>
+                </div>
+              </div>
+              <div class="evidence-list" aria-label="FESTAI 증거 파일">
+                <a href="https://github.com/FEST-ON/Backend/blob/main/app/routes/public.py">Public Router</a>
+                <a href="https://github.com/FEST-ON/Backend/blob/main/tests/test_ai_festival_context.py">테스트</a>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/FEST-ON/Backend">Repository</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="supporting" aria-label="보조 프로젝트">
+          <article class="support">
+            <h3>Weather Forecast Error</h3>
+            <p>
+              서로 다른 시각 기준을 가진 두 공공 데이터를 정렬하고 결측을
+              처리해 신뢰 가능한 분류 타깃을 만든 경험으로, 정산·집계처럼
+              시점 정합성이 중요한 금융 데이터 처리에도 적용할 수 있습니다.
+            </p>
+          </article>
+          <article class="support">
+            <h3>DentalLink</h3>
+            <p>
+              환자, 예약, 대기, 시술 데이터를 PostgreSQL 외래키로 연결해
+              1:N 관계의 데이터 무결성을 지킨 경험으로, 거래·계좌처럼
+              관계형 무결성이 중요한 데이터 모델링에 적용할 수 있습니다.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 김나영 · Finance IT Portfolio</span>
+    </footer>
+  </body>
+</html>

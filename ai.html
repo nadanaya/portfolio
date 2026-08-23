@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>김나영 | AI Engineer Portfolio</title>
+    <meta
+      name="description"
+      content="AI 연동 흐름 설계, 실패 시 폴백 처리, 모델 평가까지 정리한 김나영 AI 엔지니어 포트폴리오입니다."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #161616;
+        --muted: #60646c;
+        --line: #dedbd2;
+        --paper: #fbfaf7;
+        --panel: #ffffff;
+        --accent: #5b4b96;
+        --accent-soft: #ece7f5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px clamp(20px, 5vw, 72px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 250, 247, 0.94);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .brand {
+        font-weight: 850;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav a:hover {
+        color: var(--accent);
+      }
+
+      section {
+        padding: 54px clamp(20px, 5vw, 72px);
+      }
+
+      .hero {
+        padding-top: clamp(72px, 11vw, 126px);
+        padding-bottom: 38px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        max-width: 900px;
+        font-size: clamp(44px, 7vw, 84px);
+        line-height: 1.03;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: clamp(28px, 3.2vw, 42px);
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin-bottom: 28px;
+        color: var(--muted);
+        font-size: clamp(18px, 2.1vw, 22px);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 16px;
+        border: 1px solid var(--accent);
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 800;
+      }
+
+      .projects {
+        display: grid;
+        gap: 18px;
+      }
+
+      .project {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: clamp(22px, 3vw, 30px);
+      }
+
+      .project.featured {
+        border-color: rgba(91, 75, 150, 0.45);
+        box-shadow: 0 18px 50px rgba(91, 75, 150, 0.08);
+      }
+
+      .project-body {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+        gap: clamp(18px, 3vw, 30px);
+        align-items: start;
+        margin-top: 18px;
+      }
+
+      .visual {
+        border: 1px solid #e4e0d7;
+        border-radius: 8px;
+        background: #f7f5ef;
+        padding: 14px;
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        background: #fff;
+      }
+
+      .visual img + img {
+        margin-top: 12px;
+      }
+
+      .visual figcaption {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+
+      .tag {
+        border: 1px solid #ded8ee;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        padding: 4px 10px;
+        color: #453a70;
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .criteria {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .criterion {
+        min-height: 150px;
+        border-top: 2px solid var(--accent);
+        background: #fcfcfb;
+        padding: 14px 12px 0;
+      }
+
+      .criterion strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+      }
+
+      .criterion p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .split-note {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 14px;
+      }
+
+      .split-note div {
+        border-left: 3px solid var(--accent);
+        background: #fcfcfb;
+        padding: 10px 12px;
+      }
+
+      .split-note strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .split-note p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .note {
+        margin: 14px 0 0;
+        border-left: 3px solid var(--accent);
+        padding-left: 12px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .evidence-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .evidence-list a {
+        border: 1px solid #ded8ee;
+        border-radius: 999px;
+        background: #fff;
+        padding: 5px 10px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .supporting {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .support {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 18px;
+      }
+
+      .support p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      footer {
+        padding: 30px clamp(20px, 5vw, 72px);
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 980px) {
+        .criteria,
+        .supporting,
+        .split-note {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .project-body {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 680px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .criteria,
+        .supporting,
+        .split-note,
+        .project-body {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">김나영 Portfolio</a>
+      <nav class="nav" aria-label="주요 링크">
+        <a href="index.html">Home</a>
+        <a href="backend.html">Backend</a>
+        <a href="data.html">Data Analyst</a>
+        <a href="finance-it.html">Finance IT</a>
+        <a href="https://github.com/nadanaya/portfolio">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">AI Engineer</p>
+        <h1>AI 기능을 서비스 흐름에 연결하고,<br />실패해도 안전하게 돌아가도록 만듭니다.</h1>
+        <p class="lead">
+          LLM/AI 연동 로직 설계, 실패 시 폴백 처리, 자동화 워크플로우 구성과
+          분류 모델 평가까지 AI를 실제 서비스에 붙이는 과정을 정리했습니다.
+        </p>
+        <a class="button" href="https://github.com/nadanaya/ai-agent">AI Agent System 코드 보기</a>
+      </section>
+
+      <section aria-labelledby="projects-title">
+        <h2 id="projects-title">AI 연동·자동화 경험</h2>
+        <div class="projects">
+          <article class="project featured">
+            <div class="meta">
+              <span class="tag">대표 프로젝트</span>
+              <span class="tag">Python</span>
+              <span class="tag">LangGraph</span>
+              <span class="tag">Discord Bot</span>
+              <span class="tag">Supabase</span>
+            </div>
+            <h3>AI Agent System</h3>
+            <p>
+              프로젝트 관리 데이터에서 회의 요약, Action Item, 일정 리마인드,
+              리스크 분석, 최종 Markdown 보고서를 자동 생성하는 AI Agent
+              프로젝트입니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/ai-agent/public-agent-workflow.svg" alt="AI Agent 업무 분석 자동화 흐름" />
+                <figcaption>회의록에서 업무 항목, 일정, 리스크, 보고서를 생성하는 자동화 흐름</figcaption>
+              </figure>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>아키텍처</strong>
+                    <p>LangGraph 기반 그래프로 분석 단계를 노드 단위(report_graph, risk)로 분리</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>리스크 스코어링</strong>
+                    <p>리스크 판단 로직을 별도 scoring 모듈로 분리해 그래프 노드에서 재사용</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>저장 구조</strong>
+                    <p>Supabase(PostgreSQL)에 분석 결과를 저장하고 SQL 스키마로 구조 정의</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>실행 흐름</strong>
+                    <p>Discord Bot 명령으로 Agent 실행을 트리거하고 결과를 채널에 반환</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>결과물</strong>
+                    <p>업무 진행 상황과 리스크를 반복 확인할 수 있는 Markdown 리포트 생성</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>보완점</strong>
+                    <p>정량 지표 산출 예시와 실제 분석 결과 샘플을 추가해 평가 근거를 강화할 계획</p>
+                  </div>
+                </div>
+                <div class="evidence-list" aria-label="AI Agent System 증거 파일">
+                  <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_graph/report_graph.py">report graph</a>
+                  <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_graph/nodes/risk.py">risk node</a>
+                  <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_core/scoring.py">scoring logic</a>
+                </div>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/nadanaya/ai-agent">Repository</a>
+              <a href="images/ai-agent/README.md">상세 문서</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <span class="tag">팀 프로젝트</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Alan AI</span>
+              <span class="tag">Fallback 처리</span>
+            </div>
+            <h3>FESTAI</h3>
+            <p>
+              방문객 QR 모바일 웹이 쓰는 FastAPI 백엔드에서, 승인된 축제 운영
+              데이터를 컨텍스트로 골라 외부 AI(Alan)에게 넘기고 실패 시에도
+              응답이 끊기지 않도록 만든 AI 연동 부분입니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/festai/public-ai-context-flow.svg" alt="FESTAI 공개 API와 AI 컨텍스트 흐름" />
+                <figcaption>방문객 질문, festival context 선택, Alan AI 호출, fallback 응답으로 이어지는 흐름</figcaption>
+              </figure>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>컨텍스트 선택</strong>
+                    <p>혼잡·공지·프로그램·ESG 데이터 중 질문에 맞는 항목만 골라 AI 컨텍스트로 구성</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>제약 처리</strong>
+                    <p>Alan GET 호출의 URL 길이 제한 문제를 컨텍스트 상한 처리로 해결</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>안정성</strong>
+                    <p>외부 AI 호출 실패 시 기존 fallback 응답을 유지해 사용자 경험 단절 방지</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>투명성</strong>
+                    <p>응답에 AI 사용 여부를 표시해 사용자가 AI 답변인지 구분 가능</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>테스트</strong>
+                    <p>AI festival context 테스트로 승인 데이터 기반 응답과 예외 경로를 검증</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>기여 범위</strong>
+                    <p>AI 안내 흐름과 세션 보안 처리를 직접 구현·검증 (전체 시스템은 팀 공동 개발)</p>
+                  </div>
+                </div>
+                <div class="evidence-list" aria-label="FESTAI 증거 파일">
+                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/ai.py">AI Client</a>
+                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/context_repository.py">Context Repository</a>
+                  <a href="https://github.com/FEST-ON/Backend/blob/main/tests/test_ai_festival_context.py">AI Tests</a>
+                </div>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/FEST-ON/Backend">Repository</a>
+              <a href="https://github.com/FEST-ON">Organization</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="meta">
+              <span class="tag">Python</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">모델 평가</span>
+            </div>
+            <h3>JipFit AI</h3>
+            <p>
+              청년 주거비 부담 위험을 분류하는 모델을 직접 비교·평가하며,
+              모델 선택 기준과 오류 분석까지 정리한 분류 모델링 경험입니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/jipfit/public-ml-workflow.svg" alt="JipFit AI 머신러닝 분석 흐름" />
+                <img src="images/jipfit/public-model-results.svg" alt="JipFit AI 모델 비교와 혼동행렬" />
+                <figcaption>Logistic Regression과 Random Forest를 비교하고 혼동행렬로 오류 유형을 확인</figcaption>
+              </figure>
+              <div class="criteria">
+                <div class="criterion">
+                  <strong>모델 비교</strong>
+                  <p>Majority baseline 대비 Logistic Regression, Random Forest 성능을 비교</p>
+                </div>
+                <div class="criterion">
+                  <strong>모델 선택</strong>
+                  <p>Accuracy 0.9375, Macro F1 0.9185 기준으로 Logistic Regression을 최종 모델로 선정</p>
+                </div>
+                <div class="criterion">
+                  <strong>오류 분석</strong>
+                  <p>혼동행렬로 위험·주의 경계 오분류 패턴을 확인하고 개선 지점 도출</p>
+                </div>
+                <div class="criterion">
+                  <strong>서빙</strong>
+                  <p>Streamlit 화면에서 사용자 입력을 모델 추론 결과로 바로 연결</p>
+                </div>
+              </div>
+              <div class="evidence-list" aria-label="JipFit AI 증거 파일">
+                <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/metrics.json">성능 지표</a>
+                <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/error-analysis.md">오류 분석</a>
+                <a href="https://github.com/nadanaya/jipfit-ai/blob/main/tests/test_model_and_service.py">모델 테스트</a>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/nadanaya/jipfit-ai">Repository</a>
+              <a href="images/jipfit/README.md">상세 문서</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="supporting" aria-label="보조 경험">
+          <article class="support">
+            <h3>Pigge Server — AI 소비 요약 연동</h3>
+            <p>
+              월별 수입·지출 집계 데이터를 AI 클라이언트로 넘겨 소비 요약을
+              생성하는 흐름을 구현하고, AI Client를 mock으로 대체한 서비스
+              테스트로 연동 로직을 검증했습니다.
+            </p>
+          </article>
+          <article class="support">
+            <h3>BDA 학회 — AI Agent 수업</h3>
+            <p>
+              HuggingFace·OpenAI 모델로 텍스트 임베딩과 NLP 적용 흐름을
+              실습하고, LangChain·RAG 기반 문서 질의응답 구현 흐름을 학습해
+              AI Agent System 프로젝트의 기반 지식을 쌓았습니다.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 김나영 · AI Engineer Portfolio</span>
+    </footer>
+  </body>
+</html>
