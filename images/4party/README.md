@@ -25,7 +25,7 @@ Team Project (4인)
 - `utils/kakao.js`에서 **Kakao Local API**로 주소 문자열을 위경도 좌표로 변환하는
   지오코딩 유틸리티 구현
 - `KakaoMapScreen`에서 GitHub Pages에 별도 호스팅한 지도 페이지를 WebView로 표시
-- 담당 기능은 별도 저장소로 분리 관리: [github.com/nadanaya/kakao-map](https://github.com/nadanaya/kakao-map)
+- 담당 기능은 별도 저장소로 분리 관리: [github.com/nadanaya/taxi-share-app](https://github.com/nadanaya/taxi-share-app)
 - `MatchScreen`(매칭 결과 화면)은 실시간 매칭 백엔드 없이 후보 목록 UI 흐름만
   검증한 프로토타입입니다 — 후보 데이터는 화면 내 고정값입니다.
 
@@ -39,9 +39,3 @@ Team Project (4인)
 ## Public Recreated Visual
 
 ![4-party Kakao Map contribution flow](public-kakao-map-flow.svg)
-
-## Security Note
-
-`kakao-map` 저장소에는 한때 Kakao REST API 키가 소스에 하드코딩되어 있었으나,
-현재는 `EXPO_PUBLIC_KAKAO_REST_API_KEY` 환경 변수로 분리되어 있고 실제 키 값은
-커밋되지 않습니다.
