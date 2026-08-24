@@ -2,6 +2,8 @@
 
 생활관리 기능을 Android 앱으로 구현한 프로젝트입니다. 수면, 공부, 휴대폰 사용, 만보기 데이터를 기록하고 최근 7일 기준 그래프로 확인할 수 있도록 구성했습니다.
 
+Repository: https://github.com/nadanaya/life-manager
+
 ## Analysis View
 
 - Problem: 생활 기록을 단순 저장만 하면 사용자가 자신의 패턴을 이해하거나 행동을 조정하기 어렵습니다.
