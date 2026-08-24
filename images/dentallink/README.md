@@ -2,6 +2,8 @@
 
 치과 관리자 웹과 환자 앱을 함께 제공하는 팀 프로젝트입니다. Supabase(PostgreSQL)를 기반으로 환자, 예약, 대기열, 공지사항 데이터를 관리하고 Flutter 앱과 연동했습니다.
 
+Team Organization: https://github.com/2026-capstone-design (앱 코드 저장소는 비공개입니다)
+
 ## Analysis View
 
 - Problem: 예약, 대기열, 공지 데이터가 여러 화면에 나뉘어 있어 병원 운영 상태를 한 번에 파악하기 어려웠습니다.
