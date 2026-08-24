@@ -440,36 +440,37 @@
             </div>
             <h3>AI Agent System</h3>
             <p>
-              회의록과 업무 기록에서 Action Item, 일정, 리스크, 기여도 정보를
-              추출해 운영 리포트로 정리하는 자동화 프로젝트입니다.
+              회의록과 Git 커밋·개발자 이벤트 기록에서 Action Item, 일정, 기여도 근거를
+              추출해 팀원별 스코어링과 종료 리포트로 정리하는 자동화 프로젝트입니다.
             </p>
             <div class="project-body">
               <figure class="visual">
                 <img src="images/ai-agent/public-agent-workflow.svg" alt="AI Agent 업무 분석 자동화 흐름" />
-                <figcaption>회의록에서 업무 항목, 일정, 리스크, 보고서를 생성하는 자동화 흐름</figcaption>
+                <figcaption>회의록·Git 커밋에서 근거를 모아 기여도 스코어링과 리포트를 생성하는 자동화 흐름</figcaption>
               </figure>
               <div class="criteria">
                 <div class="criterion">
                   <strong>분석 관점</strong>
-                  <p>회의록과 업무 기록에서 Action Item, 일정, 리스크 정보를 구조화</p>
+                  <p>회의록과 Git 커밋 로그, Dev-Event 일정에서 Action Item·기여도 근거를 구조화</p>
                 </div>
                 <div class="criterion">
-                  <strong>지표 후보</strong>
-                  <p>프로젝트 지연률, 업무 완료율, 일정 준수율, 리스크 발생 빈도</p>
+                  <strong>지표</strong>
+                  <p>팀원별 기여도 점수, 마감 초과 알림 발송률, 리포트 생성 완료율</p>
                 </div>
                 <div class="criterion">
                   <strong>결과</strong>
-                  <p>업무 진행 상황과 리스크를 반복 확인할 수 있는 Markdown 리포트 흐름 구현</p>
+                  <p>회의·일정·기여도를 종합한 한국어 Markdown 리포트를 생성하고, 한글 폰트가 적용된 PDF로도 내보냄</p>
                 </div>
                 <div class="criterion">
-                  <strong>보완점</strong>
-                  <p>정량 지표 산출 예시와 실제 분석 결과 샘플을 추가해야 분석 프로젝트로 강화 가능</p>
+                  <strong>검증</strong>
+                  <p>FakeRepository/FakeLLM 기반 테스트 36개로 회의 요약부터 오케스트레이션까지 각 워크플로우 검증</p>
                 </div>
               </div>
               <div class="evidence-list" aria-label="AI Agent System 증거 파일">
-                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_graph/report_graph.py">report graph</a>
-                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_graph/nodes/risk.py">risk node</a>
-                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/_core/scoring.py">scoring logic</a>
+                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/orchestration/workflow.py">orchestration</a>
+                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/git_commits/workflow.py">git commit evidence</a>
+                <a href="https://github.com/nadanaya/ai-agent/blob/main/ai_agent/scoring/policy.py">scoring policy</a>
+                <a href="https://github.com/nadanaya/ai-agent/blob/main/tests/test_public_workflows.py">tests</a>
               </div>
             </div>
             <div class="links">
