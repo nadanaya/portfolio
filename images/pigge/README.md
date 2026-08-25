@@ -1,6 +1,6 @@
 # Pigge Server
 
-가계부 앱을 위한 Spring Boot 백엔드입니다. 수입/지출 거래를 저장하고, 사용자별 거래 내역과 월별 거래 내역, 총 잔액을 조회하며, 월별 통계와 소비 내역을 기반으로 AI 요약/분석을 제공합니다.
+가계부 앱을 위한 Spring Boot 백엔드입니다. 수입/지출 거래와 커뮤니티 게시글·댓글을 저장하고, 사용자별 거래 내역과 월별 거래 내역, 총 잔액을 조회하며, 월별 통계와 소비 내역을 기반으로 AI 요약/분석을 제공합니다.
 
 ## Source Repository
 
@@ -32,6 +32,10 @@ Personal Backend Project
 | `POST` | `/api/transactions/with-ai` | 거래 저장 후 월별 통계 기반 AI 요약 생성 |
 | `POST` | `/api/analysis/expense` | 소비 내역 텍스트 기반 AI 분석 |
 | `GET` | `/api/ai/test` | AI 연결 테스트 |
+| `POST` | `/api/community/posts` | 커뮤니티 게시글 작성 |
+| `GET` | `/api/community/posts` | 커뮤니티 게시글 목록 조회 |
+| `POST` | `/api/community/posts/{postId}/comments` | 게시글 댓글 작성 |
+| `GET` | `/api/community/posts/{postId}/comments` | 게시글 댓글 목록 조회 |
 
 ## Data Model
 
@@ -43,6 +47,8 @@ Personal Backend Project
 - `date`: 거래일
 - `type`: `INCOME` 또는 `EXPENSE`
 - `userEmail`: 사용자 식별 이메일
+
+`CommunityPost`와 `CommunityComment`는 작성자 이메일, 본문, 작성 시각을 저장하며 댓글은 `postId`로 게시글과 연결됩니다. `CommunityController`가 HTTP 요청을 받고 `CommunityService`와 각 JPA Repository가 게시글·댓글 저장 및 조회를 담당합니다.
 
 ## Analysis View
 

@@ -82,7 +82,7 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 ### Representative Projects
 
-1. Pigge Server
+1. Pigge Server (거래·AI 요약·커뮤니티 게시글/댓글 API)
 2. FESTAI
 3. DentalLink
 4. 4-party (Kakao Map 기여 범위)
