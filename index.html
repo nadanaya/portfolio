@@ -236,6 +236,70 @@
         font-size: 14px;
       }
 
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .stat {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 20px 18px;
+      }
+
+      .stat strong {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 26px;
+        color: var(--accent);
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .featured-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        padding: 22px;
+      }
+
+      .featured-card .eyebrow {
+        margin-bottom: 10px;
+      }
+
+      .featured-card h3 {
+        margin-bottom: 12px;
+      }
+
+      .featured-card p {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .featured-card p strong {
+        color: var(--ink);
+      }
+
+      .featured-card .more {
+        display: inline-block;
+        margin-top: 6px;
+        color: var(--accent);
+        font-weight: 800;
+        font-size: 14px;
+      }
+
       .tracks {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -281,8 +345,13 @@
 
         .hero,
         .tracks,
-        .skills {
+        .skills,
+        .featured-grid {
           grid-template-columns: 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
     </style>
@@ -331,6 +400,58 @@
             <li><strong>품질</strong><span>테스트 기초, 문서화, GitHub</span></li>
           </ul>
         </aside>
+      </section>
+
+      <section aria-labelledby="stats-title">
+        <h2 id="stats-title">핵심 성과</h2>
+        <div class="stats">
+          <div class="stat">
+            <strong>93.75% / 91.85%</strong>
+            <span>JipFit AI 분류 모델 Accuracy / Macro F1 (합성 데이터 기준)</span>
+          </div>
+          <div class="stat">
+            <strong>75개</strong>
+            <span>Pigge Server·JipFit AI·FESTAI·AI Agent System에서 직접 작성해 통과시킨 자동화 테스트</span>
+          </div>
+          <div class="stat">
+            <strong>30개</strong>
+            <span>Pigge Server·FESTAI에서 직접 구현한 API 엔드포인트</span>
+          </div>
+          <div class="stat">
+            <strong>4트랙 · 7프로젝트</strong>
+            <span>Data·Backend·AI·Finance IT로 나눠 역할과 근거 링크까지 정리</span>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="featured-title">
+        <h2 id="featured-title">대표 프로젝트</h2>
+        <div class="featured-grid">
+          <article class="featured-card">
+            <p class="eyebrow">Data Analyst</p>
+            <h3>JipFit AI</h3>
+            <p><strong>문제</strong> 월세·보증금·부채를 함께 고려하기 어려운 청년 주거비 부담 판단</p>
+            <p><strong>구현</strong> 6,000건 합성 시나리오로 Logistic Regression·Random Forest를 비교하고 Streamlit으로 서빙</p>
+            <p><strong>결과</strong> Accuracy 93.75% · Macro F1 91.85%, 테스트 12개로 검증</p>
+            <a class="more" href="data.html">자세히 보기 →</a>
+          </article>
+          <article class="featured-card">
+            <p class="eyebrow">Backend Developer</p>
+            <h3>Pigge Server</h3>
+            <p><strong>문제</strong> 수입·지출 거래와 커뮤니티를 함께 관리하는 개인 금융 API 부재</p>
+            <p><strong>구현</strong> Spring Boot·JPA로 거래/커뮤니티/AI 상담 API 19개 엔드포인트 구현</p>
+            <p><strong>결과</strong> Service 테스트 3개로 저장·잔액 계산·AI 요약 흐름 검증</p>
+            <a class="more" href="backend.html">자세히 보기 →</a>
+          </article>
+          <article class="featured-card">
+            <p class="eyebrow">AI Engineer</p>
+            <h3>AI Agent System</h3>
+            <p><strong>문제</strong> 회의록·Git 커밋에 흩어진 Action Item과 기여도 근거를 수작업으로 정리</p>
+            <p><strong>구현</strong> LangGraph 오케스트레이션으로 회의 요약·기여도 스코어링·리포트 생성 자동화</p>
+            <p><strong>결과</strong> FakeRepository/FakeLLM 기반 테스트 36개로 전체 워크플로우 검증</p>
+            <a class="more" href="ai.html">자세히 보기 →</a>
+          </article>
+        </div>
       </section>
 
       <section aria-labelledby="skills-title">

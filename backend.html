@@ -357,6 +357,7 @@
           <article class="project featured">
             <div class="meta">
               <span class="tag">대표 프로젝트</span>
+              <span class="tag">개인 프로젝트</span>
               <span class="tag">Java 17</span>
               <span class="tag">Spring Boot</span>
               <span class="tag">JPA</span>
@@ -402,7 +403,7 @@
                 <div class="split-note">
                   <div>
                     <strong>검증 근거</strong>
-                    <p>거래 저장, 사용자별 잔액 계산, 월별 조회, AI 요약 응답을 Service 테스트로 검증했습니다.</p>
+                    <p>API 엔드포인트 19개(Transaction 7·Community 5·AI 상담 2·AI 테스트 2·분석 2·리뷰 1)를 구현하고, 거래 저장·잔액 계산·월별 조회·AI 요약 응답을 Service 테스트 3개로 검증했습니다.</p>
                   </div>
                   <div>
                     <strong>다음 개선 단계</strong>
@@ -427,17 +428,19 @@
 
           <article class="project">
             <div class="meta">
-              <span class="tag">팀 프로젝트</span>
+              <span class="tag">팀 프로젝트 (4인)</span>
               <span class="tag">FastAPI</span>
               <span class="tag">PostgreSQL</span>
               <span class="tag">Public API</span>
               <span class="tag">AI 연동</span>
+              <span class="tag">ESG</span>
             </div>
             <h3>FESTAI</h3>
             <p>
               AI·ESG 기반 지역축제 운영 플랫폼으로, 방문객 QR 모바일 웹·운영자 콘솔·참여업체 콘솔이
-              함께 쓰는 FastAPI 백엔드입니다. 공개 조회 API와 승인된 운영 데이터 기반 AI 안내 흐름을
-              중심으로 정리했습니다.
+              함께 쓰는 FastAPI 백엔드입니다. JWT 인증·역할 기반 접근 제어 위에서 11개 라우터·169개
+              API 엔드포인트로 구성되며, 그중 공개 조회 API·AI 안내·데이터 전처리·ESG 지표 export를
+              직접 구현했습니다.
             </p>
             <div class="project-body">
               <figure class="visual">
@@ -464,7 +467,7 @@
                   </div>
                   <div class="criterion">
                     <strong>테스트</strong>
-                    <p>AI festival context, 전처리, API, SQL, 잡 테스트로 승인 데이터 기반 응답과 예외 경로를 검증</p>
+                    <p>팀 전체 141개 테스트 중 AI festival context 11개·전처리 13개, 총 24개를 직접 작성해 승인 데이터 기반 응답과 예외 경로를 검증</p>
                   </div>
                   <div class="criterion">
                     <strong>운영 안정성</strong>
@@ -474,17 +477,19 @@
                 <div class="split-note">
                   <div>
                     <strong>전체 시스템</strong>
-                    <p>방문객 QR 웹, 운영자 콘솔, 참여업체 콘솔이 사용하는 축제 운영 백엔드입니다.</p>
+                    <p>방문객 QR 웹, 운영자 콘솔, 참여업체 콘솔이 함께 쓰는 축제 운영 백엔드로, JWT 인증·역할 기반 접근 제어(RBAC)·PostgreSQL 데이터 모델 위에서 11개 라우터·169개 API 엔드포인트·141개 테스트로 구성됩니다(팀 4인 공동 개발).</p>
                   </div>
                   <div>
                     <strong>내 기여·검증 범위</strong>
-                    <p>공개 API 게시 상태 필터링, 승인된 festival context 기반 AI 안내, Alan fallback, 방문 세션 토큰 해시 처리를 정리·검증했습니다.</p>
+                    <p>공개 API(public.py, 11개 엔드포인트) 게시 상태 필터링, 승인된 festival context 기반 AI 안내(ai.py)와 Alan fallback, 방문객 데이터 전처리 파이프라인(preprocessing.py), 축제 ESG 지표 export(esg_export.py), 방문 세션 토큰 해시 처리를 구현하고 테스트 24개로 검증했습니다.</p>
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="FESTAI 증거 파일">
                   <a href="https://github.com/FEST-ON/Backend/blob/main/app/routes/public.py">Public Router</a>
                   <a href="https://github.com/FEST-ON/Backend/blob/main/app/ai.py">AI Client</a>
                   <a href="https://github.com/FEST-ON/Backend/blob/main/app/context_repository.py">Context Repository</a>
+                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/preprocessing.py">Preprocessing</a>
+                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/esg_export.py">ESG Export</a>
                   <a href="https://github.com/FEST-ON/Backend/blob/main/tests/test_ai_festival_context.py">AI Tests</a>
                 </div>
               </div>
@@ -497,53 +502,71 @@
 
           <article class="project">
             <div class="meta">
+              <span class="tag">팀 프로젝트 (캡스톤)</span>
               <span class="tag">Flutter</span>
               <span class="tag">Supabase</span>
               <span class="tag">PostgreSQL</span>
-              <span class="tag">Auth</span>
+              <span class="tag">AI 연동</span>
             </div>
             <h3>DentalLink</h3>
             <p>
-              치과 운영 과정에서 발생하는 환자, 예약, 대기열, 공지 데이터를
-              모바일 앱과 데이터베이스로 연결한 서비스 프로젝트입니다.
+              치과 운영 과정에서 발생하는 환자, 예약, 대기열, 공지, 광고 데이터를
+              모바일 앱과 Supabase로 연결한 캡스톤 팀 프로젝트입니다. 관리자 웹 화면의
+              데이터 연동과 환자 앱의 AI 상담 기능을 직접 구현했습니다.
             </p>
             <div class="project-body">
               <figure class="visual">
                 <img src="images/dentallink/public-data-architecture.svg" alt="DentalLink 데이터 접근 구조" />
                 <figcaption>Supabase Auth, PostgreSQL 테이블, 화면별 데이터 접근 구조</figcaption>
               </figure>
-              <div class="criteria">
-                <div class="criterion">
-                  <strong>도메인</strong>
-                  <p>병원 예약, 환자 관리, 대기열, 공지 확인을 하나의 흐름으로 관리</p>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>도메인</strong>
+                    <p>병원 예약, 환자 관리, 대기열, 공지·광고 관리, 환자용 AI 상담을 하나의 흐름으로 관리</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>데이터 모델</strong>
+                    <p>환자, 예약, 대기 상태, 공지, 광고, 알림 설정을 Supabase(PostgreSQL) 기반으로 구성</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>관리자 웹 연동</strong>
+                    <p>예약·대기열·광고·공지·알림·환자 관리 등 관리자 화면 8개를 Supabase 서비스·Provider 계층에 연결(17커밋)</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>환자 앱 AI 상담</strong>
+                    <p>Groq API와 로컬 Ollama(tinyllama)를 함께 붙인 AI 상담 기능, PIN 로그인, 예약 캘린더 화면 구현(5커밋)</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>수동 검증</strong>
+                    <p>예약 조회, 대기 상태 확인, 공지 노출, AI 상담 응답 흐름을 앱 화면에서 확인(자동화 테스트는 아직 없음)</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>개선 예정</strong>
+                    <p>RLS 정책, 권한별 접근 제어, 예약 충돌 방지, 위젯/서비스 테스트 추가, main 브랜치로의 통합</p>
+                  </div>
                 </div>
-                <div class="criterion">
-                  <strong>데이터 모델</strong>
-                  <p>환자, 예약, 대기 상태, 공지, 사용자 인증 정보를 PostgreSQL 기반으로 구성</p>
+                <div class="split-note">
+                  <div>
+                    <strong>전체 시스템</strong>
+                    <p>Flutter 앱 + Supabase로 팀이 함께 만든 치과 예약·관리 서비스입니다. 팀 작업은 기능별 브랜치에서 진행되어 main에는 아직 통합되지 않았습니다.</p>
+                  </div>
+                  <div>
+                    <strong>내 기여·검증 범위</strong>
+                    <p>관리자 웹 8개 화면의 Supabase 연동(web2 브랜치)과 환자 앱 AI 상담·PIN 로그인(app_dev2 브랜치)을 구현했습니다. 예약·대기·공지 로직은 팀원과 함께 만들었습니다.</p>
+                  </div>
                 </div>
-                <div class="criterion">
-                  <strong>데이터 접근 구조</strong>
-                  <p>Supabase Auth와 PostgreSQL 테이블을 기반으로 인증·예약·대기 상태 흐름 구성</p>
+                <div class="evidence-list" aria-label="DentalLink 증거 파일">
+                  <a href="https://github.com/2026-capstone-design/dentalink_app/blob/web2/lib/screens/admin_web/reservation_management_screen.dart">예약 관리 화면</a>
+                  <a href="https://github.com/2026-capstone-design/dentalink_app/blob/web2/lib/services/reservation_service.dart">Reservation Service</a>
+                  <a href="https://github.com/2026-capstone-design/dentalink_app/blob/app_dev2/lib/services/groq_service.dart">AI 상담 Service</a>
+                  <a href="https://github.com/2026-capstone-design/dentalink_app/blob/app_dev2/lib/screens/patient_app/init/pin_login_screen.dart">PIN 로그인 화면</a>
                 </div>
-                <div class="criterion">
-                  <strong>문제 해결</strong>
-                  <p>관리자와 환자 화면의 데이터 흐름을 분리하고 상태 변경 기준을 명확화</p>
-                </div>
-                <div class="criterion">
-                  <strong>수동 검증</strong>
-                  <p>예약 조회, 대기 상태 확인, 공지 노출 흐름을 앱 화면에서 확인</p>
-                </div>
-                <div class="criterion">
-                  <strong>개선 예정</strong>
-                  <p>RLS 정책, 권한별 접근 제어, 예약 충돌 방지, Realtime 상태 동기화 보강</p>
-                </div>
-              </div>
-              <div class="evidence-list" aria-label="DentalLink 증거 파일">
-                <a href="https://github.com/nadanaya/portfolio/tree/main/images/dentallink">데이터 구조도</a>
               </div>
             </div>
             <div class="links">
-              <a href="https://github.com/2026-capstone-design">팀 Organization</a>
+              <a href="https://github.com/2026-capstone-design/dentalink_app/tree/web2">내 기여 브랜치 (web2)</a>
+              <a href="https://github.com/2026-capstone-design/dentalink_app/tree/app_dev2">내 기여 브랜치 (app_dev2)</a>
               <a href="images/dentallink/README.md">상세 문서</a>
             </div>
           </article>
@@ -576,8 +599,9 @@
             <h3>기술 경험 범위</h3>
             <p>
               FESTAI는 FastAPI·PostgreSQL 기반 축제 플랫폼 백엔드, Pigge Server는 Spring Boot·JPA
-              기반 가계부 API, DentalLink는 Supabase/Firebase 기반 서비스 데이터 구조, 4-party는
-              Flutter·Node.js/Express 팀 프로젝트 중 Kakao Map 연동·요금 산출 기여 범위로 구분해 설명합니다.
+              기반 가계부 API, DentalLink는 Flutter·Supabase 기반 관리자 웹 연동과 AI 상담 기능,
+              4-party는 Flutter·Node.js/Express 팀 프로젝트 중 Kakao Map 연동·요금 산출 기여 범위로
+              구분해 설명합니다.
             </p>
           </article>
         </div>
