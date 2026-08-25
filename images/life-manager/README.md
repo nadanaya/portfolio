@@ -1,55 +1,79 @@
-# Life Manager Android App
+﻿# Life Manager Android App
 
-생활관리 기능을 Android 앱으로 구현한 프로젝트입니다. 수면, 공부, 휴대폰 사용, 만보기 데이터를 기록하고 최근 7일 기준 그래프로 확인할 수 있도록 구성했습니다.
+수면, 공부, 휴대폰 사용 시간, 걸음 수를 기록하고 최근 7일 흐름을 그래프로 확인하는 네이티브 Android 생활 관리 앱입니다.  
+생활 기록을 Room/SQLite에 저장하고 MPAndroidChart로 시각화하며, 최근 수정에서는 UI 디자인 개선과 그래프 반영 안정화를 함께 진행했습니다.
 
-Repository: https://github.com/nadanaya/life-manager
+## Project Summary
 
-## Analysis View
-
-- Problem: 생활 기록을 단순 저장만 하면 사용자가 자신의 패턴을 이해하거나 행동을 조정하기 어렵습니다.
-- Data: 날짜별 수면 시간, 공부 시간, 휴대폰 사용 시간, 걸음 수를 로컬 DB에 저장했습니다.
-- Metrics: 최근 7일 기록, 주간 평균, 날짜별 변화량을 계산해 화면에 표시했습니다.
-- Action: 빈 날짜를 포함한 최근 7일 기준을 먼저 만들고, 저장된 값을 채워 그래프와 분석 문구가 안정적으로 보이게 했습니다.
-- Result: 사용자가 최근 7일 생활 패턴과 주간 평균을 한 화면에서 확인할 수 있게 했습니다.
-
-## Key Numbers
-
-- 4 life data types: 수면, 공부, 휴대폰 사용, 걸음 수
-- 7-day metric window: 최근 7일 기준 그래프와 주간 평균
-- 3 Room entities shown in public code evidence: LifeLogEntity, StudyLog, PedometerLog
-
-## Project Type
-
-Team Project
-
-## Project Period
-
-2025.09 ~ 2025.12
-
-## My Contribution
-
-- 담당: Android 생활 기록 입력·저장·조회 화면 구현 참여
-- 담당: 생활 기록 데이터의 입력·저장·조회 흐름 구현
-- 담당: UI와 Room 기반 로컬 데이터 저장 로직 연동
-- 담당: 사용자 입력값 검증과 예외 상황 처리
-- 담당: 최근 7일 데이터를 기반으로 그래프와 주간 평균 표시
+- Repository: https://github.com/nadanaya/life-manager
+- Type: Team Project
+- Period: 2025.09 ~ 2025.12
+- Role: Android 화면 구현, Room 데이터 저장 흐름, 그래프 반영 로직 개선
 
 ## Main Features
 
-- 수면, 공부, 휴대폰 사용 시간 입력 및 저장
-- 최근 7일 기준 생활 기록 그래프 시각화
-- 주간 평균 계산 및 분석 문구 표시
-- Room Migration을 통한 만보기 데이터 테이블 확장
-- 날짜 기반 데이터 조회
+- 날짜별 수면 시간과 휴대폰 사용 시간 기록
+- 과목별 공부 타이머 및 수동 시간 조정
+- 최근 7일 수면/공부/휴대폰/걸음 수 막대 그래프
+- Android 걸음 센서 기반 만보기와 목표 달성률 표시
+- 하루 걸음 목표 설정 및 저장
+
+## Recent Improvements
+
+- 전체 화면을 카드형 레이아웃과 일관된 색상 시스템으로 리디자인
+- 깨져 있던 한글 탭, 버튼, 안내 문구, 토스트 메시지 복구
+- 공부 시간이 1분 미만이어도 그래프에 반영되도록 `elapsedMillis` 기반 집계 추가
+- 날짜별 모든 과목 공부 시간을 합산해 공부 그래프에 반영
+- 만보기 화면의 `todaySteps` 값을 DB에 동기화해 그래프 반영 안정화
+- 그래프 Y축 최소값을 0으로 고정해 `-0.4` 같은 음수 눈금 제거
+- 그래프 날짜 라벨을 `MM.dd` 형식으로 정리
+
+## Data Flow
+
+```mermaid
+flowchart LR
+    User[User Input / Sensor] --> Fragment[Android Fragment]
+    Fragment --> Dao[Room DAO]
+    Dao --> DB[(SQLite)]
+    DB --> Graph[MPAndroidChart]
+    Graph --> Summary[7-Day Trend / Weekly Average]
+```
+
+## Study Graph Logic
+
+공부 시간은 과목별로 저장되지만 그래프에서는 날짜 단위로 합산됩니다.
+
+```sql
+SELECT IFNULL(
+  SUM(CASE
+    WHEN elapsedMillis > 0 THEN elapsedMillis
+    ELSE duration * 60000
+  END),
+  0
+)
+FROM study_log
+WHERE date = :dateStr
+```
+
+- `StudyFragment`에서 과목별 `elapsedMillis`를 저장합니다.
+- `StudyLogDao.getTotalStudyMillisByDate()`가 해당 날짜의 모든 과목 시간을 합산합니다.
+- `GraphFragment`가 밀리초 값을 시간 단위로 변환해 공부 그래프에 표시합니다.
+
+## Pedometer Graph Logic
+
+- `StepCounterFragment`는 센서 이벤트 발생 시 오늘 걸음 수를 `life_log.stepCount`에 저장합니다.
+- 탭 재진입 시에도 현재 `todaySteps`를 DB에 다시 저장해 화면 값과 그래프 값이 어긋나지 않도록 보강했습니다.
+- `GraphFragment`는 `LifeLogDao.getStepsByDate()`로 최근 7일 걸음 수를 읽어 그래프에 표시합니다.
 
 ## Tech Stack
 
-- Android
-- Java
+- Android Java
 - Room
 - SQLite
-- XML
-- UI/UX
+- MPAndroidChart
+- Material Components
+- ViewPager2
+- XML Layout
 
 ## Screens & Evidence
 
@@ -57,54 +81,36 @@ Team Project
 
 ![Life Manager study graph](study-graph.png)
 
-최근 7일 공부 시간을 막대 그래프로 보여주고, 주간 평균 공부 시간을 계산해 표시하는 화면입니다.
+과목별로 저장된 공부 시간을 날짜별 합산값으로 보여주는 최근 7일 공부 시간 그래프입니다.
 
 ### Sleep Time Graph
 
 ![Life Manager sleep graph](sleep-graph.png)
 
-수면 기록을 날짜별로 시각화하고 평균 수면 시간을 함께 보여주는 화면입니다.
+수면 기록을 날짜별 막대 그래프로 시각화하고 주간 평균을 함께 확인하는 화면입니다.
 
 ### Room Database Code
 
 ![Life Manager Room database code](room-database-code.png)
 
-`LifeLogDatabase`에서 `LifeLogEntity`, `StudyLog`, `PedometerLog`를 Room Entity로 관리하고, 버전 마이그레이션을 통해 만보기 테이블을 확장한 코드입니다.
+`LifeLogEntity`, `StudyLog`, `PedometerLog`를 Room Entity로 관리하고, 생활 기록/공부 기록/걸음 수 기록을 SQLite에 저장하는 구조입니다.
 
 ### Record Fragment Code
 
 ![Life Manager record fragment code](record-fragment-code.png)
 
-생활 기록 입력 화면에서 날짜 선택, 수면 시간, 휴대폰 사용 시간 입력값을 받아 Room DB에 저장하는 흐름입니다.
-
-## App Flow
-
-```mermaid
-flowchart LR
-    User[사용자] --> Screen[Android 화면]
-    Screen --> Input[수면 / 공부 / 휴대폰 / 만보기 입력]
-    Input --> Validation[입력값 검증]
-    Validation --> Room[Room DAO]
-    Room --> DB[(SQLite)]
-    DB --> Chart[최근 7일 그래프]
-    Chart --> Average[주간 평균 표시]
-```
+날짜 선택, 수면 시간 입력, 휴대폰 사용 시간 저장 흐름을 담당하는 기록 화면 코드입니다.
 
 ## Data Scope
 
 - 수면 기록: 날짜, 수면 시간
-- 공부 기록: 날짜, 공부 시간
+- 공부 기록: 날짜, 과목, 공부 시간, 밀리초 단위 누적 시간
 - 휴대폰 기록: 날짜, 사용 시간
 - 만보기 기록: 날짜, 걸음 수
 
-## Troubleshooting
+## Verification
 
-### Room Migration으로 만보기 테이블을 추가하는 문제
-
-기존 생활 기록 데이터가 있는 상태에서 만보기 기능을 추가해야 했기 때문에 DB 버전 변경 시 기존 테이블이 손상되지 않도록 마이그레이션을 분리했습니다. 새 테이블을 추가하면서 기존 수면, 공부, 휴대폰 기록 조회 흐름은 유지되도록 구성했습니다.
-
-### 최근 7일 그래프 기준 정리
-
-날짜별 기록이 비어 있는 날에도 그래프 기준이 흔들리지 않도록 최근 7일 범위를 먼저 만들고, 해당 날짜에 저장된 값이 있을 때만 데이터를 채우는 방식으로 화면 표시 기준을 맞췄습니다.
-
-
+- `./gradlew assembleDebug` 성공
+- `./gradlew installDebug` 성공
+- Android Emulator 실행 확인
+- GitHub `life-manager` 저장소 `main` 브랜치 push 완료
