@@ -5,15 +5,6 @@
 프로젝트라도 페이지마다 강조하는 지점이 다릅니다 (예: Pigge Server는 backend.html에서는
 API/JPA 구현을, finance-it.html에서는 거래 정합성·잔액 계산을 강조).
 
-## 2026-09-01 Submission Priority
-
-현재 취업용 조합은 **금융 IT 93 > 백엔드 92 > AI 엔지니어 91 > 데이터 분석 84** 순서로 판단합니다. 새 프로젝트를 늘리기보다 직무별 이력서 순서를 분리하고, 정량 근거를 보강하는 전략입니다.
-
-- 금융 IT / 백엔드: Pigge Server를 1순위로 두고 거래 데이터 정합성, 잔액 계산, 월별 조회, 테스트 4건 통과를 강조
-- AI 엔지니어: AI Agent System을 1순위로 두고 Agentic RAG, Tool Use, DB 검색, fallback 흐름을 강조
-- 데이터 분석: JipFit AI를 1순위로 두고 6,000개 합성 시나리오, Accuracy 0.9375, Macro F1 0.9185를 본문에 직접 노출
-- 다음 보강: AI Agent Evaluation 20~50개 테스트셋, Docker/CI/CD 중 1개를 기존 프로젝트에 적용
-
 ## Live Pages
 
 - Main: https://nadanaya.github.io/portfolio/
@@ -132,7 +123,7 @@ AI Agent는 구현 근거가 충분하므로 다음 보강은 정량 Evaluation�
 
 ## Finance IT Page
 
-`finance-it.html`은 거래 데이터 정합성과 리스크 분류 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
+`finance-it.html`은 거래 데이터 정합성, 인증·권한, 예외 처리, 감사 가능한 데이터 흐름 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
 
 ### Representative Projects
 
