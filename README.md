@@ -5,6 +5,15 @@
 프로젝트라도 페이지마다 강조하는 지점이 다릅니다 (예: Pigge Server는 backend.html에서는
 API/JPA 구현을, finance-it.html에서는 거래 정합성·잔액 계산을 강조).
 
+## 2026-09-01 Submission Priority
+
+현재 취업용 조합은 **금융 IT 93 > 백엔드 92 > AI 엔지니어 91 > 데이터 분석 84** 순서로 판단합니다. 새 프로젝트를 늘리기보다 직무별 이력서 순서를 분리하고, 정량 근거를 보강하는 전략입니다.
+
+- 금융 IT / 백엔드: Pigge Server를 1순위로 두고 거래 데이터 정합성, 잔액 계산, 월별 조회, 테스트 4건 통과를 강조
+- AI 엔지니어: AI Agent System을 1순위로 두고 Agentic RAG, Tool Use, DB 검색, fallback 흐름을 강조
+- 데이터 분석: JipFit AI를 1순위로 두고 6,000개 합성 시나리오, Accuracy 0.9375, Macro F1 0.9185를 본문에 직접 노출
+- 다음 보강: AI Agent Evaluation 20~50개 테스트셋, Docker/CI/CD 중 1개를 기존 프로젝트에 적용
+
 ## Live Pages
 
 - Main: https://nadanaya.github.io/portfolio/
@@ -82,10 +91,10 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 ### Representative Projects
 
-1. Pigge Server (거래·AI 요약·커뮤니티 게시글/댓글 API)
+1. Pigge Server (Java 17·Spring Boot·Spring Data JPA 기반 거래 API, 테스트 4건 통과)
 2. FESTAI
-3. DentalLink
-4. 4-party (Kakao Map 기여 범위)
+3. AI Agent System
+4. DentalLink
 
 ### Supporting Project
 
@@ -103,7 +112,7 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
-FESTAI는 FastAPI·PostgreSQL 기반 축제 플랫폼 백엔드, Pigge Server는 Spring Boot·JPA 기반 가계부 API로 구분해 설명합니다. DentalLink는 Supabase/Firebase 기반 서비스 데이터 구조로, 4-party는 팀 프로젝트(Flutter·Node.js/Express) 중 Kakao Map 연동·요금 산출 기능이라는 개인 기여 범위로 구분해 설명합니다.
+Pigge Server는 Spring Boot·JPA 기반 거래 API로, FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드로 구분해 설명합니다. 백엔드 지원 이력서에서는 `Pigge Server → FESTAI → AI Agent System → DentalLink` 순서를 우선 사용합니다.
 
 ## AI Engineer Page
 
@@ -119,6 +128,8 @@ FESTAI는 FastAPI·PostgreSQL 기반 축제 플랫폼 백엔드, Pigge Server는
 Pigge Server의 AI 소비 요약 연동과 BDA 학회 AI Agent 수업(HuggingFace·OpenAI·NLP·RAG 학습)은
 보조 카드로 덧붙입니다.
 
+AI Agent는 구현 근거가 충분하므로 다음 보강은 정량 Evaluation입니다. Recall@K, Precision@K, 응답 성공률, tool-call 성공률, latency, hallucination 사례를 20~50개 테스트셋으로 기록합니다.
+
 ## Finance IT Page
 
 `finance-it.html`은 거래 데이터 정합성과 리스크 분류 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
@@ -126,12 +137,11 @@ Pigge Server의 AI 소비 요약 연동과 BDA 학회 AI Agent 수업(HuggingFac
 ### Representative Projects
 
 1. Pigge Server (거래 저장·잔액 계산·월별 집계)
-2. JipFit AI (소득·자산·부채 조건 기반 리스크 분류)
-3. FESTAI (세션 보안·게시 데이터 정합성 부분)
+2. FESTAI (인증·권한·게시 데이터 정합성·fallback)
+3. AI Agent System (AI 자동화와 데이터 구조)
+4. DentalLink (개인정보성 데이터와 API/DB 정합성)
 
-FESTAI는 도메인이 금융이 아니라는 점을 페이지에 명시하고, 민감 데이터를 다루는 백엔드에
-필요한 보안·정합성 관행을 보여주는 근거로만 사용합니다. Weather Forecast Error와 DentalLink는
-시점 정합성·관계형 데이터 무결성 경험을 보여주는 보조 카드로 덧붙입니다.
+금융 IT 이력서에서는 `Pigge → FESTAI → AI Agent → DentalLink` 순서를 사용합니다. 핵심 표현은 거래 데이터 정합성, 데이터 무결성, 인증·권한, 예외 처리, 장애 fallback, 회귀 테스트, API 계약, 감사 가능한 데이터 흐름입니다.
 
 ## GitHub Links
 
