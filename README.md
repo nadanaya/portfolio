@@ -82,14 +82,14 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 ### Representative Projects
 
-1. Pigge Server (Java 17·Spring Boot·Spring Data JPA 기반 거래 API, 테스트 4건 통과)
-2. FESTAI
-3. AI Agent System
-4. DentalLink
+1. FESTAI (FastAPI·PostgreSQL 기반 축제 운영 백엔드, 공개 API·AI fallback·전처리 테스트)
+2. Pigge Server (Java 17·Spring Boot·Spring Data JPA 기반 거래 API)
+3. DentalLink
+4. 4-party (Kakao Map 기여)
 
 ### Supporting Project
 
-- Life Manager
+- 4-party는 상세 페이지에서 보조 카드로 배치하되, `index.html`의 Backend 목록과 동일하게 노출합니다.
 
 ### Evaluation Criteria
 
@@ -103,7 +103,7 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
-Pigge Server는 Spring Boot·JPA 기반 거래 API로, FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드로 구분해 설명합니다. 백엔드 지원 이력서에서는 `Pigge Server → FESTAI → AI Agent System → DentalLink` 순서를 우선 사용합니다.
+FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드, Pigge Server는 Spring Boot·JPA 기반 거래 API, DentalLink는 Flutter·Supabase 기반 관리자 웹 연동, 4-party는 Kakao Map 연동 기여 범위로 구분해 설명합니다. 백엔드 지원 이력서에서는 `FESTAI → Pigge Server → DentalLink → 4-party` 순서를 우선 사용합니다.
 
 ## AI Engineer Page
 
@@ -123,16 +123,15 @@ AI Agent는 구현 근거가 충분하므로 다음 보강은 정량 Evaluation�
 
 ## Finance IT Page
 
-`finance-it.html`은 거래 데이터 정합성, 인증·권한, 예외 처리, 감사 가능한 데이터 흐름 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
+`finance-it.html`은 거래 데이터 정합성, 인증·권한, 예외 처리, 소득·부채 조건 기반 리스크 분류 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
 
 ### Representative Projects
 
 1. Pigge Server (거래 저장·잔액 계산·월별 집계)
 2. FESTAI (인증·권한·게시 데이터 정합성·fallback)
-3. AI Agent System (AI 자동화와 데이터 구조)
-4. DentalLink (개인정보성 데이터와 API/DB 정합성)
+3. JipFit AI (소득·자산·부채 조건 기반 리스크 분류)
 
-금융 IT 이력서에서는 `Pigge → FESTAI → AI Agent → DentalLink` 순서를 사용합니다. 핵심 표현은 거래 데이터 정합성, 데이터 무결성, 인증·권한, 예외 처리, 장애 fallback, 회귀 테스트, API 계약, 감사 가능한 데이터 흐름입니다.
+DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 이력서에서는 `Pigge Server → FESTAI → JipFit AI` 순서를 사용합니다. 핵심 표현은 거래 데이터 정합성, 데이터 무결성, 인증·권한, 예외 처리, 장애 fallback, 회귀 테스트, 리스크 기준 정의입니다.
 
 ## GitHub Links
 

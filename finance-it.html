@@ -357,15 +357,15 @@
         <p class="eyebrow">Finance IT</p>
         <h1>거래를 정확히 계산하고,<br />권한과 데이터 흐름을 검증합니다.</h1>
         <p class="lead">
-          거래 저장과 잔액 계산의 정합성, 월별 집계 로직, 인증·권한,
-          예외 처리, AI 자동화, 개인정보성 데이터 정합성까지
+          거래 저장과 잔액 계산의 정합성, 인증·권한과 민감 데이터 정합성,
+          소득·부채 조건 기반 리스크 분류까지
           금융 IT 직무와 맞닿은 프로젝트를 정리했습니다.
         </p>
         <a class="button" href="https://github.com/nadanaya/pigge_server">Pigge Server 코드 보기</a>
       </section>
 
       <section aria-labelledby="projects-title">
-        <h2 id="projects-title">거래 데이터·인증·자동화 경험</h2>
+        <h2 id="projects-title">거래 데이터·보안 정합성·리스크 경험</h2>
         <div class="projects">
           <article class="project featured">
             <div class="meta">
@@ -475,110 +475,80 @@
 
           <article class="project">
             <div class="meta">
-              <span class="tag">AI 자동화</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">감사 가능한 흐름</span>
+              <span class="tag">리스크 분류</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">ML</span>
             </div>
-            <h3>AI Agent System</h3>
+            <h3>JipFit AI</h3>
             <p>
-              회의·업무 데이터, 일정, Git 근거를 연결해 리스크와 기여도를 분석하고 종료 리포트를
-              생성하는 Agent입니다. 금융 IT 지원에서는 AI 자체보다 데이터 구조화, 근거 추적,
-              감사 가능한 자동화 흐름을 강조합니다.
+              청년의 소득, 자산, 주거비, 보증금, 부채 조건을 바탕으로 주거비 부담 위험을
+              분류하고 정책 후보를 추천하는 분석 프로젝트입니다. 금융 IT 관점에서는
+              조건 기반 리스크 분류와 판단 근거를 설명하는 경험으로 연결됩니다.
             </p>
             <div class="project-body">
               <figure class="visual">
-                <img src="images/ai-agent/public-agent-workflow.svg" alt="AI Agent 업무 분석 자동화 흐름" />
-                <figcaption>DB 검색, 일정 알림, 기여도 분석, 리스크 관리, 리포트 생성 흐름</figcaption>
+                <img src="images/jipfit/public-ml-workflow.svg" alt="JipFit AI 머신러닝 분석 흐름" />
+                <img src="images/jipfit/public-model-results.svg" alt="JipFit AI 모델 비교와 혼동행렬" />
+                <figcaption>소득·자산·부채 조건을 feature로 구성하고 리스크 분류 결과를 검증한 흐름</figcaption>
               </figure>
-              <div class="criteria">
-                <div class="criterion">
-                  <strong>데이터 구조</strong>
-                  <p>회의·채팅·일정·Git 근거를 PostgreSQL과 검색 가능한 컨텍스트로 구조화</p>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>리스크 기준</strong>
+                    <p>월세, 보증금, 관리비, 부채 조건을 함께 반영해 주거비 부담 위험을 분류</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>Feature 구성</strong>
+                    <p>소득 대비 주거비 부담률, 부채 버퍼, 권장 주거비 상한 등 판단 기준을 변수화</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>모델 검증</strong>
+                    <p>6,000개 합성 시나리오로 Logistic Regression과 Random Forest 성능 비교</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>결과 설명</strong>
+                    <p>Accuracy 0.9375, Macro F1 0.9185와 오류 분석을 함께 제시해 과장 없이 해석</p>
+                  </div>
                 </div>
-                <div class="criterion">
-                  <strong>리스크 관리</strong>
-                  <p>Action Item, 마감 일정, Dev-Event를 함께 분석해 지연 위험과 담당 근거를 추적</p>
+                <p class="note">
+                  실제 금융 데이터가 아닌 합성 시나리오 기반 기술 검증이며, 리스크 판단 기준을
+                  데이터로 정의하고 검증한 경험으로 설명합니다.
+                </p>
+                <div class="evidence-list" aria-label="JipFit AI 증거 파일">
+                  <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/metrics.json">성능 지표</a>
+                  <a href="https://github.com/nadanaya/jipfit-ai/blob/main/reports/error-analysis.md">오류 분석</a>
+                  <a href="https://github.com/nadanaya/jipfit-ai/blob/main/tests/test_model_and_service.py">모델 테스트</a>
                 </div>
-                <div class="criterion">
-                  <strong>자동화 흐름</strong>
-                  <p>RAG 검색 결과를 답변 생성뿐 아니라 일정 알림, 리포트 생성 Tool 실행으로 연결</p>
-                </div>
-                <div class="criterion">
-                  <strong>검증</strong>
-                  <p>FakeRepository/FakeLLM 기반 테스트로 회의 요약부터 오케스트레이션까지 주요 경로 검증</p>
-                </div>
-              </div>
-              <div class="evidence-list" aria-label="AI Agent System 증거 파일">
-                <a href="https://github.com/nadanaya/ai-agent">Repository</a>
               </div>
             </div>
             <div class="links">
-              <a href="https://github.com/nadanaya/ai-agent">Repository</a>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="meta">
-              <span class="tag">개인정보성 데이터</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">API/DB 정합성</span>
-            </div>
-            <h3>DentalLink</h3>
-            <p>
-              환자, 예약, 대기열, 공지 데이터를 Supabase(PostgreSQL)로 연결한 치과 운영 서비스입니다.
-              금융 IT 지원에서는 도메인보다 개인정보성 데이터, 화면 상태, API/DB 정합성을 맞춘 경험을
-              중심으로 설명합니다.
-            </p>
-            <div class="project-body">
-              <figure class="visual">
-                <img src="images/dentallink/public-data-architecture.svg" alt="DentalLink 데이터 접근 구조" />
-                <figcaption>환자·예약·대기열 데이터가 화면과 PostgreSQL 테이블로 이어지는 구조</figcaption>
-              </figure>
-              <div class="criteria">
-                <div class="criterion">
-                  <strong>데이터 모델</strong>
-                  <p>환자, 예약, 대기 상태, 공지, 알림 데이터를 관계형 구조로 분리해 화면별 조회 기준 정리</p>
-                </div>
-                <div class="criterion">
-                  <strong>인증 흐름</strong>
-                  <p>환자 PIN 인증과 예약 조회 흐름을 분리해 사용자별 접근 가능한 데이터를 제한</p>
-                </div>
-                <div class="criterion">
-                  <strong>정합성 처리</strong>
-                  <p>대기 상태 변경 후 최신 목록을 재조회하고 상태별 표시 기준을 맞춰 관리자/환자 화면 불일치 완화</p>
-                </div>
-                <div class="criterion">
-                  <strong>오류 대응</strong>
-                  <p>데이터가 없거나 API 응답이 비어 있는 경우 화면이 멈추지 않도록 기본 상태와 예외 메시지 분리</p>
-                </div>
-              </div>
-              <div class="evidence-list" aria-label="DentalLink 증거 파일">
-                <a href="images/dentallink/README.md">상세 문서</a>
-              </div>
-            </div>
-            <div class="links">
-              <a href="https://github.com/2026-capstone-design" title="팀 저장소 (비공개)">팀 저장소 (dentalink_app · 비공개)</a>
-              <a href="images/dentallink/README.md">상세 문서</a>
+              <a href="https://github.com/nadanaya/jipfit-ai">Repository</a>
+              <a href="images/jipfit/README.md">상세 문서</a>
             </div>
           </article>
         </div>
 
         <div class="supporting" aria-label="보조 프로젝트">
           <article class="support">
-            <h3>JipFit AI</h3>
+            <h3>DentalLink</h3>
             <p>
-              6,000개 합성 시나리오 기반으로 소득·자산·부채 조건을 반영한 주거비 부담 리스크를
-              분류했습니다. 데이터 분석/리스크 모델링 보조 근거로 사용합니다.
+              환자, 예약, 대기열 데이터를 Supabase(PostgreSQL)로 연결한 팀 프로젝트입니다.
+              금융 IT에서는 개인정보성 데이터와 API/DB 정합성을 맞춘 보조 경험으로 설명합니다.
             </p>
+            <div class="links">
+              <a href="images/dentallink/README.md">상세 문서</a>
+            </div>
           </article>
           <article class="support">
-            <h3>Weather Forecast Error</h3>
+            <h3>AI Agent System</h3>
             <p>
-              서로 다른 시각 기준을 가진 두 공공 데이터를 정렬하고 결측을
-              처리해 신뢰 가능한 분류 타깃을 만든 경험으로, 정산·집계처럼
-              시점 정합성이 중요한 금융 데이터 처리에도 적용할 수 있습니다.
+              팀 프로젝트에서 회의·일정·Git 근거를 구조화해 리스크와 기여도를 분석한 경험입니다.
+              Finance IT 페이지에서는 감사 가능한 자동화 흐름의 보조 근거로만 배치했습니다.
             </p>
+            <div class="links">
+              <a href="https://github.com/nadanaya/nadanaya">Repository</a>
+            </div>
           </article>
         </div>
       </section>
