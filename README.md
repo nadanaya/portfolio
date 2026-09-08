@@ -30,6 +30,7 @@ portfolio/
     festai/
     pigge/
     dentallink/
+    silentorchestra/
     4party/
     life-manager/
 ```
@@ -85,7 +86,8 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 1. FESTAI (FastAPI·PostgreSQL 기반 축제 운영 백엔드, 공개 API·AI fallback·전처리 테스트)
 2. Pigge Server (Java 17·Spring Boot·Spring Data JPA 기반 거래 API)
 3. DentalLink
-4. 4-party (Kakao Map 기여)
+4. SilentOrchestra 2.0 (FastAPI·SQLite 기반 로컬 우선 Spatial AI Agent, OpenCV 웹캠 제스처 인식 개선)
+5. 4-party (Kakao Map 기여)
 
 ### Supporting Project
 
@@ -103,7 +105,7 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 모델 성능이나 데이터 분석 결과보다 데이터 정합성, API 설계, 조회 구조, 예외 처리, 테스트 계획을 앞에 둡니다.
 
-FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드, Pigge Server는 Spring Boot·JPA 기반 거래 API, DentalLink는 Flutter·Supabase 기반 관리자 웹 연동, 4-party는 Kakao Map 연동 기여 범위로 구분해 설명합니다. 백엔드 지원 이력서에서는 `FESTAI → Pigge Server → DentalLink → 4-party` 순서를 우선 사용합니다.
+FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드, Pigge Server는 Spring Boot·JPA 기반 거래 API, DentalLink는 Flutter·Supabase 기반 관리자 웹 연동, SilentOrchestra 2.0은 FastAPI·SQLite 기반 로컬 우선 Spatial AI Agent에서 OpenCV 웹캠 제스처 인식 개선(PR #1·#8), 4-party는 Kakao Map 연동 기여 범위로 구분해 설명합니다. 백엔드 지원 이력서에서는 `FESTAI → Pigge Server → DentalLink → SilentOrchestra 2.0 → 4-party` 순서를 우선 사용합니다.
 
 ## AI Engineer Page
 
@@ -143,3 +145,5 @@ DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 
 - FESTAI Organization: https://github.com/FEST-ON
 - Pigge Server: https://github.com/nadanaya/pigge_server
 - AI Agent System: https://github.com/nadanaya/ai-agent
+- SilentOrchestra 2.0 Backend: https://github.com/1-WAVE-ON/Backend
+- SilentOrchestra 2.0 Organization: https://github.com/1-WAVE-ON

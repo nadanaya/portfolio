@@ -594,6 +594,77 @@
               <a href="images/dentallink/README.md">상세 문서</a>
             </div>
           </article>
+
+          <article class="project silentorchestra">
+            <div class="meta">
+              <span class="tag">팀 프로젝트</span>
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">SQLAlchemy</span>
+              <span class="tag">OpenCV</span>
+            </div>
+            <h3>SilentOrchestra 2.0</h3>
+            <p>
+              사용자가 정해진 명령을 외우는 대신 반복되는 몸짓과 현재 사용 맥락을 학습해
+              행동을 제안·실행하는 로컬 우선 Spatial AI Agent 팀 프로젝트입니다(2026.09).
+              웹캠 제스처 클라이언트와 FastAPI 관찰 API의 연동, OpenCV 기반 손짓 인식
+              개선을 맡았습니다.
+            </p>
+            <div class="project-body">
+              <figure class="visual">
+                <img src="images/silentorchestra/gesture-observation-flow.svg" alt="SilentOrchestra 2.0 제스처 관찰 흐름" />
+                <figcaption>웹캠 제스처 클라이언트가 모션 특징을 뽑아 FastAPI 관찰 API로 넘기고, SQLite에 제스처·맥락 기억을 저장하는 흐름</figcaption>
+              </figure>
+              <div>
+                <div class="criteria">
+                  <div class="criterion">
+                    <strong>도메인</strong>
+                    <p>Observation → Pattern → Suggestion → Memory → Execution → Feedback 학습 흐름으로, 3회 반복 관찰 후 행동을 제안하고 사용자 승인 이후 자동 실행</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>데이터 모델</strong>
+                    <p>사용자·제스처·사용 맥락을 결합한 개인화 행동 기억을 SQLite·SQLAlchemy로 저장하고, 원본 영상과 얼굴 정보 없이 모션 특징과 맥락만 보관</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>API 구조</strong>
+                    <p>웹캠 제스처 클라이언트가 관찰 이벤트를 FastAPI 관찰 API로 전송하고, 백엔드가 패턴·제안·실행 단계로 연결</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>문제 해결 — 미감지</strong>
+                    <p>손이 관심 영역 일부만 차지하면 전체 Optical Flow 중앙값이 0에 수렴해 좌우 손짓이 감지되지 않는 원인을 분석하고, 임계값을 넘은 움직임 픽셀만 선별해 평균 이동 방향을 계산하도록 개선(PR #1)</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>문제 해결 — 오탐지</strong>
+                    <p>배경·카메라 노이즈까지 움직임으로 잡히는 문제를 MOG2 전경 마스크와 Optical Flow 조건 결합, 수평·수직 이동 비교, 동일 방향의 연속 프레임 검증으로 안정화(PR #8)</p>
+                  </div>
+                  <div class="criterion">
+                    <strong>검증</strong>
+                    <p>현재 저장소 기준 pytest 21 passed, SQLite 38 statements passed — 팀 저장소 전체 구현·검증 결과이며 개인 구현으로 주장하지 않음</p>
+                  </div>
+                </div>
+                <div class="split-note">
+                  <div>
+                    <strong>전체 시스템</strong>
+                    <p>사용자·제스처·맥락을 결합한 개인화 행동 기억 관리와 학습 흐름, FastAPI 기반 API, SQLite·SQLAlchemy 저장 구조, 원본 프레임을 저장하지 않는 로컬 우선 설계로 구성된 팀 저장소 전체 성과입니다. 위 테스트 수치도 팀 저장소 전체 검증 결과입니다.</p>
+                  </div>
+                  <div>
+                    <strong>내 기여·검증 범위</strong>
+                    <p>관심 영역 전체 중앙값 대신 움직임 픽셀만 선별해 평균 방향을 계산하도록 바꾸고 최소 움직임 비율을 설정값으로 분리, 이동량·방향·움직임 비율·누적 감지 횟수를 출력해 현장 디버깅을 보완했습니다(PR #1). 이후 MOG2 전경 분리와 연속 프레임 방향 검증을 더해 오탐지를 줄였고(PR #8), 두 PR은 main에 병합됐습니다.</p>
+                  </div>
+                </div>
+                <div class="evidence-list" aria-label="SilentOrchestra 2.0 증거 링크">
+                  <a href="https://github.com/1-WAVE-ON/Backend/pull/1">PR #1 · 움직임 픽셀 기반 Optical Flow</a>
+                  <a href="https://github.com/1-WAVE-ON/Backend/pull/8">PR #8 · MOG2 전경 분리·연속 프레임 검증</a>
+                  <a href="https://github.com/1-WAVE-ON/Backend">Repository</a>
+                </div>
+              </div>
+            </div>
+            <div class="links">
+              <a href="https://github.com/1-WAVE-ON/Backend">Repository</a>
+              <a href="https://github.com/1-WAVE-ON">Organization</a>
+            </div>
+          </article>
         </div>
 
         <div class="supporting" aria-label="보조 프로젝트">
