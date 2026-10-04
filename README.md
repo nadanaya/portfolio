@@ -147,3 +147,17 @@ DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 
 - AI Agent System: https://github.com/nadanaya/ai-agent
 - SilentOrchestra 2.0 Backend: https://github.com/1-WAVE-ON/Backend
 - SilentOrchestra 2.0 Organization: https://github.com/1-WAVE-ON
+
+
+## PetBalance
+
+반려동물의 급여 조합 분석과 보호소 운영을 연결한 풀스택 프로젝트입니다.
+
+- **문제:** 여러 제품의 영양소를 함께 계산하기 어렵고, 보호소는 로스터·급여·재고·예산을 분리해 관리해야 했습니다.
+- **백엔드:** FastAPI 인증·제품·식단·영양 분석 API와 Spring Boot 호환 구현, SQLite/PostgreSQL 저장 구조
+- **클라이언트:** React/Vite 웹, Electron 데스크톱, Capacitor Android
+- **운영 웹:** Next.js Route Handlers와 Neon PostgreSQL, revision 기반 동시 수정 충돌 감지
+- **검증:** 백엔드 단위·API 테스트 63개, 프런트엔드 프로덕션 빌드
+- **안전 범위:** 영양 기준·제품 데이터는 기능 검증용 데모이며 실제 수의학적 판단을 대체하지 않음을 명시
+
+Links: [Backend](https://github.com/petbalance/backend) · [Frontend](https://github.com/petbalance/Frontend) · [Organization](https://github.com/petbalance)
