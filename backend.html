@@ -459,13 +459,14 @@
               <span class="tag">React</span>
             </div>
             <h3>PetBalance</h3>
-            <p>개인 반려동물의 급여 조합 분석과 보호소의 로스터·급여·재고·예산 관리를 연결한 서비스입니다.</p>
+            <p>개인 반려동물의 식단 조합 분석과 보호소 운영을 하나의 데이터 흐름으로 연결한 풀스택 서비스입니다. 개인 사용자는 반려동물의 제품·급여량·식단 조합을 관리하고, 보호소는 로스터·급여·재고·예산을 함께 운영할 수 있도록 구성했습니다.</p>
             <div class="criteria">
-              <div class="criterion"><strong>API·데이터</strong><p>FastAPI 인증·제품·식단·영양 분석 API, SQLite/PostgreSQL 저장 구조와 Spring Boot 호환 구현</p></div>
-              <div class="criterion"><strong>클라이언트</strong><p>React/Vite 웹을 Electron 데스크톱과 Capacitor Android로 확장</p></div>
-              <div class="criterion"><strong>보호소 운영</strong><p>Next.js Route Handlers, Neon PostgreSQL, revision 기반 동시 수정 충돌 감지</p></div>
-              <div class="criterion"><strong>검증</strong><p>백엔드 단위·API 테스트 63개와 프런트엔드 프로덕션 빌드</p></div>
-              <div class="criterion"><strong>안전성</strong><p>데모 영양 기준·제품 데이터임을 표시하고 의료 판단을 대체하지 않는 범위를 문서화</p></div>
+              <div class="criterion"><strong>문제 정의</strong><p>제품 정보와 급여 기록이 분산되어 반려동물별 영양 균형을 비교하기 어렵고, 보호소 운영에서는 담당자·재고·예산 데이터가 따로 관리되는 문제를 대상으로 했습니다.</p></div>
+              <div class="criterion"><strong>개인 사용자 기능</strong><p>반려동물 프로필, 제품 정보, 급여량, 식단 조합을 저장하고 영양 기준과 비교해 칼로리·주요 영양소 구성을 확인하는 흐름을 구현했습니다.</p></div>
+              <div class="criterion"><strong>보호소 운영</strong><p>Next.js Route Handlers와 Neon PostgreSQL을 기반으로 로스터, 급여 기록, 재고, 예산 데이터를 연결했습니다. revision 값을 함께 저장해 여러 운영자가 동시에 수정할 때 충돌을 감지하고 최신 상태를 다시 확인하도록 했습니다.</p></div>
+              <div class="criterion"><strong>API·데이터 구조</strong><p>FastAPI 인증·제품·식단·영양 분석 API와 SQLite/PostgreSQL 저장 구조를 구성하고, Spring Boot에서도 확장할 수 있도록 도메인·서비스 경계를 분리했습니다.</p></div>
+              <div class="criterion"><strong>클라이언트 확장</strong><p>React/Vite 웹을 기준으로 Electron 데스크톱과 Capacitor Android 배포로 확장해 동일한 서비스 흐름을 여러 실행 환경에서 사용할 수 있도록 했습니다.</p></div>
+              <div class="criterion"><strong>검증·안전성</strong><p>백엔드 단위·API 테스트 63개와 프런트엔드 프로덕션 빌드로 주요 흐름을 확인했습니다. 영양 기준과 제품 데이터는 데모 범위임을 표시하고 의료 판단을 대체하지 않는다는 한계를 문서화했습니다.</p></div>
             </div>
             <div class="links"><a href="https://github.com/petbalance/backend">Backend</a><a href="https://github.com/petbalance/Frontend">Frontend</a><a href="https://github.com/petbalance">Organization</a></div>
           </article>
