@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>김나영 포트폴리오 | Data Analyst & Backend Developer</title>
+    <title>김나영 포트폴리오 | 문제를 해결하는 개발자</title>
     <meta
       name="description"
-      content="데이터 분석과 백엔드 개발 프로젝트를 주제별 상세 페이지로 정리한 김나영 포트폴리오입니다."
+      content="문제 정의부터 구현과 검증까지, 데이터·백엔드·AI 프로젝트의 과정과 결과를 담은 김나영 포트폴리오입니다."
     />
     <style>
       :root {
@@ -478,44 +478,40 @@
     <header class="topbar">
       <a class="brand" href="index.html">김나영 Portfolio</a>
       <nav class="nav" aria-label="주요 링크">
-        <a href="data.html">Data Analyst</a>
-        <a href="backend.html">Backend</a>
-        <a href="ai.html">AI Engineer</a>
-        <a href="finance-it.html">Finance IT</a>
+        <a href="#about">소개</a>
+        <a href="#featured-title">프로젝트</a>
+        <a href="#skills-title">역량</a>
+        <a href="#tracks-title">전문 영역</a>
         <a href="https://github.com/nadanaya/portfolio">GitHub</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero" id="about">
         <div>
           <p class="eyebrow">Nayoung Kim</p>
-          <h1>데이터로 문제를 정의하고,<br />서비스로 해결합니다.</h1>
+          <h1>기술보다 문제를 먼저 보고,<br />끝까지 동작하는 결과물을 만듭니다.</h1>
           <p class="lead">
-            Python과 SQL로 데이터를 분석하고, 지표와 인사이트로 결과를
-            제시합니다. 필요한 경우 Java와 Spring Boot를 활용해 API와
-            데이터베이스 구조까지 구현합니다.
+            데이터 분석, 백엔드, AI를 하나의 직무명으로 제한하지 않고 문제에 맞는 도구로 활용합니다.
+            프로젝트마다 맡은 역할, 구현 과정, 검증 결과를 명확히 보여드립니다.
           </p>
-          <div class="actions" aria-label="포트폴리오 선택">
-            <a class="button primary" href="data.html">데이터 분석 포트폴리오</a>
-            <a class="button blue" href="backend.html">백엔드 포트폴리오</a>
-            <a class="button violet" href="ai.html">AI 엔지니어 포트폴리오</a>
-            <a class="button amber" href="finance-it.html">금융 IT 포트폴리오</a>
+          <div class="actions" aria-label="포트폴리오 탐색">
+            <a class="button primary" href="#featured-title">대표 프로젝트 보기</a>
+            <a class="button blue" href="#skills-title">핵심 역량 살펴보기</a>
             <a class="button" href="https://github.com/nadanaya/portfolio">GitHub</a>
           </div>
         </div>
 
         <aside class="profile-panel" aria-label="공통 소개">
-          <h2>공통 역량</h2>
+          <h2>일하는 방식</h2>
           <p>
-            사용자 문제를 데이터로 정의하고, 그 결과가 실제 서비스 구조 안에서
-            동작하도록 구현하는 데 관심이 있습니다.
+            요구사항을 구조화하고, 구현 근거와 검증 결과를 함께 남기는 개발을 지향합니다.
           </p>
           <ul class="quick-list">
-            <li><strong>분석</strong><span>Python, SQL, 분석 지표 설계</span></li>
-            <li><strong>백엔드</strong><span>Java, Spring Boot, REST API</span></li>
-            <li><strong>데이터</strong><span>PostgreSQL, SQLite, 데이터 모델링</span></li>
-            <li><strong>품질</strong><span>테스트 기초, 문서화, GitHub</span></li>
+            <li><strong>문제 정의</strong><span>사용자 요구와 핵심 지표 구조화</span></li>
+            <li><strong>구현</strong><span>데이터·API·서비스 흐름 연결</span></li>
+            <li><strong>검증</strong><span>테스트와 수치로 결과 확인</span></li>
+            <li><strong>협업</strong><span>GitHub 기반 기록과 문서화</span></li>
           </ul>
         </aside>
       </section>
@@ -536,8 +532,8 @@
             <span>Pigge Server·FESTAI에서 직접 구현한 API 엔드포인트</span>
           </div>
           <div class="stat">
-            <strong>4트랙 · 8프로젝트</strong>
-            <span>Data·Backend·AI·Finance IT로 나눠 역할과 근거 링크까지 정리</span>
+            <strong>8개 프로젝트</strong>
+            <span>개인·팀 프로젝트의 역할, 구현 과정과 검증 근거를 함께 정리</span>
           </div>
         </div>
       </section>
@@ -546,7 +542,7 @@
         <h2 id="featured-title">대표 프로젝트</h2>
         <div class="featured-grid">
           <article class="featured-card">
-            <p class="eyebrow">Data Analyst</p>
+            <p class="eyebrow">Data &amp; ML</p>
             <h3>JipFit AI</h3>
             <p><strong>문제</strong> 월세·보증금·부채를 함께 고려하기 어려운 청년 주거비 부담 판단</p>
             <p><strong>구현</strong> 6,000건 합성 시나리오로 Logistic Regression·Random Forest를 비교하고 Streamlit으로 서빙</p>
@@ -554,7 +550,7 @@
             <a class="more" href="data.html">자세히 보기 →</a>
           </article>
           <article class="featured-card">
-            <p class="eyebrow">Backend Developer</p>
+            <p class="eyebrow">Backend &amp; Platform</p>
             <h3>FESTAI</h3>
             <p><strong>문제</strong> 지역축제 운영 데이터와 방문객 안내를 하나의 서비스 흐름으로 연결</p>
             <p><strong>구현</strong> FastAPI·PostgreSQL 기반 공개 API·AI 안내·ESG 데이터 export와 역할별 운영 구조 구현</p>
@@ -562,7 +558,7 @@
             <a class="more" href="backend.html">자세히 보기 →</a>
           </article>
           <article class="featured-card">
-            <p class="eyebrow">AI Engineer</p>
+            <p class="eyebrow">AI Automation</p>
             <h3>AI Agent System</h3>
             <p><strong>문제</strong> 회의록·Git 커밋에 흩어진 Action Item과 기여도 근거를 수작업으로 정리</p>
             <p><strong>구현</strong> LangGraph 오케스트레이션으로 회의 요약·기여도 스코어링·리포트 생성 자동화</p>
@@ -603,10 +599,10 @@
       </section>
 
       <section aria-labelledby="tracks-title">
-        <h2 id="tracks-title">프로젝트 구분</h2>
+        <h2 id="tracks-title">전문 영역</h2>
         <div class="tracks">
           <article class="track">
-            <h3>Data Analyst</h3>
+            <h3>Data &amp; Insights</h3>
             <p>
               문제 정의, 데이터 출처, 지표 설계, 모델 검증, 비즈니스 인사이트를
               기준으로 프로젝트를 정리했습니다.
@@ -620,7 +616,7 @@
           </article>
 
           <article class="track">
-            <h3>Backend Developer</h3>
+            <h3>Backend &amp; Platform</h3>
             <p>
               실제 서버 구현, 서비스 데이터 구조, 인증과 상태 관리, 구현한 흐름과
               개선 계획을 분리해 정리했습니다.
@@ -636,7 +632,7 @@
           </article>
 
           <article class="track">
-            <h3>AI Engineer</h3>
+            <h3>AI &amp; Automation</h3>
             <p>
               AI 연동 로직 설계, 실패 시 폴백 처리, 자동화 워크플로우 구성과
               분류 모델 평가까지 AI를 서비스에 붙이는 과정을 정리했습니다.
@@ -650,7 +646,7 @@
           </article>
 
           <article class="track">
-            <h3>Finance IT</h3>
+            <h3>Finance &amp; Data Integrity</h3>
             <p>
               거래 저장·잔액 계산의 정합성, 민감 데이터를 다루는 보안·정합성 처리,
               소득·부채 조건 기반 리스크 분류 경험을 정리했습니다.
