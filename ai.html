@@ -494,9 +494,9 @@
             </div>
             <h3>AI Agent System</h3>
             <p>
-              프로젝트 관리 데이터에서 회의 요약, Action Item, 일정 알림,
-              Git 커밋 기반 기여도 근거, 최종 Markdown/PDF 보고서를 자동
-              생성하는 AI Agent 프로젝트입니다.
+              Python·LangGraph로 회의 요약→Action Item→일정 알림→Git 근거 수집→종료 리포트를
+              연결한 AI Agent workflow입니다. 기능별 모듈을 orchestration이 목표 단위로 실행하고
+              Markdown/PDF 결과물까지 자동 생성합니다.
             </p>
             <div class="project-body">
               <figure class="visual">
@@ -527,7 +527,7 @@
                   </div>
                   <div class="criterion">
                     <strong>검증</strong>
-                    <p>FakeRepository/FakeLLM 기반 테스트 36개로 회의 요약부터 오케스트레이션까지 검증. 다음 보강은 Recall@K, Precision@K, tool-call 성공률, latency 중심의 정량 Evaluation</p>
+                    <p>FakeRepository/FakeLLM 기반 pytest 36개로 orchestration 회귀를 검증했습니다. 이는 기능·흐름 테스트이며, LLM 품질 평가는 Recall@K, Precision@K, tool-call 성공률, latency 기준으로 별도 보강할 계획입니다.</p>
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="AI Agent System 증거 파일">
@@ -590,16 +590,16 @@
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="FESTAI 증거 파일">
-                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/ai.py">AI Client</a>
-                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/context_repository.py">Context Repository</a>
-                  <a href="https://github.com/FEST-ON/Backend/blob/main/app/preprocessing.py">Preprocessing</a>
-                  <a href="https://github.com/FEST-ON/Backend/blob/main/tests/test_ai_festival_context.py">AI Tests</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/ai.py">AI Client</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/context_repository.py">Context Repository</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/preprocessing.py">Preprocessing</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/tests/test_ai_festival_context.py">AI Tests</a>
                 </div>
               </div>
             </div>
             <div class="links">
-              <a href="https://github.com/FEST-ON/Backend">Repository</a>
-              <a href="https://github.com/FEST-ON">Organization</a>
+              <a href="https://github.com/est-34/fest-ai">Repository</a>
+              <a href="https://github.com/est-34">Organization</a>
             </div>
           </article>
 

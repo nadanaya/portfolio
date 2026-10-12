@@ -141,8 +141,8 @@ DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 
 - GitHub Profile: https://github.com/nadanaya
 - JipFit AI: https://github.com/nadanaya/jipfit-ai
 - Weather Forecast Error: https://github.com/nadanaya/weather-forecast-error
-- FESTAI Backend: https://github.com/FEST-ON/Backend
-- FESTAI Organization: https://github.com/FEST-ON
+- FESTAI Repository: https://github.com/est-34/fest-ai
+- Project Organization: https://github.com/est-34
 - Pigge Server: https://github.com/nadanaya/pigge_server
 - AI Agent System: https://github.com/nadanaya/ai-agent
 - SilentOrchestra 2.0 Backend: https://github.com/1-WAVE-ON/Backend

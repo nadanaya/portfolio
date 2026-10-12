@@ -553,16 +553,16 @@
             <p class="eyebrow">Backend &amp; Platform</p>
             <h3>FESTAI</h3>
             <p><strong>문제</strong> 지역축제 운영 데이터와 방문객 안내를 하나의 서비스 흐름으로 연결</p>
-            <p><strong>구현</strong> FastAPI·PostgreSQL 기반 공개 API·AI 안내·ESG 데이터 export와 역할별 운영 구조 구현</p>
-            <p><strong>결과</strong> 11개 라우터·169개 API·141개 테스트로 팀 백엔드 구조와 검증 범위 정리</p>
+            <p><strong>구현</strong> FastAPI·PostgreSQL 기반 공개 API 11개와 승인 데이터 기반 AI 안내·fallback·전처리 구현</p>
+            <p><strong>결과</strong> 팀 전체 141개 테스트 중 AI·전처리 테스트 24개를 직접 작성해 예외 경로까지 검증</p>
             <a class="more" href="backend.html">자세히 보기 →</a>
           </article>
           <article class="featured-card">
             <p class="eyebrow">AI Automation</p>
             <h3>AI Agent System</h3>
             <p><strong>문제</strong> 회의록·Git 커밋에 흩어진 Action Item과 기여도 근거를 수작업으로 정리</p>
-            <p><strong>구현</strong> LangGraph 오케스트레이션으로 회의 요약·기여도 스코어링·리포트 생성 자동화</p>
-            <p><strong>결과</strong> FakeRepository/FakeLLM 기반 테스트 36개로 전체 워크플로우 검증</p>
+            <p><strong>구현</strong> Python·LangGraph로 회의 요약→Action Item→일정 알림→Git 근거 수집→종료 리포트 흐름 자동화</p>
+            <p><strong>결과</strong> FakeRepository/FakeLLM 기반 pytest 36개로 orchestration 회귀 검증</p>
             <a class="more" href="ai.html">자세히 보기 →</a>
           </article>
         </div>

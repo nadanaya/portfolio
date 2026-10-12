@@ -528,10 +528,9 @@
             </div>
             <h3>FESTAI</h3>
             <p>
-              AI·ESG 기반 지역축제 운영 플랫폼으로, 방문객 QR 모바일 웹·운영자 콘솔·참여업체 콘솔이
-              함께 쓰는 FastAPI 백엔드입니다. JWT 인증·역할 기반 접근 제어 위에서 11개 라우터·169개
-              API 엔드포인트로 구성되며, 그중 공개 조회 API·AI 안내·데이터 전처리·ESG 지표 export를
-              직접 구현했습니다.
+              FastAPI·PostgreSQL 기반 지역축제 운영 백엔드에서 공개 API 11개를 구현했습니다.
+              공개·방문객·관리자 권한을 분리하고 승인 데이터 기반 AI 안내, 외부 AI 오류 시 fallback,
+              방문객 데이터 전처리와 ESG 지표 export를 연결했습니다.
             </p>
             <div class="project-body">
               <figure class="visual">
@@ -576,12 +575,12 @@
                   </div>
                 </div>
                 <div class="evidence-list" aria-label="FESTAI 증거 파일">
-                  <a href="https://github.com/est-34/fest-ai/blob/main/app/routes/public.py">Public Router</a>
-                  <a href="https://github.com/est-34/fest-ai/blob/main/app/ai.py">AI Client</a>
-                  <a href="https://github.com/est-34/fest-ai/blob/main/app/context_repository.py">Context Repository</a>
-                  <a href="https://github.com/est-34/fest-ai/blob/main/app/preprocessing.py">Preprocessing</a>
-                  <a href="https://github.com/est-34/fest-ai/blob/main/app/esg_export.py">ESG Export</a>
-                  <a href="https://github.com/est-34/fest-ai/blob/main/tests/test_ai_festival_context.py">AI Tests</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/routes/public.py">Public Router</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/ai.py">AI Client</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/context_repository.py">Context Repository</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/preprocessing.py">Preprocessing</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/app/esg_export.py">ESG Export</a>
+                  <a href="https://github.com/est-34/fest-ai/blob/main/backend/tests/test_ai_festival_context.py">AI Tests</a>
                 </div>
               </div>
             </div>
@@ -640,10 +639,9 @@
             </div>
             <h3>Pigge Server</h3>
             <p>
-              사용자별 수입·지출 거래와 커뮤니티 게시글·댓글을 관리하고 월별 조회,
-              잔액 조회, AI 요약 연동을 제공하는 개인 금융 서비스입니다. Spring Boot 백엔드와
-              Android 클라이언트를 단일 저장소로 통합하고, DTO 중복으로 발생한 Kotlin 빌드 오류와
-              실제 기기 접속을 위한 LAN 연결 설정을 수정했습니다.
+              Java 17·Spring Boot 기반 거래·커뮤니티 REST API 19개와 Android 클라이언트 연동을
+              구현했습니다. DTO 중복으로 발생한 Kotlin 빌드 오류와 실제 기기 접속을 위한 LAN 연결
+              문제를 해결하고, Service 테스트 3개로 거래 저장·월별 조회·잔액 계산 흐름을 검증했습니다.
             </p>
             <div class="project-body">
               <figure class="visual">
@@ -790,7 +788,7 @@
               <span class="tag">SQLAlchemy</span>
               <span class="tag">OpenCV</span>
             </div>
-            <h3>SilentOrchestra 2.0 <span class="project-owner">· Wanted-WAVE-ON</span></h3>
+            <h3>SilentOrchestra 2.0 <span class="project-owner">· 팀 프로젝트</span></h3>
             <p>
               사용자가 정해진 명령을 외우는 대신 반복되는 몸짓과 현재 사용 맥락을 학습해
               행동을 제안·실행하는 로컬 우선 Spatial AI Agent 팀 프로젝트입니다(2026.09).
