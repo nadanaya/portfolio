@@ -4,7 +4,7 @@ AI·ESG 기반 지역축제 운영 플랫폼을 위한 FastAPI 백엔드입니�
 
 ## Source Repository
 
-https://github.com/FEST-ON/Backend
+https://github.com/est-34/fest-ai
 
 ## Project Type
 
@@ -79,6 +79,6 @@ AI festival context, 전처리, API, SQL, 잡(job) 테스트로 승인 데이터
 
 ## Public API Flow
 
-`public-ai-context-flow.svg`는 FEST-ON/Backend `origin/main`의 README와 소스 구조를 기반으로, 방문객 QR 웹부터 공개 조회 API, 축제 운영 컨텍스트, Alan AI 폴백까지 이어지는 흐름을 재구성한 이미지입니다.
+`public-ai-context-flow.svg`는 프로젝트 저장소 `main` 브랜치의 README와 소스 구조를 기반으로, 방문객 QR 웹부터 공개 조회 API, 축제 운영 컨텍스트, Alan AI 폴백까지 이어지는 흐름을 재구성한 이미지입니다.
 
 ![FESTAI public API and AI context flow](public-ai-context-flow.svg)
