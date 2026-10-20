@@ -160,4 +160,4 @@ DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 
 - **검증:** 백엔드 단위·API 테스트 63개, 프런트엔드 프로덕션 빌드
 - **안전 범위:** 영양 기준·제품 데이터는 기능 검증용 데모이며 실제 수의학적 판단을 대체하지 않음을 명시
 
-Links: [Backend](https://github.com/petbalance/backend) · [Frontend](https://github.com/petbalance/Frontend) · [Organization](https://github.com/petbalance)
+Link: https://github.com/nadanaya/petbalance 
