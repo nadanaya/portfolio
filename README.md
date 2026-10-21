@@ -108,6 +108,18 @@ JipFit AI는 합성 테스트 데이터 기반 결과임을 명시하고, 모델
 
 FESTAI는 FastAPI·PostgreSQL 기반 운영 백엔드, PetBalance는 FastAPI·React 기반 반려동물·보호소 운영 서비스, Pigge Server는 Spring Boot·JPA 기반 거래 API, DentalLink는 Flutter·Supabase 기반 관리자 웹 연동, SilentOrchestra 2.0은 FastAPI·SQLite 기반 로컬 우선 Spatial AI Agent에서 OpenCV 웹캠 제스처 인식 개선(PR #1·#8), 4-party는 Kakao Map 연동 기여 범위로 구분해 설명합니다. 백엔드 지원 이력서에서는 `FESTAI → PetBalance → Pigge Server → DentalLink → SilentOrchestra 2.0 → 4-party` 순서를 우선 사용합니다.
 
+### PetBalance
+
+반려동물의 급여 조합 분석과 보호소 운영을 연결한 풀스택 프로젝트입니다.
+
+- **문제:** 여러 제품의 영양소를 함께 계산하기 어렵고, 보호소는 로스터·급여·재고·예산을 분리해 관리해야 했습니다.
+- **백엔드:** FastAPI 인증·제품·식단·영양 분석 API와 Spring Boot 호환 구현, SQLite/PostgreSQL 저장 구조
+- **클라이언트:** React/Vite 웹, Electron 데스크톱, Capacitor Android
+- **운영 웹:** Next.js Route Handlers와 Neon PostgreSQL, revision 기반 동시 수정 충돌 감지
+- **검증:** 백엔드 단위·API 테스트 63개, 프런트엔드 프로덕션 빌드
+- **안전 범위:** 영양 기준·제품 데이터는 기능 검증용 데모이며 실제 수의학적 판단을 대체하지 않음을 명시
+- **Repository:** https://github.com/nadanaya/petbalance
+
 ## AI Engineer Page
 
 `ai.html`은 AI 연동·자동화 관점에서 같은 프로젝트를 다시 구성한 페이지입니다.
@@ -149,17 +161,3 @@ DentalLink와 AI Agent System은 보조 경험으로 배치합니다. 금융 IT 
 - PetBalance: https://github.com/nadanaya/petbalance
 - SilentOrchestra 2.0: https://github.com/est-34/wave-on
 - SilentOrchestra 2.0 Organization: https://github.com/est-34
-
-
-## PetBalance
-
-반려동물의 급여 조합 분석과 보호소 운영을 연결한 풀스택 프로젝트입니다.
-
-- **문제:** 여러 제품의 영양소를 함께 계산하기 어렵고, 보호소는 로스터·급여·재고·예산을 분리해 관리해야 했습니다.
-- **백엔드:** FastAPI 인증·제품·식단·영양 분석 API와 Spring Boot 호환 구현, SQLite/PostgreSQL 저장 구조
-- **클라이언트:** React/Vite 웹, Electron 데스크톱, Capacitor Android
-- **운영 웹:** Next.js Route Handlers와 Neon PostgreSQL, revision 기반 동시 수정 충돌 감지
-- **검증:** 백엔드 단위·API 테스트 63개, 프런트엔드 프로덕션 빌드
-- **안전 범위:** 영양 기준·제품 데이터는 기능 검증용 데모이며 실제 수의학적 판단을 대체하지 않음을 명시
-
-Link: https://github.com/nadanaya/petbalance 
